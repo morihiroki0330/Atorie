@@ -1,4 +1,7 @@
 #pragma once
+class GameTitle;
+
+class Mouse;
 class Game : public IGameObject
 {
 public:
@@ -7,6 +10,8 @@ public:
 	void Update();
 	void Render(RenderContext& rc);
 private:
-	SpriteRender as;
+	GameTitle* P_GameTitle;
+
+	Mouse* P_Mouse;
 };
 

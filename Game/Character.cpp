@@ -4,7 +4,7 @@
 bool Character::Start()
 {
 	P_Stage = FindGO<Stage>("stage");
-	M_CharacterTexture.ColorOutInit("Assets/Sprite/AnyModel.DDS","Assets/Sprite/AnyModelColor.DDS", "Assets/Sprite/AnyModelGreenBack.DDS",120.0f,120.0f);
+	M_CharacterTexture.Init("Assets/Sprite/AnyModel.DDS",120.0f,120.0f,true);
 	M_PositionX = P_Stage->M_StartX;
 	M_PositionY = P_Stage->M_StartY;
 	M_CharacterPosition = P_Stage->M_MapPosition[M_PositionX][M_PositionY];

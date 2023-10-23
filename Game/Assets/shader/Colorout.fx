@@ -20,8 +20,6 @@ struct PSInput
 };
 
 Texture2D<float4> Texture : register(t0);
-Texture2D<float4> TextureColor : register(t1);
-Texture2D<float4> TextureGreenBack : register(t2);
 sampler Sampler : register(s0);
 
 PSInput VSMain(VSInput In) 
@@ -33,15 +31,7 @@ PSInput VSMain(VSInput In)
 }
 float4 PSMain( PSInput In ) : SV_Target0
 {
-	float4 TexColor = TextureGreenBack.Sample(Sampler,In.uv);
-	if(TexColor.g>TexColor.r && TexColor.g>TexColor.b)
-	{
-		TexColor.w = 0.0f;
-	}else{
-		TexColor = TextureColor.Sample(Sampler,In.uv);
-		TexColor.r *= 1.0f;
-		TexColor.g *= 1.0f;
-		TexColor.b *= 1.0f;
-	}
+	float4 TexColor = Texture.Sample(Sampler,In.uv);
+	TexColor.rgb = pow(TexColor.rgb, 1.0 / 2.2);
 	return TexColor;
 }

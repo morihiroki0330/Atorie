@@ -11,19 +11,10 @@ namespace nsK2EngineLow
 		//引数：（ファイルパス、画像の横幅、画像の縦幅、半透明合成）
 		void Init
 		(
-		const char* Sprite, 
-		const float w = 1920.0f, 
-		const float h = 1080.0f,
-		AlphaBlendMode alphaBlendMode = AlphaBlendMode_Trans
-		);
-
-		void ColorOutInit
-		(
 			const char* Sprite,
-			const char* Color,
-			const char* GreenBack,
-			const float w = 1920.0f,
-			const float h = 1080.0f,
+			const float w,
+			const float h,
+			bool ColorOut = false,
 			AlphaBlendMode alphaBlendMode = AlphaBlendMode_Trans
 		);
 
@@ -34,16 +25,6 @@ namespace nsK2EngineLow
 			const float h = 1080.0f,
 			AlphaBlendMode alphaBlendMode = AlphaBlendMode_Trans
 		);
-
-		void CreateCollision
-		(
-			const float w,
-			const float h,
-			const char* ObjectName
-		)
-		{
-
-		}
 
 		//更新
 		void Update()

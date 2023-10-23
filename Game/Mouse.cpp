@@ -5,7 +5,7 @@ Mouse::Mouse()
     M_Window.x = 1920.0f;
     M_Window.y = 1080.0f;
     M_MouseCollision.DecisionDataSet(15.0f, 15.0f, M_MousePosition.x, M_MouseCousorPosition.y, 1);
-    MouseCursorTextureSet("Assets/Sprite/Flick/Cursor.DDS","Assets/Sprite/Flick/CursorColor.DDS","Assets/Sprite/Flick/CursorGreenBack.DDS",90.0f,90.0f);
+    MouseCursorTextureSet("Assets/Sprite/Flick/Cursor.DDS",90.0f,90.0f,true);
 }
 void Mouse::Update()
 {
@@ -38,16 +38,12 @@ void Mouse::MouseCurSorSetPosition(Vector3 &Position)
     Position.y = (M_MousePosition.y - (M_Window.y / 2)) * -1;
 }
 
-void Mouse::MouseCursorTextureSet(const char* Sprite,const char* Color,const char* GreenBack, const float w, const float h)
+void Mouse::MouseCursorTextureSet(const char* Sprite,const float w, const float h,bool ColorOut)
 {
-    M_MouseCursorTexture.ColorOutInit(Sprite,Color,GreenBack,w, h);
+    M_MouseCursorTexture.Init(Sprite,w, h,ColorOut);
     M_MouseCursorTextureFlag = true;
 }
-void Mouse::MouseCursorTextureSet(const char* Sprite,const float w, const float h)
-{
-    M_MouseCursorTexture.Init(Sprite,w, h);
-    M_MouseCursorTextureFlag = true;
-}
+
 void Mouse::MouseCorsorTextureSetCheck()
 {
     if (M_MouseCursorTextureFlag)

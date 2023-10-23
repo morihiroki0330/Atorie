@@ -19,7 +19,6 @@ void GameTitle::Update()
 {
 	if (M_StartButtonCollision.DecisionCollision(2, 1) && GetAsyncKeyState(VK_LBUTTON) & 0x8000)
 	{
-		NewGO<Game>(0, "game");
 		DeleteGO(this);
 	}
 	M_StartButtonCollision.DecisionSetPosition(M_StartButtonPosition.x, M_StartButtonPosition.y, 1);

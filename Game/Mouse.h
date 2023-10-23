@@ -9,8 +9,7 @@ public:
 	Vector3 GetMousePosition() { return M_MouseCousorPosition; }
 	Vector2 GetMouseDelta() { return M_DeltaPosition; }
 
-	void MouseCursorTextureSet(const char* Sprite,const char* Color, const char* GreenBack,const float w, const float h);
-	void MouseCursorTextureSet(const char* Sprite,const float w, const float h);
+	void MouseCursorTextureSet(const char* Sprite,const float w, const float h,bool ColorOut = false);
 	void MouseCorsorTextureSetCheck();
 	void Render(RenderContext& rc);
 	DimensionCollision M_MouseCollision;
