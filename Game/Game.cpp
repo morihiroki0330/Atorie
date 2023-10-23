@@ -2,6 +2,9 @@
 #include "Game.h"
 #include "GameTitle.h"
 #include "GameResult.h"
+
+#include "Stage.h"
+
 #include "Mouse.h"
 Game::~Game()
 {
@@ -11,6 +14,8 @@ Game::~Game()
 bool Game::Start()
 {
 	P_GameTitle = NewGO<GameTitle>(0, "gametitle");
+
+	//P_Stage = NewGO<Stage>(0, "stage");
 
 	P_Mouse = NewGO<Mouse>(0, "mouse");
 	return true;
