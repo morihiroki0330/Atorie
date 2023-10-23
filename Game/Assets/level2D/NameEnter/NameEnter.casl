@@ -1,0 +1,16 @@
+15
+9,TextFrame,49,../../Game/Assets/level2D/NameEnter/TextFrame.jpg,0.0,0.0,1200,700,2,1.0,1.0,0.5,0.5,13,TextFrame.dds
+12,FinishButton,52,../../Game/Assets/level2D/NameEnter/FinishButton.jpg,440.0,-300.0,300,75,3,1.0,1.0,0.5,0.5,16,FinishButton.dds
+10,BackGround,50,../../Game/Assets/level2D/NameEnter/BackGround.jpg,0.0,1.1368683772161603e-13,1920,1080,1,1.0,1.0,0.5,0.5,14,BackGround.dds
+8,TextBox1,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,-400.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox2,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,-300.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox3,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,-200.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox4,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,-100.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox5,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,0.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox6,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,100.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox7,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,200.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox8,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,300.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+8,TextBox9,47,../../Game/Assets/level2D/NameEnter/TextBox.jpg,400.0,440.0,75,75,3,1.0,1.0,0.5,0.5,11,TextBox.dds
+10,BackButton,50,../../Game/Assets/level2D/NameEnter/BackButton.jpg,440.0,-210.0,300,75,3,1.0,1.0,0.5,0.5,14,BackButton.dds
+14,KatakanaButton,54,../../Game/Assets/level2D/NameEnter/KatakanaButton.jpg,440.0,-120.0,300,75,3,1.0,1.0,0.5,0.5,18,KatakanaButton.dds
+14,HiraganaButton,54,../../Game/Assets/level2D/NameEnter/HiraganaButton.jpg,440.0,-30.0,300,75,3,1.0,1.0,0.5,0.5,18,HiraganaButton.dds

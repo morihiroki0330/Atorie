@@ -1,0 +1,1911 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btCollisionAlgorithmConstructionInfo::m_manifold' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+                },
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 2,
+                  "endLine": 39,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btCollisionAlgorithmConstructionInfo::{ctor}",
+                  "decoratedName": "??0btCollisionAlgorithmConstructionInfo@@QEAA@PEAVbtDispatcher@@H@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btCollisionAlgorithmConstructionInfo::m_manifold"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btCollisionAlgorithm::m_dispatcher' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+                },
+                "region": {
+                  "startLine": 67,
+                  "startColumn": 2,
+                  "endLine": 67,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btCollisionAlgorithm::{ctor}",
+                  "decoratedName": "??0btCollisionAlgorithm@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btCollisionAlgorithm::m_dispatcher"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btVector3::<unnamed-tag>::m_floats' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btVector3.h"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 2,
+                  "endLine": 119,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btVector3::{ctor}",
+                  "decoratedName": "??0btVector3@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btVector3::<unnamed-tag>::m_floats"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btVector3::<unnamed-tag>::mVec128' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btVector3.h"
+                },
+                "region": {
+                  "startLine": 119,
+                  "startColumn": 2,
+                  "endLine": 119,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btVector3::{ctor}",
+                  "decoratedName": "??0btVector3@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btVector3::<unnamed-tag>::mVec128"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btQuadWord::<unnamed-tag>::mVec128' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btQuadWord.h"
+                },
+                "region": {
+                  "startLine": 181,
+                  "startColumn": 3,
+                  "endLine": 181,
+                  "endColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btQuadWord::{ctor}",
+                  "decoratedName": "??0btQuadWord@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btQuadWord::<unnamed-tag>::mVec128"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btQuadWord::<unnamed-tag>::m_floats' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btQuadWord.h"
+                },
+                "region": {
+                  "startLine": 181,
+                  "startColumn": 3,
+                  "endLine": 181,
+                  "endColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btQuadWord::{ctor}",
+                  "decoratedName": "??0btQuadWord@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btQuadWord::<unnamed-tag>::m_floats"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_index1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_index1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_index0' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_index0"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_partId1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_partId1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_partId0' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_partId0"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_combinedRestitution' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_combinedRestitution"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_combinedRollingFriction' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_combinedRollingFriction"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_combinedFriction' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_combinedFriction"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_distance1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 45,
+                  "startColumn": 4,
+                  "endLine": 45,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_distance1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_index1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 4,
+                  "endLine": 59,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@AEBVbtVector3@@00M@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_index1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_index0' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 4,
+                  "endLine": 59,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@AEBVbtVector3@@00M@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_index0"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_partId1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 4,
+                  "endLine": 59,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@AEBVbtVector3@@00M@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_partId1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldPoint::m_partId0' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+                },
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 4,
+                  "endLine": 59,
+                  "endColumn": 4
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldPoint::{ctor}",
+                  "decoratedName": "??0btManifoldPoint@@QEAA@AEBVbtVector3@@00M@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldPoint::m_partId0"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btPersistentManifold::m_companionIdB' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 2,
+                  "endLine": 86,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btPersistentManifold::{ctor}",
+                  "decoratedName": "??0btPersistentManifold@@QEAA@PEBVbtCollisionObject@@0HMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btPersistentManifold::m_companionIdB"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btPersistentManifold::m_companionIdA' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 2,
+                  "endLine": 86,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btPersistentManifold::{ctor}",
+                  "decoratedName": "??0btPersistentManifold@@QEAA@PEBVbtCollisionObject@@0HMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btPersistentManifold::m_companionIdA"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btPersistentManifold::m_index1a' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+                },
+                "region": {
+                  "startLine": 86,
+                  "startColumn": 2,
+                  "endLine": 86,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btPersistentManifold::{ctor}",
+                  "decoratedName": "??0btPersistentManifold@@QEAA@PEBVbtCollisionObject@@0HMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btPersistentManifold::m_index1a"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_manifoldPtr' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_manifoldPtr"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_index1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_index1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_partId1' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_partId1"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_partId0' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_partId0"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_index0' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_index0"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_body1Wrap' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_body1Wrap"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btManifoldResult::m_body0Wrap' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+                },
+                "region": {
+                  "startLine": 55,
+                  "startColumn": 2,
+                  "endLine": 55,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btManifoldResult::{ctor}",
+                  "decoratedName": "??0btManifoldResult@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btManifoldResult::m_body0Wrap"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btBroadphaseProxy::m_uniqueId' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+                },
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 2,
+                  "endLine": 118,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btBroadphaseProxy::{ctor}",
+                  "decoratedName": "??0btBroadphaseProxy@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btBroadphaseProxy::m_uniqueId"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btBroadphaseProxy::m_collisionFilterGroup' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+                },
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 2,
+                  "endLine": 118,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btBroadphaseProxy::{ctor}",
+                  "decoratedName": "??0btBroadphaseProxy@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btBroadphaseProxy::m_collisionFilterGroup"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btBroadphaseProxy::m_collisionFilterMask' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+                },
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 2,
+                  "endLine": 118,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btBroadphaseProxy::{ctor}",
+                  "decoratedName": "??0btBroadphaseProxy@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btBroadphaseProxy::m_collisionFilterMask"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "変数 'btBroadphaseProxy::m_uniqueId' が初期化されていません。メンバー変数は必ず初期化してください (type.6)。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+                },
+                "region": {
+                  "startLine": 122,
+                  "startColumn": 2,
+                  "endLine": 122,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "btBroadphaseProxy::{ctor}",
+                  "decoratedName": "??0btBroadphaseProxy@@QEAA@AEBVbtVector3@@0PEAXFF1@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "btBroadphaseProxy::m_uniqueId"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.31.31106.2",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x00007FF797A89CC0 -il C:\\Users\\Ibuki\\AppData\\Local\\Temp\\_CL_ea0bfee5ast -typedil -f CollisionDispatch\\btActivatingCollisionAlgorithm.cpp -Ze -D_MSC_EXTENSIONS -Zp16 -pc \\:/ -D_MSC_VER=1931 -D_MSC_FULL_VER=193131106 -D_MSC_BUILD=2 -D_M_AMD64=100 -ZILP448 -D_M_X64=100 -D_WIN64 -D_WIN32 -I C:\\Users\\Ibuki\\Documents\\ゲーム\\GameTemplate\\Game\\\\BulletPhysics\\src -nologo -W 3 -diagnostics:column -GF -Og -Oi -Ot -Oy -ltcg -DCODE_ANALYSIS -DNDEBUG -DUSE_GRAPHICAL_BENCHMARK -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE -D_SCL_SECURE_NO_WARNINGS -DCMAKE_INTDIR=\"Release\" -D_MBCS -EHs -D_CPPUNWIND -EHc -MT -clrNoPureCRT -D_MT -fpfast -fpcontract -D_M_FP_FAST -D_M_FP_CONTRACT -Zc:wchar_t -Zc:forScope -GR -D_CPPRTTI -Fox64\\Release\\btActivatingCollisionAlgorithm.obj -Fd..\\..\\..\\..\\..\\exlib\\x64\\Release\\BulletCollision_Release.pdb -external:W 3 -Gd -analyze:projectdirectory C:\\Users\\Ibuki\\Documents\\ゲーム\\GameTemplate\\k2EngineLow\\ExEngine\\bulletPhysics\\src\\BulletCollision -analyze:rulesetdirectory ;C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Users\\Ibuki\\Documents\\ゲーム\\GameTemplate\\k2EngineLow\\ExEngine\\bulletPhysics\\src\\BulletCollision\\../ -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\atlmfc\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\atlmfc\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\atlmfc\\include -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt -external:I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\um -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\shared -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\winrt -external:I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\cppwinrt -external:I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "b42f573bab430cd46cb387cf310df90bce066fd24819a8aace130a23f0b90688"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btVector3.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "cb11c672dd7913cfac0d1ad2377aa4d36b5f33ae6c34439b4bb650f87583a3b8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "fe10ceea6a27d230180a7c18e021cf6e5bb5ae2f331c98e07237e6d65c5207e7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btQuadWord.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "3f1bdebf9e09cfa165d86250886d41bb7d0791eae2a205c898148f8337de8bd6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "2a2562099e0fdf1decc2c91c9107a738f8e70fb4f27a6a3f0f8da1d9dc9cd0e3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "7e4c3f1f72733c9ae297aadd71400e00f60909aca3b07407a5c85458b85278bd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btDbvt.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "2a06d28c96b02fa89da5cd015b467b4000d83d2ccda1905d488209db0b8182ea"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btManifoldResult.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "3657ae46c138d9db8d5949630a0c36d2cbfdba5fd9dd0399c17e228de290d818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcompoundcompoundcollisionalgorithm.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "bbf42353625279ff0e1fc8f2c9528b95c14688a9b9b6f5473e2cb1b8d2c4207a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcompoundcompoundcollisionalgorithm.h"
+          },
+          "hashes": {
+            "sha-256": "28fb88fe6f636e0bb556ef3cb0be0ec5ad77c949665adac8bd60d557fe7c0a03"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcompoundcollisionalgorithm.h"
+          },
+          "hashes": {
+            "sha-256": "190b37d947f1fa1596e993ef8745a5dc28591422ccc628435f742871b113ede4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btactivatingcollisionalgorithm.h"
+          },
+          "hashes": {
+            "sha-256": "4ac178dd081a7ca0a28309fd9366a7d731fcadd58310f70df72e29187ce642d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btscalar.h"
+          },
+          "hashes": {
+            "sha-256": "1058bbbeb46a0a77ee6a16460df98bce9a81503e2adf5ace030387fb076065a8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btalignedobjectarray.h"
+          },
+          "hashes": {
+            "sha-256": "e459fbee99c703298c56a96c1de9c57bea44e3884c8314aec6ef604bea42732f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btalignedallocator.h"
+          },
+          "hashes": {
+            "sha-256": "f738f976d3b34ae44e08fe6b6552a33024da2f5a4c4f247e58c4cbb90b84ed2c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/broadphasecollision/btdispatcher.h"
+          },
+          "hashes": {
+            "sha-256": "edf5e050a3bccafa42e5f9707fdd4581d94ca452c1ec0e7d693a97fdfa6dc569"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/broadphasecollision/btbroadphaseinterface.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "6574621b03330f5532bfec74f306e50ecbca979c868c08fd104a2314262154a1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btminmax.h"
+          },
+          "hashes": {
+            "sha-256": "dddb29198837dfceadc246fc3ad4df5a4f4081a5f35c7737a1947bead49b7d23"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/bttransform.h"
+          },
+          "hashes": {
+            "sha-256": "efdf628e8fdfa7d27af4fff52d6a20260aa3aa215985605a534acba73d395602"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btmatrix3x3.h"
+          },
+          "hashes": {
+            "sha-256": "69c5854b1e98cc973ca53a20ba634331735c4184d1d651d30aa391b0ececd8b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btquaternion.h"
+          },
+          "hashes": {
+            "sha-256": "c98e3456e455c45b42b254135d8d5263669a90ceb013c300df34f61ea3300c54"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/bttransformutil.h"
+          },
+          "hashes": {
+            "sha-256": "264d77c0f2a7663ce58bb9f12ae49a648a371031a67cea53b72400da6e46f857"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisioncreatefunc.h"
+          },
+          "hashes": {
+            "sha-256": "58d1d27f7d9daec02de06010dc6f14e611fffad238cbaaaf8ef786189439b914"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/bthashedsimplepaircache.h"
+          },
+          "hashes": {
+            "sha-256": "b11e99015a2e684aa1dd7ee09d4cf7ad1ecde5d3253648b7311e242f009cd460"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionobject.h"
+          },
+          "hashes": {
+            "sha-256": "5d9baf1b149fa176909aeeda5fbd24d863d59fe0f79566bc45c2f2e107a8d831"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btmotionstate.h"
+          },
+          "hashes": {
+            "sha-256": "f30aac1efd97e09c2d705809b4f4d86f73ef28f7170f4ac02891216e92ae2894"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btcompoundshape.h"
+          },
+          "hashes": {
+            "sha-256": "e449a9e3fd6f21ac077d023852458b9f8ddd4ad817333591e106e708d6a1f792"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btcollisionshape.h"
+          },
+          "hashes": {
+            "sha-256": "940237e25a2e800a6c71fbbd0388d369e382918c62c5e9ef684f74e1b2c3d364"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btcollisionmargin.h"
+          },
+          "hashes": {
+            "sha-256": "f33df09ea62875a1f3b3c87a855022e2e5bffe14cef9cb4b8607143e35ed9863"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btaabbutil2.h"
+          },
+          "hashes": {
+            "sha-256": "60206684fa899b75278727518990f217071b8b00d12fc7eaf6480edf3573390a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btidebugdraw.h"
+          },
+          "hashes": {
+            "sha-256": "78c6a745145abda5b379c788a45dca476114d7d40a44462926480e09ffb3a344"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btdiscretecollisiondetectorinterface.h"
+          },
+          "hashes": {
+            "sha-256": "2028779aa80e460149059036ff9fd906c976a61d444de9ae5103a31776e47faf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionobjectwrapper.h"
+          },
+          "hashes": {
+            "sha-256": "4b4ca27f22a30d7a362ba10707dcc97baf0fffe83356453513ba6f3c1b6153a0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcompoundcollisionalgorithm.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "334e7b0a1ac2ba721ff6f0ae6a993ac49a1c9996989b64c00b10615b568be827"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionShapes/btCapsuleShape.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "fa70a90bf61e59caf18ce59faed6ad6489f5c528cc688ba6b4cb23f4ca19b6a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "68c48c1cbd68821eac3907d6af4ae8b2da65047798558b28ed6089704af6be05"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "9375a2c88f5d96a7199f9a890d53e19a07403c4c29862291f28a3250324e5d20"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btSerializer.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "8674df8b25e8f2bfd1426496fd7d39d929196eececcd31e5a09ead8385ebab3e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "71db0e3c32ed1ff39b8d0932051201ae01f1cff457577e22d94f3e693d737266"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "85ce773ef97bda482d5f3be3739b0532be81ce97f9f3f0eaeb73aaf126c050fa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "4370ba48af4ed950891e34566bf2868933c17316db0b8704a88ee1e1bb0001a8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btCollisionWorldImporter.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "bdd67912249bd9f8128101903c7f2ffd4254bda57a04595be7a8e86e093b1c5f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionworldimporter.h"
+          },
+          "hashes": {
+            "sha-256": "063cb4c4b4ff1bb55b0abcb4c80d4c8f3e52071b29fcf407abc401416f64c128"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/bthashmap.h"
+          },
+          "hashes": {
+            "sha-256": "20d3f21f2e466ea0a1b7825e42fe1469dc594d0097c97a2ec0984a7da22522ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/btbulletcollisioncommon.h"
+          },
+          "hashes": {
+            "sha-256": "f3786ebecb099f7c431152fa236c490bcfa816c026158a6b7cb67c75a539ba1c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionworld.h"
+          },
+          "hashes": {
+            "sha-256": "54417d5cadeaf192d1e4c4b0662e7a6be76ab8a07c73cc0a6d47de9b14b07087"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisiondispatcher.h"
+          },
+          "hashes": {
+            "sha-256": "b2474c69811d27b97b8e03a0a1998dd38627a2f25f9012190d90ae5d20eaf22e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/broadphasecollision/btoverlappingpaircache.h"
+          },
+          "hashes": {
+            "sha-256": "cbc88781346dafe0a3c03d29ac74d70a9778c057f077f5c8619b793a50f04bff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/broadphasecollision/btoverlappingpaircallback.h"
+          },
+          "hashes": {
+            "sha-256": "353873543bdcc6269acf7d3da3ed7eabbd9813c981e4e896e006dfb89e128dcb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btboxshape.h"
+          },
+          "hashes": {
+            "sha-256": "d1ebdaff4fb5bb075ba09a6ad34c83a4f61445a11848307ac8881d697ca4791d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btpolyhedralconvexshape.h"
+          },
+          "hashes": {
+            "sha-256": "fab6fc0349211acc8ea2125b868b74b4a12b5d129a21d3cbe151c5be590c2881"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconvexinternalshape.h"
+          },
+          "hashes": {
+            "sha-256": "706bbb84b1ba998fe90ade2d92e9a5d099bb15042a5b33dbedfb641373fe68ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconvexshape.h"
+          },
+          "hashes": {
+            "sha-256": "b80b9521404aaf31885fdcfe60628bf1b0443537cf874ac98dac829a6aac89d3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btsphereshape.h"
+          },
+          "hashes": {
+            "sha-256": "1d130f1bc56bd584dcea5a6d5db1854a10cab5a87d0ff51e2623ea4106873b1e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btcylindershape.h"
+          },
+          "hashes": {
+            "sha-256": "090c3dd565da6dfddc56a6f01c2085eea84b9f456453f38cd89a3467cb11be43"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconeshape.h"
+          },
+          "hashes": {
+            "sha-256": "56640ac9b4a04f30f393cc1b201693b6507dc1417944e4bec7854a5c66526b41"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btstaticplaneshape.h"
+          },
+          "hashes": {
+            "sha-256": "dd3402dea2e9f6dc61b59c2cf636bb037311075210e12cfa4229885c23d773c9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconcaveshape.h"
+          },
+          "hashes": {
+            "sha-256": "c790e7bc05d340ff6d6a453330e7ac9dc3eb5791ba94ff7d7c00a6de2635a5c7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/bttrianglecallback.h"
+          },
+          "hashes": {
+            "sha-256": "73aa3175c7048d50d58a1d47061e65ad78153dc08182eb0459d355b27e24f793"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconvexhullshape.h"
+          },
+          "hashes": {
+            "sha-256": "dcf6310ea73746e6cdae9ba853682e59bbe98f85fbaac1c058302716e8ee73b6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/bttrianglemesh.h"
+          },
+          "hashes": {
+            "sha-256": "ad73aecfe35ddd59fa88094c8c293e003e3e9703b7fe5314f570f0389ffd3a65"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btstridingmeshinterface.h"
+          },
+          "hashes": {
+            "sha-256": "e94ac929235934b4f85e79d9f460d00e03ad9668e331541920546367c3185497"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconvextrianglemeshshape.h"
+          },
+          "hashes": {
+            "sha-256": "7ee8208a3b4b357f185f7343269567d24063ab1274f781364b46f3db43a4e7b7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btbvhtrianglemeshshape.h"
+          },
+          "hashes": {
+            "sha-256": "86567461d8d2971498d0d063dd23cae4952f3020950d3cd12912206c119e4d64"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/bttrianglemeshshape.h"
+          },
+          "hashes": {
+            "sha-256": "f05e5929b5b37c5b6e8175a8a84e079d2d6fd715ae90651b98c41a547f207890"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btoptimizedbvh.h"
+          },
+          "hashes": {
+            "sha-256": "e7a57e1671d3c437e4e1e9eb8ee7bf9685b5e73b3f02378affb6e296956f5855"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/bttriangleinfomap.h"
+          },
+          "hashes": {
+            "sha-256": "d24ca944d042e591395624947ff35f24304daa88eb500673e7b470d2012c50c6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btscaledbvhtrianglemeshshape.h"
+          },
+          "hashes": {
+            "sha-256": "60f51a5a2d04f11faeb2be5ed82586efa853d8acacdec377578a0854852020f3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/bttetrahedronshape.h"
+          },
+          "hashes": {
+            "sha-256": "de1095622c3c61d6c39dd33e280609f58ea55ab2402fb81f0f077d0244627985"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btemptyshape.h"
+          },
+          "hashes": {
+            "sha-256": "15d2ca0faafc8fc77ad7b94c4dae9d9e53984cdef4c1556b550ff35c3e78086d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btmultisphereshape.h"
+          },
+          "hashes": {
+            "sha-256": "a62e964a83d214b59b5236d668f35aac905083fac34339a300e81e2bb0b3ff94"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btuniformscalingshape.h"
+          },
+          "hashes": {
+            "sha-256": "611b7ebe3f6fe76dbdefecdf036bd6034d916d50967f6442bdc8b32d1237c988"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btdefaultcollisionconfiguration.h"
+          },
+          "hashes": {
+            "sha-256": "57748eaa971f4a1cf79ff94183baaeaff8f973e9244d1d9f0f2458c27a51e012"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionconfiguration.h"
+          },
+          "hashes": {
+            "sha-256": "8303d64a2cc72a27cb3c2e2eda85485bca50ea0e6677265d953ec088be9abda7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/broadphasecollision/btaxissweep3.h"
+          },
+          "hashes": {
+            "sha-256": "e30ce7b3de70b9666a0d8d6a5862f9de28ec95b1a06188a84fa50c0105a21099"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/broadphasecollision/btmultisapbroadphase.h"
+          },
+          "hashes": {
+            "sha-256": "97c1a3742d8d8b3c521ec2e9384ccc9cfaef814927a400e11995af68edbcc18a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btdefaultmotionstate.h"
+          },
+          "hashes": {
+            "sha-256": "90a7053e2b19d2827af5c1504db4867d05fd72e3417208344c8a0169c037ba81"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/linearmath/btquickprof.h"
+          },
+          "hashes": {
+            "sha-256": "c436d4a0d73bce348405fece51f4415d5a4bad80fa1972ab104db0677fe4a2fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "3a47b010c10d654ee38da73875eda5abeac91041b478d0e682dcb1537ced99a5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionworld.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "f8b710f05afccf0a80d027d0456cd14fbf24ff243681a2617b271e76c28ddb32"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btgjkepapenetrationdepthsolver.h"
+          },
+          "hashes": {
+            "sha-256": "5f9ea65773b56fed44b8c749755f1c042c66f1245bfffc34f3db27910dbdffbc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btconvexpenetrationdepthsolver.h"
+          },
+          "hashes": {
+            "sha-256": "2863fdbd9a640374d2028e36a8b3aa1072418425b25eaa9b1eb8cac30a67d82d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btsimplexsolverinterface.h"
+          },
+          "hashes": {
+            "sha-256": "28062fa5f8a4e34abbf59fc3b411e948c6f83ab5b4e4e9a769e79c855995270b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btraycastcallback.h"
+          },
+          "hashes": {
+            "sha-256": "5a49fd7b5e4381130360297a7d9dcd21b47edc3217fc70e36a92df496987b918"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btsubsimplexconvexcast.h"
+          },
+          "hashes": {
+            "sha-256": "ac348a13e687c8ed27ef56508d761a7ca91eb44a59586cb33f356eaa9b82398f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btconvexcast.h"
+          },
+          "hashes": {
+            "sha-256": "5e2bf605b4ca298cfd2eb82a2722d429f41018c8e265204530a3ecb92de481b4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btgjkconvexcast.h"
+          },
+          "hashes": {
+            "sha-256": "222d44a87806542fcfa833867b35a3275f5a0fd16fc159fde32cbd296c3203d5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/narrowphasecollision/btcontinuousconvexcollision.h"
+          },
+          "hashes": {
+            "sha-256": "f236ffbadbfe5a9b2231314621a28779012a078e9fc1b49da973c3a8551aa181"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btconvexpolyhedron.h"
+          },
+          "hashes": {
+            "sha-256": "ff9076b91e715ad80c4056e12a6dfe7f4cd1ad9df8eff59e0489a934063b65dc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisionobject.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "8c59ebb2a7046ae6593e9ba302e428fd50fe45044b354d15c274d390f409b4a4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/LinearMath/btPoolAllocator.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "6d76d41935e28f025dd01d5178289d94441212decf38a53622f2cca66cfb2823"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btcollisiondispatcher.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "d27ecd6392e21c18d39cdb82fd27d967b3ceaa724b840d52022bb55429f5a2a6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "10e1efcd0fd528fc3038e0bfe2402d19226d00eae56a31eb44ff985648c4371e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btboxboxdetector.h"
+          },
+          "hashes": {
+            "sha-256": "c301bb83a0e7354c09426a2a5c55752338e02e4af304e5e6a9b22082823f9ab7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "569dd678144f07671cc786c146b28ecc994f50bffa11081e54a0cf8e18d51bf8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btboxboxcollisionalgorithm.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "a2fc05e4ddeeb0cadc0db8c4f6660b7f6b59d319c6e72aba32a5b6f453613e85"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "c02a91aaa3752e296a8bf6ce193fc1e336b27e3c76695336cd88236b5ab81fc1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Ibuki/Documents/ゲーム/GameTemplate/k2EngineLow/ExEngine/bulletPhysics/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "2c1a1fc6c577f981ec880bb37babffe0d700b42368e5a49f6cb1b353282451aa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisionshapes/btbox2dshape.h"
+          },
+          "hashes": {
+            "sha-256": "49d1a6eaa3032517f92bd71daa31d9b6f167424c3d80d0a905df064c5f10ff09"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ibuki/documents/ゲーム/gametemplate/k2enginelow/exengine/bulletphysics/src/bulletcollision/collisiondispatch/btactivatingcollisionalgorithm.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "3eeb08ce4119753cdb179c1b962b0c37825bab1c155955950c5333127e08bdf4"
+          }
+        }
+      ]
+    }
+  ]
+}
