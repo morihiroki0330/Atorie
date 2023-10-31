@@ -12,7 +12,6 @@ public:
 	void MouseCursorTextureSet(const char* Sprite,const float w, const float h,bool ColorOut = false);
 	void MouseCorsorTextureSetCheck();
 	void Render(RenderContext& rc);
-	DimensionCollision M_MouseCollision;
 private:
 	SpriteRender M_MouseCursorTexture;
 

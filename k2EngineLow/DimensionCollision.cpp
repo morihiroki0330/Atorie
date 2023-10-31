@@ -2,13 +2,15 @@
 #include "DimensionCollision.h"
 namespace nsK2EngineLow
 {
-	void DimensionCollision::DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName)
+	void DimensionCollision::DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag)
 	{
-		for (int Count = 0; Count < 20; Count++)
+		for (int Count = 0; Count < 150; Count++)
 		{
 			if (DecisionData[Count].ObjectName == 0)
 			{
 				DecisionData[Count].ObjectName = ObjectName;
+
+				DecisionData[Count].Tag = Tag;
 
 				DecisionData[Count].UpperLeftVertexPositionX = int((PositionX - (Wide / 2)));
 				DecisionData[Count].UpperLeftVertexPositionX = EvenConversion(DecisionData[Count].UpperLeftVertexPositionX);
@@ -29,13 +31,15 @@ namespace nsK2EngineLow
 		}
 	}
 
-	void DimensionCollision::DecisionDataSet(ObjectData Decision,int ObjectName)
+	void DimensionCollision::DecisionDataSet(ObjectData Decision,int ObjectName, int Tag)
 	{
-		for (int Count = 0; Count < 20; Count++)
+		for (int Count = 0; Count < 150; Count++)
 		{
 			if (DecisionData[Count].ObjectName == 0)
 			{
 				DecisionData[Count].ObjectName = ObjectName;
+
+				DecisionData[Count].Tag = Tag;
 
 				DecisionData[Count].UpperLeftVertexPositionX = Decision.UpperLeftVertexPositionX;
 				DecisionData[Count].UpperLeftVertexPositionX = EvenConversion(DecisionData[Count].UpperLeftVertexPositionX);
@@ -58,7 +62,7 @@ namespace nsK2EngineLow
 
 	void DimensionCollision::DecisionDataUpdate(ObjectData Decision, int ObjectName)
 	{
-		for (int Count = 0; Count < 20; Count++)
+		for (int Count = 0; Count < 150; Count++)
 		{
 			if (DecisionData[Count].ObjectName == ObjectName)
 			{
@@ -80,11 +84,12 @@ namespace nsK2EngineLow
 
 	void DimensionCollision::CopyDecisionData(ObjectData& Decision, int ObjectName)
 	{
-		for (int Count = 0; Count < 20; Count++)
+		for (int Count = 0; Count < 150; Count++)
 		{
 			if (DecisionData[Count].ObjectName == ObjectName)
 			{
 				Decision.ObjectName = DecisionData[Count].ObjectName;
+				Decision.Tag = DecisionData[Count].Tag;
 				Decision.UpperLeftVertexPositionX = DecisionData[Count].UpperLeftVertexPositionX;
 				Decision.UpperLeftVertexPositionY = DecisionData[Count].UpperLeftVertexPositionY;
 				Decision.LowerRightVertexPositionX = DecisionData[Count].LowerRightVertexPositionX;
@@ -96,7 +101,7 @@ namespace nsK2EngineLow
 
 	ObjectData DimensionCollision::GetDecisionData(int ObjectName)
 	{
-		for (int Count = 0; Count < 20; Count++)
+		for (int Count = 0; Count < 150; Count++)
 		{
 			if (DecisionData[Count].ObjectName == ObjectName)
 			{
@@ -107,7 +112,7 @@ namespace nsK2EngineLow
 
 	void DimensionCollision::DecisionSetPosition(float PositionX, float PositionY, int ObjectName)
 	{
-		for (int Count = 0; Count < 20; Count++)
+		for (int Count = 0; Count < 150; Count++)
 		{
 			if (DecisionData[Count].ObjectName == ObjectName)
 			{

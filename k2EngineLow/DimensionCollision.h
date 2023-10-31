@@ -4,18 +4,20 @@ namespace nsK2EngineLow
 	struct ObjectData
 	{
 		int ObjectName;
+		int Tag;
 		int UpperLeftVertexPositionX;
 		int UpperLeftVertexPositionY;
 		int LowerRightVertexPositionX;
 		int LowerRightVertexPositionY;
 		int Wide;
 		int Height;
+		
 	};
 	class DimensionCollision : public Noncopyable
 	{
 	public:
-		void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName);
-		void DecisionDataSet(ObjectData DecisionData, int ObjectName);
+		void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag);
+		void DecisionDataSet(ObjectData DecisionData, int ObjectName,int Tag);
 		void DecisionDataUpdate(ObjectData DecisionData, int ObjectName);
 		void CopyDecisionData(ObjectData& DecisionData, int ObjectName);
 		ObjectData GetDecisionData(int ObjectName);
@@ -39,7 +41,7 @@ namespace nsK2EngineLow
 				return Number;
 			}
 		}
-		ObjectData DecisionData[20];
+		ObjectData DecisionData[150];
 	private:
 		
 	};

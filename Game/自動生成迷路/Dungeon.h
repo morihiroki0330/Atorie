@@ -10,12 +10,6 @@ struct DungeonClass
 	Dungeon_Character* P_Character;
 	Dungeon_Stage* P_Stage;
 };
-enum Class
-{
-	FIRST,
-	SECOND,
-	THIRD,
-};
 class Dungeon : public IGameObject
 {
 public:

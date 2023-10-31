@@ -4,7 +4,6 @@ Mouse::Mouse()
 {
     M_Window.x = 1920.0f;
     M_Window.y = 1080.0f;
-    M_MouseCollision.DecisionDataSet(15.0f, 15.0f, M_MousePosition.x, M_MouseCousorPosition.y, 1);
     MouseCursorTextureSet("Assets/Sprite/Flick/Cursor.DDS",90.0f,90.0f,true);
 }
 void Mouse::Update()

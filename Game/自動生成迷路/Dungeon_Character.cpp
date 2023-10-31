@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "Game.h"
 #include "Dungeon_Character.h"
 #include "Dungeon_Stage.h"
 #include "Dungeon.h"
