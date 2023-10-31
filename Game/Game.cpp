@@ -1,31 +1,11 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameTitle.h"
-#include "GameResult.h"
-
-#include "Stage.h"
-
-#include "Mouse.h"
+#include "é©ìÆê∂ê¨ñ¿òH/Dungeon.h"
+Game::Game()
+{
+	S_GameClass.P_Dungeon = NewGO<Dungeon>(0, "dungeon");
+}
 Game::~Game()
 {
-	
-}
-
-bool Game::Start()
-{
-	P_GameTitle = NewGO<GameTitle>(0, "gametitle");
-
-	//P_Stage = NewGO<Stage>(0, "stage");
-
-	P_Mouse = NewGO<Mouse>(0, "mouse");
-	return true;
-}
-
-void Game::Update()
-{
-	
-}
-
-void Game::Render(RenderContext& rc)
-{
+	DeleteGO(S_GameClass.P_Dungeon);
 }

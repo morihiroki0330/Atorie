@@ -1,22 +1,16 @@
 #pragma once
-class GameTitle;
-class GameResult;
-
-class Stage;
-
 class Mouse;
+class Dungeon;
+struct GameClass
+{
+	Dungeon* P_Dungeon;
+};
 class Game : public IGameObject
 {
 public:
+	Game();
 	~Game();
-	bool Start();
-	void Update();
-	void Render(RenderContext& rc);
 private:
-	GameTitle* P_GameTitle;
-
-	Stage* P_Stage;
-
-	Mouse* P_Mouse;
+	GameClass S_GameClass;
 };
 
