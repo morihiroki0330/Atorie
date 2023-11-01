@@ -105,6 +105,11 @@ namespace nsK2EngineLow
 
 		void OnRender2D(RenderContext& rc) override;
 
+		bool GetInitFlag()
+		{
+			return M_InitFlag;
+		}
+
 	private:
 		//スプライト
 		Texture M_Texture;
@@ -122,6 +127,8 @@ namespace nsK2EngineLow
 
 		//ピボット
 		Vector2 m_pivot = Sprite::DEFAULT_PIVOT;
+
+		bool M_InitFlag = false;
 	};
 }
 

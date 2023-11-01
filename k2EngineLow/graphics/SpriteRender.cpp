@@ -32,6 +32,8 @@ namespace nsK2EngineLow
 
 		InitData.m_alphaBlendMode = alphaBlendMode;
 
+		M_InitFlag = true;
+
 		m_sprite.Init(InitData);
 	}
 

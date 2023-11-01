@@ -6,10 +6,12 @@
 #include "Action_Character.h"
 #include "Action_Stage.h"
 #include "Action_WindowFrame.h"
+#include "DimensionCollision.h"
 Action::Action()
 {
 	S_Action.P_WindowFrame = NewGO<Action_WindowFrame>(0, "action_windowframe");
 	S_Action.P_GameTitle = NewGO<Action_GameTitle>(0, "action_gametitle");
+	S_Action.P_Collision = NewGO<DimensionCollision>(0, "collision");
 }
 Action::~Action()
 {
@@ -18,6 +20,7 @@ Action::~Action()
 	DeleteGO(S_Action.P_Stage);
 	DeleteGO(S_Action.P_Character);
 	DeleteGO(S_Action.P_WindowFrame);
+	DeleteGO(S_Action.P_Collision);
 }
 void Action::Create(int Number)
 {

@@ -1,12 +1,33 @@
 #include "stdafx.h"
+#include "Action.h"
 #include "Action_Stage.h"
+#include "DimensionCollision.h"
 bool Action_Stage::Start()
+{
+	P_Collision = FindGO<DimensionCollision>("collision");
+	M_BackGroundTexture.Init("Assets/Sprite/Action/Sky.DDS", 1000.0f, 1000.0f, true);
+	MapSet();
+	return true;
+}
+void Action_Stage::Render(RenderContext& rc)
+{
+	M_BackGroundTexture.Draw(rc);
+	for (int X = 0; X < 10; X++)
+	{
+		for (int Y = 0; Y < 10; Y++)
+		{
+			if (M_StageTexture[X][Y].GetInitFlag())
+			{
+				M_StageTexture[X][Y].Draw(rc);
+			}
+		}
+	}
+}
+bool Action_Stage::MapSet()
 {
 	M_FilePath = "Assets/Sprite/Action/StageTile.txt";
 	FILE* M_FilePointer = nullptr;
-
 	fopen_s(&M_FilePointer, M_FilePath, "r");
-
 	if (M_FilePointer == NULL)
 	{return 0;}
 
@@ -42,11 +63,13 @@ bool Action_Stage::Start()
 							GroundType = Count;
 							switch (GroundType)
 							{
-							case GROUND:
+							case MAP_GROUND:
 								Ground(X, Y);
 								break;
-							case WALL:
+							case MAP_WALL:
 								Wall(X, Y);
+								break;
+							default:
 								break;
 							}
 						}
@@ -59,35 +82,23 @@ bool Action_Stage::Start()
 	return true;
 }
 
-void Action_Stage::Update()
-{
-	for (int Y = 0; Y < 10; Y++)
-	{
-		for (int X = 0; X < 10; X++)
-		{
-			M_StageTexture[Y][X].SetPosition(M_StagePosition[Y][X]);
-			M_StageTexture[Y][X].Update();
-		}
-	}
-}
-
-void Action_Stage::Render(RenderContext& rc)
-{
-	for (int Y = 0; Y < 10; Y++)
-	{
-		for (int X = 0; X < 10; X++)
-		{
-			M_StageTexture[Y][X].Draw(rc);
-		}
-	}
-}
-
 void Action_Stage::Ground(int X, int Y)
 {
+	M_StageTexture[X][Y].Init("Assets/Sprite/Action/Ground.DDS", 100.0f, 100.0f,true);
+	M_StagePosition.x = -450.0f + (X * 100.0f);
+	M_StagePosition.y = -450.0f + (Y * 100.0f);
+	M_StageTexture[X][Y].SetPosition(M_StagePosition);
+	M_StageTexture[X][Y].Update();
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_GROUND,TAG_GROUND);
 
+	
 }
-
 void Action_Stage::Wall(int X, int Y)
 {
-
+	M_StageTexture[X][Y].Init("Assets/Sprite/Action/Wall.DDS", 100.0f, 100.0f,true);
+	M_StagePosition.x = -450.0f + (X * 100.0f);
+	M_StagePosition.y = -450.0f + (Y * 100.0f);
+	M_StageTexture[X][Y].SetPosition(M_StagePosition);
+	M_StageTexture[X][Y].Update();
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_WALL, TAG_WALL);
 }
