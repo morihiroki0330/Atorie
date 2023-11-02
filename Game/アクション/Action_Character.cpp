@@ -42,7 +42,11 @@ void Action_Character::Move()
 {
 	if (!P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_GROUND))
 	{
-		Fall();
+		S_Flag.M_FallFlag = true;
+		if (S_Flag.M_FallFlag)
+		{
+			Fall();
+		}
 	}
 
 	if (g_pad[0]->IsTrigger(enButtonA))
@@ -54,14 +58,14 @@ void Action_Character::Move()
 void Action_Character::Walk()
 {
 	M_CharacterSpeed.x = P_Controller->GetLStick().x;
-	if (P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_WALL) || P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_GROUND))
+	if (P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_WALL))
 	{
 		if (M_CharacterSpeed.x < 0.0f)
 		{
 			M_CharacterSpeed.x = 0.0f;
 		}
 	}
-	if (P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_WALL) || P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_GROUND))
+	if (P_Collision->EmptyAndDecisionsCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_WALL))
 	{
 		if (M_CharacterSpeed.x > 0.0f)
 		{
@@ -77,12 +81,5 @@ void Action_Character::Jump()
 void Action_Character::Fall()
 {
 	M_CharacterPosition.y -= P_Action->GetGravity();
-}
-void Action_Character::PositionJust(int Direction)
-{
-	if (!S_Flag.M_PositionJustFlag)
-	{
-		M_CharacterPosition.y = P_Collision->GetWidth().x;
-		S_Flag.M_PositionJustFlag = true;
-	}
+	S_Flag.M_FallFlag = true;
 }

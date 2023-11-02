@@ -45,6 +45,6 @@ private:
 	ActionClass S_Action;
 	SpriteRender M_BackTexture;
 	int M_Number = 0;
-	float M_Gravity = 1.0f;
+	float M_Gravity = 3.0f;
 };
 

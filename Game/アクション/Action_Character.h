@@ -8,6 +8,7 @@ struct MotionFlag
 	bool M_JumpFlag = false;
 	bool M_GoalFlag = false;
 	bool M_PositionJustFlag = false;
+	bool M_FallFlag = false;
 };
 class Action_Character : public IGameObject
 {
@@ -22,8 +23,6 @@ public:
 	void Walk();
 	void Jump();
 	void Fall();
-
-	void PositionJust(int Direction);
 private:
 	SpriteRender M_CharacterTexture;
 
