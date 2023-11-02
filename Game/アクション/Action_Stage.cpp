@@ -90,8 +90,6 @@ void Action_Stage::Ground(int X, int Y)
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
 	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_GROUND,TAG_GROUND);
-
-	
 }
 void Action_Stage::Wall(int X, int Y)
 {

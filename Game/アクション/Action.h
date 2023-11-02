@@ -16,10 +16,9 @@ struct ActionClass
 enum CollisionData
 {
 	COLLISION_CHARACTER = 1,
-	COLLISION_CHARACTERLEG = 2,
-	COLLISION_GROUND = 3,
-	COLLISION_WALL = 4,
-	COLLISION_BOX = 5
+	COLLISION_GROUND = 2,
+	COLLISION_WALL = 3,
+	COLLISION_BOX = 4
 };
 enum TagType
 {
@@ -40,9 +39,12 @@ public:
 	Action();
 	~Action();
 	void Create(int Number);
+	float GetGravity()
+	{return M_Gravity;}
 private:
 	ActionClass S_Action;
 	SpriteRender M_BackTexture;
 	int M_Number = 0;
+	float M_Gravity = 1.0f;
 };
 
