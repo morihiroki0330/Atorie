@@ -28,11 +28,13 @@ namespace nsK2EngineLow
 		
 		//当たり判定の生成
 		void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag);
+		void DecisionInSideDataSet(int Count);
 
 		//コピー
 		void CopyDecisionData(ObjectData& Decision, int ObjectName);//【本体】のコピー
 		void CopyDecisionsData(ObjectData& Decision, int Tag,int Count);//【タグが付いた複数の本体】のコピー
 		void CopyEmptyData(ObjectData& Decision, int ObjectName, int Direction);//【空】のコピー
+		void CopyEmptysData(ObjectData& Decision, int Tag, int Direction, int Count);//【タグが付いた複数の空】のコピー
 
 		//座標更新
 		void DecisionSetPosition(float PositionX, float PositionY, int ObjectName);
@@ -44,10 +46,16 @@ namespace nsK2EngineLow
 
 		//衝突判定
 		bool EmptyAndEmptyCollision(int ObjectName1, int Direction1, int ObjectName2, int Direction2);//【空同士】の衝突
+		bool DecisionAndDecisionCollision(int ObjectName1, int ObjectName2);//【本体同士】の衝突
+
 		bool EmptyAndDecisionCollision(int ObjectName1,int Direction1, int ObjectName2);//【空】と【本体】の衝突
+
 		bool EmptyAndDecisionsCollision(int ObjectName1, int Direction1,int Tag2);//【空】と【タグが付いた複数の本体】の衝突
 		bool DecisionAndDecisionsCollision(int ObjectName1, int Tag2);//【本体】と【タグが付いた複数の本体】の衝突
-		bool DecisionAndDecisionCollision(int ObjectName1, int ObjectName2);//【本体同士】の衝突
+
+		bool EmptyAndEmptysCollision(int ObjectName1, int Direction1, int Tag2,int Direction2);//【空】と【タグが付いた複数の空】の衝突
+		bool DecisionAndEmptysCollision(int ObjectName1, int Tag2, int Direction2);//【本体】と【タグが付いた複数の空】の衝突
+		
 
 		int OddConversion(int Number)
 		{

@@ -38,8 +38,18 @@ namespace nsK2EngineLow
 				
 				/*DecisionData[Count][DIRECTION_NON].Wide = (int)(Wide);
 				DecisionData[Count][DIRECTION_NON].Height = (int)(Height);*/
+
+				DecisionInSideDataSet(Count);
 				return;
 			}
+		}
+	}
+	void DimensionCollision::DecisionInSideDataSet(int Count)
+	{
+		for (int Direction = DIRECTION_UP; Direction <= DIRECTION_LEFT; Direction++)
+		{
+			DecisionData[Count][Direction].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].ObjectName;
+			DecisionData[Count][Direction].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].Tag;
 		}
 	}
 
@@ -85,6 +95,19 @@ namespace nsK2EngineLow
 				Decision.LowerRightVertexPositionY = DecisionData[Count][Direction].LowerRightVertexPositionY;
 				return;
 			}
+		}
+	}
+	void DimensionCollision::CopyEmptysData(ObjectData& Decision, int Tag, int Direction, int Count)
+	{
+		if (DecisionData[Count][Direction].Tag == Tag)
+		{
+			Decision.ObjectName = DecisionData[Count][Direction].ObjectName;
+			Decision.Tag = DecisionData[Count][Direction].Tag;
+			Decision.UpperLeftVertexPositionX = DecisionData[Count][Direction].UpperLeftVertexPositionX;
+			Decision.UpperLeftVertexPositionY = DecisionData[Count][Direction].UpperLeftVertexPositionY;
+			Decision.LowerRightVertexPositionX = DecisionData[Count][Direction].LowerRightVertexPositionX;
+			Decision.LowerRightVertexPositionY = DecisionData[Count][Direction].LowerRightVertexPositionY;
+			return;
 		}
 	}
 
@@ -191,6 +214,7 @@ namespace nsK2EngineLow
 		}
 		return false;
 	}
+
 	bool DimensionCollision::EmptyAndDecisionsCollision(int ObjectName1, int Direction1, int Tag2)
 	{
 		ObjectData Decision1;
@@ -236,6 +260,7 @@ namespace nsK2EngineLow
 		}
 		return false;
 	}
+
 	bool DimensionCollision::DecisionAndDecisionCollision(int ObjectName1, int ObjectName2)
 	{
 		ObjectData Decision1;
@@ -251,6 +276,53 @@ namespace nsK2EngineLow
 				{
 					CollisionWidth.x = Decision2.UpperLeftVertexPositionY;
 					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	bool DimensionCollision::EmptyAndEmptysCollision(int ObjectName1, int Direction1, int Tag2, int Direction2)
+	{
+		ObjectData Decision1;
+		CopyEmptyData(Decision1, ObjectName1,Direction1);
+		ObjectData Decision2;
+
+		for (int Count = 0; Count < 150; Count++)
+		{
+			CopyEmptysData(Decision2, Tag2,Direction2, Count);
+			for (int X = Decision1.UpperLeftVertexPositionX; X <= Decision1.LowerRightVertexPositionX; X++)
+			{
+				for (int Y = Decision1.LowerRightVertexPositionY; Y <= Decision1.UpperLeftVertexPositionY; Y++)
+				{
+					if ((X >= Decision2.UpperLeftVertexPositionX && X <= Decision2.LowerRightVertexPositionX) && (Y <= Decision2.UpperLeftVertexPositionY && Y >= Decision2.LowerRightVertexPositionY))
+					{
+						CollisionWidth.x = Decision2.UpperLeftVertexPositionY;
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	bool DimensionCollision::DecisionAndEmptysCollision(int ObjectName1, int Tag2, int Direction2)
+	{
+		ObjectData Decision1;
+		CopyDecisionData(Decision1, ObjectName1);
+		ObjectData Decision2;
+
+		for (int Count = 0; Count < 150; Count++)
+		{
+			CopyEmptysData(Decision2, Tag2,Direction2, Count);
+			for (int X = Decision1.UpperLeftVertexPositionX; X <= Decision1.LowerRightVertexPositionX; X++)
+			{
+				for (int Y = Decision1.LowerRightVertexPositionY; Y <= Decision1.UpperLeftVertexPositionY; Y++)
+				{
+					if ((X >= Decision2.UpperLeftVertexPositionX && X <= Decision2.LowerRightVertexPositionX) && (Y <= Decision2.UpperLeftVertexPositionY && Y >= Decision2.LowerRightVertexPositionY))
+					{
+						CollisionWidth.x = Decision2.UpperLeftVertexPositionY;
+						return true;
+					}
 				}
 			}
 		}
