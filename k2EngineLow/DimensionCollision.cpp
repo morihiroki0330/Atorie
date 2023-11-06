@@ -48,9 +48,30 @@ namespace nsK2EngineLow
 	{
 		for (int Direction = DIRECTION_UP; Direction <= DIRECTION_LEFT; Direction++)
 		{
-			DecisionData[Count][Direction].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].ObjectName;
-			DecisionData[Count][Direction].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].Tag;
+			DecisionData[Count][Direction].ObjectName = DecisionData[Count][DIRECTION_NON].ObjectName;
+			DecisionData[Count][Direction].Tag = DecisionData[Count][DIRECTION_NON].Tag;
 		}
+
+		DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX;
+		DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionY = (DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY);
+		DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX;
+		DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY + (-EmptyWidth);
+
+		DecisionData[Count][DIRECTION_RIGHT].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX + (-EmptyWidth);
+		DecisionData[Count][DIRECTION_RIGHT].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY;
+		DecisionData[Count][DIRECTION_RIGHT].LowerRightVertexPositionX = (DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX);
+		DecisionData[Count][DIRECTION_RIGHT].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY;
+
+		DecisionData[Count][DIRECTION_DOWN].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX;
+		DecisionData[Count][DIRECTION_DOWN].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY + (EmptyWidth);
+		DecisionData[Count][DIRECTION_DOWN].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX;
+		DecisionData[Count][DIRECTION_DOWN].LowerRightVertexPositionY = (DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY);
+
+		DecisionData[Count][DIRECTION_LEFT].UpperLeftVertexPositionX = (DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX);
+		DecisionData[Count][DIRECTION_LEFT].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY;
+		DecisionData[Count][DIRECTION_LEFT].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX + (EmptyWidth);
+		DecisionData[Count][DIRECTION_LEFT].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY;
+
 	}
 
 	//ƒRƒs[
@@ -99,12 +120,12 @@ namespace nsK2EngineLow
 	}
 	void DimensionCollision::CopyEmptysData(ObjectData& Decision, int Tag, int Direction, int Count)
 	{
-		if (DecisionData[Count][Direction].Tag == Tag)
+		if (DecisionData[Count][DIRECTION_NON].Tag == Tag)
 		{
-			Decision.ObjectName = DecisionData[Count][Direction].ObjectName;
-			Decision.Tag = DecisionData[Count][Direction].Tag;
-			Decision.UpperLeftVertexPositionX = DecisionData[Count][Direction].UpperLeftVertexPositionX;
-			Decision.UpperLeftVertexPositionY = DecisionData[Count][Direction].UpperLeftVertexPositionY;
+			Decision.ObjectName                = DecisionData[Count][Direction].ObjectName;
+			Decision.Tag                       = DecisionData[Count][Direction].Tag;
+			Decision.UpperLeftVertexPositionX  = DecisionData[Count][Direction].UpperLeftVertexPositionX;
+			Decision.UpperLeftVertexPositionY  = DecisionData[Count][Direction].UpperLeftVertexPositionY;
 			Decision.LowerRightVertexPositionX = DecisionData[Count][Direction].LowerRightVertexPositionX;
 			Decision.LowerRightVertexPositionY = DecisionData[Count][Direction].LowerRightVertexPositionY;
 			return;
@@ -149,7 +170,7 @@ namespace nsK2EngineLow
 	void DimensionCollision::DecisionUpSetPosition(int Count)
 	{
 		DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX;
-		DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionY = (DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY) ;
+		DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionY = (DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY);
 		DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX;
 		DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY + (-EmptyWidth);
 	}
