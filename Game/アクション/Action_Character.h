@@ -23,11 +23,14 @@ public:
 	void Walk();
 	void Jump();
 	void Fall();
+
+	void WallCollision();
+	void GroundCollision();
 private:
 	SpriteRender M_CharacterTexture;
 
-	Vector3 M_CharacterPosition = {0.0f,150.0f,0.0f};
-	Vector3 M_CharacterSpeed = { 0.0f,0.0f,0.0f };
+	Vector3 M_CharacterPosition = {0.0f,-150.0f,0.0f};
+	Vector3 M_CharacterSpeed = { 0.0f,10.0f,0.0f };
 
 	Action* P_Action = nullptr;
 	Action_Stage* P_Stage = nullptr;
@@ -35,5 +38,7 @@ private:
 	Controller* P_Controller =nullptr;
 
 	MotionFlag S_Flag;
+
+	int M_JumpCoolTime = 0;
 };
 

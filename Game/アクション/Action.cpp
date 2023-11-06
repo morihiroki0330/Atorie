@@ -9,9 +9,9 @@
 #include "DimensionCollision.h"
 Action::Action()
 {
+	S_Action.P_Collision = NewGO<DimensionCollision>(0, "collision");
 	S_Action.P_WindowFrame = NewGO<Action_WindowFrame>(0, "action_windowframe");
 	S_Action.P_GameTitle = NewGO<Action_GameTitle>(0, "action_gametitle");
-	S_Action.P_Collision = NewGO<DimensionCollision>(0, "collision");
 }
 Action::~Action()
 {
@@ -34,6 +34,7 @@ void Action::Create(int Number)
 	case SECOND:
 		DeleteGO(S_Action.P_Stage);
 		DeleteGO(S_Action.P_Character);
+		S_Action.P_Collision->Reset();
 		S_Action.P_GameResult = NewGO<Action_GameResult>(0, "action_gameresult");
 		break;
 	case THIRD:

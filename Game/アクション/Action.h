@@ -18,20 +18,21 @@ enum CollisionData
 	COLLISION_CHARACTER = 1,
 	COLLISION_GROUND = 2,
 	COLLISION_WALL = 3,
-	COLLISION_BOX = 4
+	COLLISION_GOAL = 4,
 };
 enum TagType
 {
 	TAG_GROUND = 1,
 	TAG_WALL = 2,
 	TAG_BOX = 3,
-	TAG_NON = 4
+	TAG_GOAL = 4,
+	TAG_NON = 5
 };
 enum MapType
 {
 	MAP_GROUND = 1,
 	MAP_WALL = 2,
-	MAP_BOX = 3,
+	MAP_GOAL = 3,
 };
 class Action : public IGameObject
 {
@@ -45,6 +46,6 @@ private:
 	ActionClass S_Action;
 	SpriteRender M_BackTexture;
 	int M_Number = 0;
-	float M_Gravity = 3.0f;
+	float M_Gravity = 10.0f;
 };
 

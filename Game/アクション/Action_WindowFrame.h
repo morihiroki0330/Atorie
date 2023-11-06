@@ -6,5 +6,6 @@ public:
 	void Render(RenderContext& rc);
 private:
 	SpriteRender M_FrameTexture;
+	DimensionCollision* P_Collision = nullptr;
 };
 

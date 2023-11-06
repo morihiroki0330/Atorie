@@ -8,6 +8,6 @@ void Controller::Update()
 	M_RStick.x = g_pad[0]->GetRStickXF();
 	M_RStick.y = g_pad[0]->GetRStickYF();
 
-	M_RStick.x *= 10.0f;
-	M_LStick.x *= 10.0f;
+	M_RStick.x *= 8.0f;
+	M_LStick.x *= 8.0f;
 }

@@ -26,15 +26,18 @@ namespace nsK2EngineLow
 	{
 	public:
 		
+		DimensionCollision();
+		void Reset();
+
 		//当たり判定の生成
 		void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag);
 		void DecisionInSideDataSet(int Count);
 
 		//コピー
-		void CopyDecisionData(ObjectData& Decision, int ObjectName);//【本体】のコピー
-		void CopyDecisionsData(ObjectData& Decision, int Tag,int Count);//【タグが付いた複数の本体】のコピー
-		void CopyEmptyData(ObjectData& Decision, int ObjectName, int Direction);//【空】のコピー
-		void CopyEmptysData(ObjectData& Decision, int Tag, int Direction, int Count);//【タグが付いた複数の空】のコピー
+		bool CopyDecisionData(ObjectData& Decision, int ObjectName);//【本体】のコピー
+		bool CopyDecisionsData(ObjectData& Decision, int Tag,int Count);//【タグが付いた複数の本体】のコピー
+		bool CopyEmptyData(ObjectData& Decision, int ObjectName, int Direction);//【空】のコピー
+		bool CopyEmptysData(ObjectData& Decision, int Tag, int Direction, int Count);//【タグが付いた複数の空】のコピー
 
 		//座標更新
 		void DecisionSetPosition(float PositionX, float PositionY, int ObjectName);
@@ -81,8 +84,9 @@ namespace nsK2EngineLow
 			return CollisionWidth;
 		}
 	private:
-		ObjectData DecisionData[150][5];
-		float EmptyWidth = 1.0f;
+		ObjectData DecisionData[256][5];
+		float EmptyWidth = 5.0f;
+		float InitValue = 50000.0f;
 		Vector4 CollisionWidth;//X:上の状突Y:右の衝突Z:下の衝突W:左の衝突
 	};
 }

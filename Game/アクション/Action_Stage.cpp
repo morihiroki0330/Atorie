@@ -12,6 +12,7 @@ bool Action_Stage::Start()
 void Action_Stage::Render(RenderContext& rc)
 {
 	M_BackGroundTexture.Draw(rc);
+	M_GoalFlagTexture.Draw(rc);
 	for (int X = 0; X < 10; X++)
 	{
 		for (int Y = 0; Y < 10; Y++)
@@ -69,6 +70,9 @@ bool Action_Stage::MapSet()
 							case MAP_WALL:
 								Wall(X, Y);
 								break;
+							case MAP_GOAL:
+								Goal(X, Y);
+								break;
 							default:
 								break;
 							}
@@ -99,4 +103,13 @@ void Action_Stage::Wall(int X, int Y)
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
 	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_WALL, TAG_WALL);
+}
+void Action_Stage::Goal(int X, int Y)
+{
+	M_GoalFlagTexture.Init("Assets/Sprite/Action/Goal.DDS", 100.0f, 100.0f, true);
+	M_StagePosition.x = -450.0f + (X * 100.0f);
+	M_StagePosition.y = -450.0f + (Y * 100.0f);
+	M_GoalFlagTexture.SetPosition(M_StagePosition);
+	M_GoalFlagTexture.Update();
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_GOAL, TAG_GOAL);
 }

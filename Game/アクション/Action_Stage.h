@@ -8,9 +8,11 @@ public:
 	bool MapSet();
 	void Ground(int X,int Y);
 	void Wall(int X,int Y);
+	void Goal(int X,int Y);
 private:
 	SpriteRender M_StageTexture[10][10];
 	SpriteRender M_BackGroundTexture;
+	SpriteRender M_GoalFlagTexture;
 	Vector3 M_StagePosition;
 	DimensionCollision* P_Collision = nullptr;
 	const char* M_FilePath = nullptr;

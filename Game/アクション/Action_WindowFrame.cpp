@@ -1,5 +1,7 @@
 #include "stdafx.h"
+#include "Action.h"
 #include "Action_WindowFrame.h"
+#include "DimensionCollision.h"
 Action_WindowFrame::Action_WindowFrame()
 {
 	M_FrameTexture.Init("Assets/Sprite/Action/WindowFrame.DDS", 1920.0f, 1080.0f,true);
