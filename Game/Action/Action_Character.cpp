@@ -14,13 +14,13 @@ bool Action_Character::Start()
 
 	M_CharacterTexture.Init("Assets/Sprite/Action/Riblock.DDS", 90.0f, 90.0f, true);
 
-	P_Collision->DecisionDataSet(90.0f, 90.0f, M_CharacterPosition.x, M_CharacterPosition.y, COLLISION_CHARACTER, TAG_NON);
+	P_Collision->DecisionDataSet(90.0f, 90.0f, M_CharacterPosition.x, M_CharacterPosition.y, ACTION_COLLISION_CHARACTER, ACTION_TAG_NON);
 	return true;
 }
 void Action_Character::Update()
 {
 	Move();
-	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, COLLISION_CHARACTER);
+	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, ACTION_COLLISION_CHARACTER);
 	M_CharacterTexture.SetPosition(M_CharacterPosition);
 	M_CharacterTexture.Update();
 }
@@ -31,7 +31,7 @@ void Action_Character::Render(RenderContext& rc)
 
 void Action_Character::Goal()
 {
-	if (P_Collision->DecisionAndDecisionCollision(COLLISION_CHARACTER, COLLISION_GOAL))
+	if (P_Collision->DecisionAndDecisionCollision(ACTION_COLLISION_CHARACTER, ACTION_COLLISION_GOAL))
 	{
 		P_Action->Create(SECOND);
 	}
@@ -67,7 +67,7 @@ void Action_Character::Jump()
 				M_JumpCoolTime = 0;
 				S_Flag.M_JumpFlag = false;
 			}else {
-				if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_UP, TAG_WALL, DIRECTION_DOWN) || P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_UP, TAG_GROUND, DIRECTION_DOWN))
+				if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_UP, ACTION_TAG_WALL, DIRECTION_DOWN) || P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_UP, ACTION_TAG_GROUND, DIRECTION_DOWN))
 				{
 					M_JumpCoolTime = 0;
 					S_Flag.M_JumpFlag = false;
@@ -83,11 +83,11 @@ void Action_Character::Jump()
 }
 void Action_Character::Fall()
 {
-	if (!P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_GROUND, DIRECTION_UP) && !S_Flag.M_JumpFlag)
+	if (!P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_DOWN, ACTION_TAG_GROUND, DIRECTION_UP) && !S_Flag.M_JumpFlag)
 	{
 		S_Flag.M_FallFlag = true;
 	}else {
-		if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_GROUND, DIRECTION_UP))
+		if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_DOWN, ACTION_TAG_GROUND, DIRECTION_UP))
 		{
 			S_Flag.M_FallFlag = false;
 			S_Flag.M_JumpFlag = false;
@@ -100,11 +100,11 @@ void Action_Character::Fall()
 
 void Action_Character::WallCollision()
 {
-	if (!P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_WALL, DIRECTION_LEFT) && !P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_WALL, DIRECTION_RIGHT))
+	if (!P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_RIGHT, ACTION_TAG_WALL, DIRECTION_LEFT) && !P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_LEFT, ACTION_TAG_WALL, DIRECTION_RIGHT))
 	{
 		S_Flag.M_WalkFlag = true;
 	}else {
-		if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_WALL, DIRECTION_LEFT))
+		if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_RIGHT, ACTION_TAG_WALL, DIRECTION_LEFT))
 		{
 			if (M_CharacterSpeed.x > 0.0f)
 			{
@@ -113,7 +113,7 @@ void Action_Character::WallCollision()
 				S_Flag.M_WalkFlag = true;
 			}
 		}else {
-			if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_WALL, DIRECTION_RIGHT))
+			if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_LEFT, ACTION_TAG_WALL, DIRECTION_RIGHT))
 			{
 				if (M_CharacterSpeed.x < 0.0f)
 				{
@@ -129,7 +129,7 @@ void Action_Character::GroundCollision()
 {
 	if (S_Flag.M_FallFlag || S_Flag.M_JumpFlag)
 	{
-		if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_GROUND, DIRECTION_RIGHT))
+		if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_LEFT, ACTION_TAG_GROUND, DIRECTION_RIGHT))
 		{
 			if (M_CharacterSpeed.x < 0.0f)
 			{
@@ -138,7 +138,7 @@ void Action_Character::GroundCollision()
 				S_Flag.M_WalkFlag = true;
 			}
 		}else {
-			if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_GROUND, DIRECTION_LEFT))
+			if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_RIGHT, ACTION_TAG_GROUND, DIRECTION_LEFT))
 			{
 				if (M_CharacterSpeed.x > 0.0f)
 				{

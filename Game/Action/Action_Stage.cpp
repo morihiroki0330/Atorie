@@ -64,13 +64,13 @@ bool Action_Stage::MapSet()
 							GroundType = Count;
 							switch (GroundType)
 							{
-							case MAP_GROUND:
+							case ACTION_MAP_GROUND:
 								Ground(X, Y);
 								break;
-							case MAP_WALL:
+							case ACTION_MAP_WALL:
 								Wall(X, Y);
 								break;
-							case MAP_GOAL:
+							case ACTION_MAP_GOAL:
 								Goal(X, Y);
 								break;
 							default:
@@ -93,7 +93,7 @@ void Action_Stage::Ground(int X, int Y)
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_GROUND,TAG_GROUND);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_GROUND, ACTION_TAG_GROUND);
 }
 void Action_Stage::Wall(int X, int Y)
 {
@@ -102,7 +102,7 @@ void Action_Stage::Wall(int X, int Y)
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_WALL, TAG_WALL);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_WALL, ACTION_TAG_WALL);
 }
 void Action_Stage::Goal(int X, int Y)
 {
@@ -111,5 +111,5 @@ void Action_Stage::Goal(int X, int Y)
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_GoalFlagTexture.SetPosition(M_StagePosition);
 	M_GoalFlagTexture.Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, COLLISION_GOAL, TAG_GOAL);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_GOAL, ACTION_TAG_GOAL);
 }

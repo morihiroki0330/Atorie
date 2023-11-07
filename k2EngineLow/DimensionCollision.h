@@ -31,7 +31,7 @@ namespace nsK2EngineLow
 
 		//当たり判定の生成
 		void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag);
-		void DecisionInSideDataSet(int Count);
+		
 
 		//コピー
 		bool CopyDecisionData(ObjectData& Decision, int ObjectName);//【本体】のコピー
@@ -41,12 +41,7 @@ namespace nsK2EngineLow
 
 		//座標更新
 		void DecisionSetPosition(float PositionX, float PositionY, int ObjectName);
-		void DecisionUpSetPosition(int Count);
-		void DecisionRightSetPosition(int Count);
-		void DecisionDownSetPosition(int Count);
-		void DecisionLeftSetPosition(int Count);
-
-
+		
 		//衝突判定
 		bool EmptyAndEmptyCollision(int ObjectName1, int Direction1, int ObjectName2, int Direction2);//【空同士】の衝突
 		bool DecisionAndDecisionCollision(int ObjectName1, int ObjectName2);//【本体同士】の衝突
@@ -83,6 +78,12 @@ namespace nsK2EngineLow
 		{
 			return CollisionWidth;
 		}
+	private:
+		void DecisionInSideDataSet(int Count);
+		void DecisionUpSetPosition(int Count);
+		void DecisionRightSetPosition(int Count);
+		void DecisionDownSetPosition(int Count);
+		void DecisionLeftSetPosition(int Count);
 	private:
 		ObjectData DecisionData[256][5];
 		float EmptyWidth = 5.0f;

@@ -13,26 +13,26 @@ struct ActionClass
 	Action_WindowFrame* P_WindowFrame;
 	DimensionCollision* P_Collision;
 };
-enum CollisionData
+enum 
 {
-	COLLISION_CHARACTER = 1,
-	COLLISION_GROUND = 2,
-	COLLISION_WALL = 3,
-	COLLISION_GOAL = 4,
+	ACTION_COLLISION_CHARACTER = 1,
+	ACTION_COLLISION_GROUND = 2,
+	ACTION_COLLISION_WALL = 3,
+	ACTION_COLLISION_GOAL = 4,
 };
-enum TagType
+enum 
 {
-	TAG_GROUND = 1,
-	TAG_WALL = 2,
-	TAG_BOX = 3,
-	TAG_GOAL = 4,
-	TAG_NON = 5
+	ACTION_TAG_GROUND = 1,
+	ACTION_TAG_WALL = 2,
+	ACTION_TAG_BOX = 3,
+	ACTION_TAG_GOAL = 4,
+	ACTION_TAG_NON = 5
 };
-enum MapType
+enum 
 {
-	MAP_GROUND = 1,
-	MAP_WALL = 2,
-	MAP_GOAL = 3,
+	ACTION_MAP_GROUND = 1,
+	ACTION_MAP_WALL = 2,
+	ACTION_MAP_GOAL = 3,
 };
 class Action : public IGameObject
 {

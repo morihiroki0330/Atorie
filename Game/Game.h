@@ -3,10 +3,12 @@ class Mouse;
 class Controller;
 class Dungeon;
 class Action;
+class Flick;
 struct GameClass
 {
 	Dungeon* P_Dungeon;
 	Action* P_Action;
+	Flick* P_Flick;
 };
 struct Operation
 {
