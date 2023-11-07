@@ -4,7 +4,7 @@
 #include "Action_Character.h"
 #include "Action_Stage.h"
 #include "DimensionCollision.h"
-#include "マウス・コントローラー/Controller.h"
+#include "Mouse・Controller/Controller.h"
 bool Action_Character::Start()
 {
 	P_Action = FindGO<Action>("action");

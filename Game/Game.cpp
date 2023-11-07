@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "自動生成迷路/Dungeon.h"
-#include "アクション/Action.h"
+#include "Dungeon/Dungeon.h"
+#include "Action/Action.h"
 
-#include "マウス・コントローラー/Mouse.h"
-#include "マウス・コントローラー/Controller.h"
+#include "Mouse・Controller/Mouse.h"
+#include "Mouse・Controller/Controller.h"
 Game::Game()
 {
 	//S_GameClass.P_Dungeon = NewGO<Dungeon>(0, "dungeon");
