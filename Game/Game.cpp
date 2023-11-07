@@ -3,8 +3,8 @@
 #include "自動生成迷路/Dungeon.h"
 #include "アクション/Action.h"
 
-#include "Mouse.h"
-#include "Controller.h"
+#include "マウス・コントローラー/Mouse.h"
+#include "マウス・コントローラー/Controller.h"
 Game::Game()
 {
 	//S_GameClass.P_Dungeon = NewGO<Dungeon>(0, "dungeon");
