@@ -21,7 +21,11 @@ public:
 
 	void MouseButton();
 	
-	Vector3 GetMousePosition() { return M_MouseCousorPosition; }
+	Vector3 GetMousePosition()
+	{return M_MouseCousorPosition; }
+
+	Vector3 GetMouseMoveSpeed()
+	{return M_MouseCousorMoveSpeed;}
 
 	bool GetLeftButton()
 	{return S_Flag.M_LeftButtonFlag;}
@@ -31,15 +35,15 @@ public:
 private:
 	SpriteRender M_MouseCursorTexture;
 	Vector3 M_MouseCousorPosition;
+	Vector3 M_MouseCousorMoveSpeed;
 
 	POINT M_CursorPosition = {};
 	HWND M_HWnd = GetConsoleWindow();
 
-	Vector2 M_Client = { 1535.0f,863.0f };
-	Vector2 M_Window = { 1920.0f,1080.0f };
+	Vector2 M_Client = { 1535.0f,863.0f };//ウィンドウの縦横
+	Vector2 M_Window = { 1920.0f,1080.0f };//正規ウィンドウの縦横
 	Vector2 M_PrevMouse = { 0.0f,0.0f };
-	Vector2 M_Delta = { 0.0f,0.0f };
-	Vector2 M_Mouse = { 0.0f,0.0f };
+	Vector2 M_Delta = { 0.0f,0.0f };//マウスの移動量
 	Vector2 M_Converted = { 0.0f,0.0f };
 
 	MouseFlag S_Flag;

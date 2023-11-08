@@ -42,9 +42,9 @@ void Flick_Box::Fall()
 }
 void Flick_Box::Move()
 {
-	if (P_Collision->DecisionAndDecisionCollision(FLICK_COLLISION_BOX, FLICK_COLLISION_CURSOR) && P_Mouse->GetLeftButton())
+	if (P_Collision->DecisionAndDecisionCollision(FLICK_COLLISION_BOX, FLICK_COLLISION_CURSOR))
 	{
-		M_BoxPosition = P_Mouse->GetMousePosition();
-		M_FallFlag = false;
+		M_BoxPosition += P_Mouse->GetMouseMoveSpeed();
+		//M_FallFlag = false;
 	}
 }

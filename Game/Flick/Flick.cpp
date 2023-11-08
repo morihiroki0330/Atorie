@@ -22,7 +22,7 @@ bool Flick::Start()
 {
 	S_Flick.P_Mouse = FindGO<Mouse>("mouse");
 	S_Flick.P_Mouse->MouseCursorTextureSet("Assets/Sprite/Flick/MouseCursor.DDS", 90.0f, 90.0f, true);
-	S_Flick.P_Collision->DecisionDataSet(150.0f, 150.0f, S_Flick.P_Mouse->GetMousePosition().x, S_Flick.P_Mouse->GetMousePosition().y, FLICK_COLLISION_CURSOR, FLICK_TAG_NON);
+	S_Flick.P_Collision->DecisionDataSet(100.0f, 100.0f, S_Flick.P_Mouse->GetMousePosition().x, S_Flick.P_Mouse->GetMousePosition().y, FLICK_COLLISION_CURSOR, FLICK_TAG_NON);
 	return true;
 }
 void Flick::Update()

@@ -6,6 +6,7 @@ void Mouse::Update()
     GetCursorPos(&M_CursorPosition);
     ScreenToClient(M_HWnd, &M_CursorPosition);
     MouseSet();
+	MouseMove();
     MouseCorsorTextureSetCheck();
 	MouseButton();
     MouseCurSorSetPosition(M_MouseCousorPosition);
@@ -19,25 +20,31 @@ void Mouse::Render(RenderContext& rc)
 
 void Mouse::MouseCurSorSetPosition(Vector3& Position)
 {
-	Position.x = (M_Mouse.x - (M_Window.x / 2));
-	Position.y = (M_Mouse.y - (M_Window.y / 2)) * -1;
+	Position.x = (M_Converted.x - (M_Window.x / 2));
+	Position.y = (M_Converted.y - (M_Window.y / 2)) * -1;
 }
 
 void Mouse::MouseMove()
 {
-	M_Delta.x = M_Mouse.x - M_PrevMouse.x;
-	M_Delta.y = M_Mouse.y - M_PrevMouse.y;
+	M_MouseCousorMoveSpeed.x = 0.0f;
+	M_MouseCousorMoveSpeed.y = 0.0f;
 
-	M_PrevMouse.x = M_Mouse.x;
-	M_PrevMouse.y = M_Mouse.y;
+	M_Delta.x = M_Converted.x - M_PrevMouse.x;
+	M_Delta.y = M_Converted.y - M_PrevMouse.y;
+
+	M_PrevMouse.x = M_Converted.x;
+	M_PrevMouse.y = M_Converted.y;
+
+	if (S_Flag.M_LeftButtonFlag)
+	{
+		M_MouseCousorMoveSpeed.x = M_Delta.x;
+		M_MouseCousorMoveSpeed.y = M_Delta.y * -1.0f;
+	}
 }
 void Mouse::MouseSet()
 {
 	M_Converted.x = (M_CursorPosition.x * M_Window.x) / M_Client.x;
 	M_Converted.y = (M_CursorPosition.y * M_Window.y) / M_Client.y;
-
-	M_Mouse.x = M_Converted.x;
-	M_Mouse.y = M_Converted.y;
 }
 void Mouse::MouseReset()
 {
