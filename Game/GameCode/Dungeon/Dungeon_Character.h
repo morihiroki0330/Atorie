@@ -1,21 +1,25 @@
 #pragma once
-class Dungeon_Stage;
 class Dungeon;
+class Dungeon_Stage;
 class Dungeon_Character : public IGameObject
 {
 public:
+	Dungeon_Character();
 	bool Start();
-	bool GetGoalFlag() { return GoalFlag; }
-	void Goal();
 	void Update();
 	void Render(RenderContext& rc);
+
+	void Move();
+	void Goal();
 private:
 	SpriteRender M_CharacterTexture;
-	Vector3 M_CharacterPosition;
-	Dungeon_Stage* P_Stage;
-	Dungeon* P_Dungeon;
-	int M_PositionX;
-	int M_PositionY;
-	bool GoalFlag = false;
+
+	Vector3 M_CharacterPosition = { 0.0f,0.0f,0.0f };
+
+	Dungeon_Stage* P_Stage = nullptr;
+	Dungeon* P_Dungeon     = nullptr;
+
+	int M_PositionX = 0;
+	int M_PositionY = 0;
 };
 

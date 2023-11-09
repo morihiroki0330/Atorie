@@ -9,6 +9,7 @@ public:
 	void Render(RenderContext& rc);
 private:
 	SpriteRender M_GameTitleTexture;
-	Dungeon* P_Dungeon;
+
+	Dungeon* P_Dungeon = nullptr;
 };
 

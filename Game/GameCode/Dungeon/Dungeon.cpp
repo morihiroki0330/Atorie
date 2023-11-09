@@ -9,7 +9,6 @@ Dungeon::Dungeon()
 {
 	S_Dungeon.P_GameTitle = NewGO<Dungeon_GameTitle>(0, "dungeon_gametitle");
 }
-
 Dungeon::~Dungeon()
 {
 	DeleteGO(S_Dungeon.P_GameTitle);
@@ -17,14 +16,13 @@ Dungeon::~Dungeon()
 	DeleteGO(S_Dungeon.P_Stage);
 	DeleteGO(S_Dungeon.P_Character);
 }
-
 void Dungeon::Create(int Number)
 {
 	switch (Number)
 	{
 	case FIRST:
 		DeleteGO(S_Dungeon.P_GameTitle);
-		S_Dungeon.P_Stage = NewGO<Dungeon_Stage>(0, "dungeon_stage");
+		S_Dungeon.P_Stage     = NewGO<Dungeon_Stage>(0, "dungeon_stage");
 		S_Dungeon.P_Character = NewGO<Dungeon_Character>(0, "dungeon_character");
 		break;
 	case SECOND:
@@ -34,7 +32,7 @@ void Dungeon::Create(int Number)
 		break;
 	case THIRD:
 		DeleteGO(S_Dungeon.P_GameResult);
-		S_Dungeon.P_GameTitle = NewGO<Dungeon_GameTitle>(0, "dungeon_gametitle");
+		S_Dungeon.P_GameTitle  = NewGO<Dungeon_GameTitle>(0, "dungeon_gametitle");
 		break;
 	}
 }

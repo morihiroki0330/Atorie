@@ -9,7 +9,7 @@ class Mouse : public IGameObject
 public:
 	void Update();
 	void Render(RenderContext& rc);
-
+	
 	void MouseCurSorSetPosition(Vector3& Position);
 
 	void MouseMove();

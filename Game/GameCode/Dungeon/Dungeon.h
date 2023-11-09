@@ -15,8 +15,10 @@ class Dungeon : public IGameObject
 public:
 	Dungeon();
 	~Dungeon();
+
 	void Create(int Number);
 private:
 	DungeonClass S_Dungeon;
+
 	int M_Number = FIRST;
 };

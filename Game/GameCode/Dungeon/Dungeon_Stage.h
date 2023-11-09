@@ -1,64 +1,77 @@
 #pragma once
 enum
 {
-	NON = 0,
-	GROUND = 1,
-	GROUNDFORMAL = 2,
-	WALL = 3,
-	WALLFORMAL = 4,
-	WALLFIXED = 5
+	DUNGEON_NON          = 0,
+	DUNGEON_GROUND       = 1,
+	DUNGEON_GROUNDFORMAL = 2,
+	DUNGEON_WALL         = 3,
+	DUNGEON_WALLFORMAL   = 4,
+	DUNGEON_WALLFIXED    = 5
 };
 enum
 {
-	UP = 1,
-	RIGHT = 2,
-	DOWN = 3,
-	LEFT = 4
+	DUNGEON_DIRECTION_UP    = 1,
+	DUNGEON_DIRECTION_RIGHT = 2,
+	DUNGEON_DIRECTION_DOWN  = 3,
+	DUNGEON_DIRECTION_LEFT  = 4
+};
+enum
+{
+	DUNGEON_NUMBER_SquareX          = 0,
+	DUNGEON_NUMBER_SquareY          = 1,
+	DUNGEON_NUMBER_StageUpperLeftX  = 2,
+	DUNGEON_NUMBER_StageUpperLeftY  = 3,
+	DUNGEON_NUMBER_StageLowerRightX = 4,
+	DUNGEON_NUMBER_StageLowerRightY = 5,
+	DUNGEON_NUMBER_StartX           = 6,
+	DUNGEON_NUMBER_StartY           = 7,
+	DUNGEON_NUMBER_GoalX            = 8,
+	DUNGEON_NUMBER_GoalY            = 9,
+	DUNGEON_NUMBER_MapDataUp        = 10,
+	DUNGEON_NUMBER_MapDataRight     = 11,
+	DUNGEON_NUMBER_MapDataDown      = 12,
+	DUNGEON_NUMBER_MapDataLeft      = 13,
 };
 class Dungeon_Stage : public IGameObject
 {
 public:
+	Dungeon_Stage();
 	bool Start();
-	bool WallCheck(int X, int Y, int Direction);
-	bool GroundCheck(int X, int Y, int Direction);
+	void Update();
+	void Render(RenderContext& rc);
 
 	void FirstMapDataSet();
 	void SecondMapDataSet();
 	void ThirdMapDataSet();
 	void ForthMapDataSet();
-	void Reset();
 
-	void Update();
-	void Render(RenderContext& rc);
+	int GetNumber(int Number);
+	int GetMapData(int X, int Y, int Number);
+	bool WallCheck(int X, int Y, int Direction);
+	bool GroundCheck(int X, int Y, int Direction);
+	Vector3 GetMapPosition(int X, int Y)
+	{return M_MapPosition[X][Y];}
+private:
+	struct IntVector2
+	{
+		int x = 0;
+		int y = 0;
+	};
 
-	static const int M_SquareX = 16;//Xのマス数
-	static const int M_SquareY = 9;//Yのマス数
+	SpriteRender M_MapTexture[16][9];
 
-	const float M_Wide = 1920.0f;
-	const float M_Height = 1080.0f;
+	Vector3 M_MapPosition[16][9];
 
-	const float M_SquareWide = M_Wide / M_SquareX;
-	const float M_SquareHeight = M_Height / M_SquareY;
+	int M_MapData[16][9];
+	
+	Vector2 M_Width       = {0.0f,0.0f};//マップの縦横幅
+	Vector2 M_SquareWidth = { 0.0f,0.0f };//マスの縦横幅
 
-	SpriteRender M_MapTexture[M_SquareX][M_SquareY];
-	Vector3 M_MapPosition[M_SquareX][M_SquareY];
-	int M_MapData[M_SquareX][M_SquareY];
-
-	//マスの左上頂点
-	static const int M_StageX = 0;
-	static const int M_StageY = 0;
-
-	//マスの右下頂点
-	static const int M_Stage_X = M_SquareX - 1;
-	static const int M_Stage_Y = M_SquareY - 1;
-
-	//スタート地点
-	static const int M_StartX = 1;
-	static const int M_StartY = 1;
-
-	//ゴール地点
-	static const int M_GoalX = M_SquareX - 2;
-	static const int M_GoalY = M_SquareY - 2;
+	IntVector2 M_Square          = { 0,0 };//マス数
+	IntVector2 M_StageUpperLeft  = { 0,0 };//マスの左上頂点
+	IntVector2 M_StageLowerRight = { 0,0 };//マスの右下頂点
+	IntVector2 M_Start           = { 0,0 };//スタート地点
+	IntVector2 M_Goal            = { 0,0 };//ゴール地点
 
 	int M_RandDirection = 0;
 	bool M_RandCheck = false;

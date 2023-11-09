@@ -15,7 +15,10 @@ void Mouse::Update()
 }
 void Mouse::Render(RenderContext& rc)
 {
-    M_MouseCursorTexture.Draw(rc);
+	if (M_MouseCursorTexture.GetInitFlag())
+	{
+		M_MouseCursorTexture.Draw(rc);
+	}
 }
 
 void Mouse::MouseCurSorSetPosition(Vector3& Position)
