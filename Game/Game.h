@@ -3,12 +3,12 @@ class Mouse;
 class Controller;
 class Dungeon;
 class Action;
-class Flick;
+class DragAndDraw;
 struct GameClass
 {
 	Dungeon* P_Dungeon;
 	Action* P_Action;
-	Flick* P_Flick;
+	DragAndDraw* P_DragAndDraw;
 };
 struct Operation
 {
@@ -20,6 +20,7 @@ enum Class
 	FIRST,
 	SECOND,
 	THIRD,
+	FORTH
 };
 class Game : public IGameObject
 {

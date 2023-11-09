@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include "Game.h"
+#include "DragAndDraw_GameResult.h"
+#include "DragAndDraw.h"
+#include "MouseÅEController/Mouse.h"
+DragAndDraw_GameResult::DragAndDraw_GameResult()
+{
+}
+bool DragAndDraw_GameResult::Start()
+{
+	P_DragAndDraw = FindGO<DragAndDraw>("dad");
+	P_Collision = FindGO<DimensionCollision>("collision");
+	if (P_DragAndDraw->GetGoal())
+	{
+		M_GameResultTexture.Init("Assets/Sprite/DragAndDraw/GameResult.DDS", 1920.0f, 1080.0f);
+	}else {
+		if (P_DragAndDraw->GetOver())
+		{
+			M_GameResultTexture.Init("Assets/Sprite/DragAndDraw/GameOver.DDS", 1920.0f, 1080.0f);
+		}
+	}
+	
+	return true;
+}
+void DragAndDraw_GameResult::Update()
+{
+	M_GameResultTexture.Update();
+}
+void DragAndDraw_GameResult::Render(RenderContext& rc)
+{
+	M_GameResultTexture.Draw(rc);
+}
