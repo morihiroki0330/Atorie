@@ -12,7 +12,6 @@ namespace nsK2EngineLow
 		float LowerRightVertexPositionY = 0;//‹éŒ`‚Ì‰E‰ºY
 		float Wide = 0;
 		float Height = 0;
-		
 	};
 	enum
 	{
