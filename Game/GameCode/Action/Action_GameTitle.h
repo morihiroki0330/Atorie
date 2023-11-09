@@ -9,6 +9,7 @@ public:
 	void Render(RenderContext& rc);
 private:
 	SpriteRender M_GameTitleTexture;
-	Action* P_Action;
+
+	Action* P_Action = nullptr;
 };
 

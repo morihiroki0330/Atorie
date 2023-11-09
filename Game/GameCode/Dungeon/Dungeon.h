@@ -5,10 +5,10 @@ class Dungeon_Character;
 class Dungeon_Stage;
 struct DungeonClass
 {
-	Dungeon_GameTitle* P_GameTitle;
-	Dungeon_GameResult* P_GameResult;
-	Dungeon_Character* P_Character;
-	Dungeon_Stage* P_Stage;
+	Dungeon_GameTitle* P_GameTitle   = nullptr;
+	Dungeon_GameResult* P_GameResult = nullptr;
+	Dungeon_Character* P_Character   = nullptr;
+	Dungeon_Stage* P_Stage           = nullptr;
 };
 class Dungeon : public IGameObject
 {

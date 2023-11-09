@@ -2,24 +2,24 @@
 #include "Game.h"
 #include "Action.h"
 #include "Action_Character.h"
-#include "Action_Stage.h"
 #include "DimensionCollision.h"
 #include "MouseEController/Controller.h"
+Action_Character::Action_Character()
+{
+	M_CharacterTexture.Init("Assets/Sprite/Action/Riblock.DDS", 90.0f, 90.0f, true);
+	P_Collision->DecisionDataSet(90.0f, 90.0f, M_CharacterPosition.x, M_CharacterPosition.y, ACTION_COLLISION_CHARACTER, ACTION_TAG_NON);
+}
 bool Action_Character::Start()
 {
 	P_Action = FindGO<Action>("action");
-	P_Stage = FindGO<Action_Stage>("action_stage");
 	P_Collision = FindGO<DimensionCollision>("collision");
 	P_Controller = FindGO<Controller>("controller");
-
-	M_CharacterTexture.Init("Assets/Sprite/Action/Riblock.DDS", 90.0f, 90.0f, true);
-
-	P_Collision->DecisionDataSet(90.0f, 90.0f, M_CharacterPosition.x, M_CharacterPosition.y, ACTION_COLLISION_CHARACTER, ACTION_TAG_NON);
 	return true;
 }
 void Action_Character::Update()
 {
 	Move();
+
 	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, ACTION_COLLISION_CHARACTER);
 	M_CharacterTexture.SetPosition(M_CharacterPosition);
 	M_CharacterTexture.Update();
@@ -29,13 +29,6 @@ void Action_Character::Render(RenderContext& rc)
 	M_CharacterTexture.Draw(rc);
 }
 
-void Action_Character::Goal()
-{
-	if (P_Collision->DecisionAndDecisionCollision(ACTION_COLLISION_CHARACTER, ACTION_COLLISION_GOAL))
-	{
-		P_Action->Create(SECOND);
-	}
-}
 void Action_Character::Move()
 {
 	Fall();
@@ -43,15 +36,21 @@ void Action_Character::Move()
 	Walk();
 	Goal();
 }
-void Action_Character::Walk()
+void Action_Character::Fall()
 {
-	M_CharacterSpeed.x = P_Controller->GetLStick().x;
+	if (!P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_DOWN, ACTION_TAG_GROUND, DIRECTION_UP) && !S_Flag.M_JumpFlag)
+	{
+		S_Flag.M_FallFlag = true;
+	}else {
+		if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_DOWN, ACTION_TAG_GROUND, DIRECTION_UP))
+		{
+			S_Flag.M_FallFlag = false;
+			S_Flag.M_JumpFlag = false;
+		}
+	}
 
-	WallCollision();
-	GroundCollision();
-
-	if (S_Flag.M_WalkFlag)
-	{M_CharacterPosition.x += M_CharacterSpeed.x;}
+	if (S_Flag.M_FallFlag)
+	{M_CharacterPosition.y -= P_Action->GetGravity();}
 }
 void Action_Character::Jump()
 {
@@ -77,25 +76,22 @@ void Action_Character::Jump()
 	}
 
 	if (S_Flag.M_JumpFlag)
-	{
-		M_CharacterPosition.y += M_CharacterSpeed.y;
-	}
+	{M_CharacterPosition.y += M_CharacterSpeed.y;}
 }
-void Action_Character::Fall()
+void Action_Character::Walk()
 {
-	if (!P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_DOWN, ACTION_TAG_GROUND, DIRECTION_UP) && !S_Flag.M_JumpFlag)
-	{
-		S_Flag.M_FallFlag = true;
-	}else {
-		if (P_Collision->EmptyAndEmptysCollision(ACTION_COLLISION_CHARACTER, DIRECTION_DOWN, ACTION_TAG_GROUND, DIRECTION_UP))
-		{
-			S_Flag.M_FallFlag = false;
-			S_Flag.M_JumpFlag = false;
-		}
-	}
+	M_CharacterSpeed.x = P_Controller->GetLStick().x;
 
-	if (S_Flag.M_FallFlag)
-	{M_CharacterPosition.y -= P_Action->GetGravity();}
+	WallCollision();
+	GroundCollision();
+
+	if (S_Flag.M_WalkFlag)
+	{M_CharacterPosition.x += M_CharacterSpeed.x;}
+}
+void Action_Character::Goal()
+{
+	if (P_Collision->DecisionAndDecisionCollision(ACTION_COLLISION_CHARACTER, ACTION_COLLISION_GOAL))
+	{P_Action->Create(SECOND);}
 }
 
 void Action_Character::WallCollision()

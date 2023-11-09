@@ -2,28 +2,30 @@
 #include "Action.h"
 #include "Action_Stage.h"
 #include "DimensionCollision.h"
-bool Action_Stage::Start()
+Action_Stage::Action_Stage()
+{
+	M_BackGroundTexture.Init("Assets/Sprite/Action/Sky.DDS", 1000.0f, 1000.0f, true);
+}
+bool Action_Stage::Start()	
 {
 	P_Collision = FindGO<DimensionCollision>("collision");
-	M_BackGroundTexture.Init("Assets/Sprite/Action/Sky.DDS", 1000.0f, 1000.0f, true);
+
 	MapSet();
 	return true;
 }
 void Action_Stage::Render(RenderContext& rc)
 {
 	M_BackGroundTexture.Draw(rc);
-	M_GoalFlagTexture.Draw(rc);
 	for (int X = 0; X < 10; X++)
 	{
 		for (int Y = 0; Y < 10; Y++)
 		{
 			if (M_StageTexture[X][Y].GetInitFlag())
-			{
-				M_StageTexture[X][Y].Draw(rc);
-			}
+			{M_StageTexture[X][Y].Draw(rc);}
 		}
 	}
 }
+
 bool Action_Stage::MapSet()
 {
 	M_FilePath = "Assets/Sprite/Action/StageTile.txt";
@@ -106,10 +108,10 @@ void Action_Stage::Wall(int X, int Y)
 }
 void Action_Stage::Goal(int X, int Y)
 {
-	M_GoalFlagTexture.Init("Assets/Sprite/Action/Goal.DDS", 100.0f, 100.0f, true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/Action/Goal.DDS", 100.0f, 100.0f, true);
 	M_StagePosition.x = -450.0f + (X * 100.0f);
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
-	M_GoalFlagTexture.SetPosition(M_StagePosition);
-	M_GoalFlagTexture.Update();
+	M_StageTexture[X][Y].SetPosition(M_StagePosition);
+	M_StageTexture[X][Y].Update();
 	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_GOAL, ACTION_TAG_GOAL);
 }

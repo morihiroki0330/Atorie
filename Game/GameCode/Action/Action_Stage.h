@@ -2,6 +2,7 @@
 class Action_Stage : public IGameObject
 {
 public:
+	Action_Stage();
 	bool Start();
 	void Render(RenderContext& rc);
 
@@ -12,16 +13,17 @@ public:
 private:
 	SpriteRender M_StageTexture[10][10];
 	SpriteRender M_BackGroundTexture;
-	SpriteRender M_GoalFlagTexture;
 
-	Vector3 M_StagePosition;
+	Vector3 M_StagePosition = { 0.0f,0.0f,0.0f };
 
 	DimensionCollision* P_Collision = nullptr;
 
 	const char* M_FilePath = nullptr;
+
 	char M_Value[256];
-	int X = 99;
-	int Y = 99;
+
+	int X          = 99;
+	int Y          = 99;
 	int GroundType = 99;
 };
 

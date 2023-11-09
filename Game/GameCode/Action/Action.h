@@ -6,12 +6,12 @@ class Action_Stage;
 class Action_WindowFrame;
 struct ActionClass
 {
-	Action_GameTitle* P_GameTitle;
-	Action_GameResult* P_GameResult;
-	Action_Character* P_Character;
-	Action_Stage* P_Stage;
-	Action_WindowFrame* P_WindowFrame;
-	DimensionCollision* P_Collision;
+	Action_GameTitle* P_GameTitle     = nullptr;
+	Action_GameResult* P_GameResult   = nullptr;
+	Action_Character* P_Character     = nullptr;
+	Action_Stage* P_Stage             = nullptr;
+	Action_WindowFrame* P_WindowFrame = nullptr;
+	DimensionCollision* P_Collision   = nullptr;
 };
 enum 
 {
@@ -39,13 +39,17 @@ class Action : public IGameObject
 public:
 	Action();
 	~Action();
+
 	void Create(int Number);
+
 	float GetGravity()
 	{return M_Gravity;}
 private:
 	ActionClass S_Action;
-	SpriteRender M_BackTexture;
+
 	int M_Number = 0;
+
 	float M_Gravity = 10.0f;
+
 };
 
