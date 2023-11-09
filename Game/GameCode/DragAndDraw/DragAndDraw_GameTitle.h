@@ -15,7 +15,7 @@ private:
 	Vector3 M_GameTitleButtonPosition = { 0.0f,-150.0f,0.0f };
 
 	DimensionCollision* P_Collision = nullptr;
-	DragAndDraw* P_DragAndDraw = nullptr;
-	Mouse* P_Mouse = nullptr;
+	DragAndDraw* P_DragAndDraw      = nullptr;
+	Mouse* P_Mouse                  = nullptr;
 };
 

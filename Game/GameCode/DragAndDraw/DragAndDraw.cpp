@@ -29,6 +29,7 @@ void DragAndDraw::Update()
 {
 	S_DragAndDraw.P_Collision->DecisionSetPosition(S_DragAndDraw.P_Mouse->GetMousePosition().x, S_DragAndDraw.P_Mouse->GetMousePosition().y, DAD_COLLISION_CURSOR);
 }
+
 void DragAndDraw::Create(int Number)
 {
 	switch (Number)
@@ -42,6 +43,31 @@ void DragAndDraw::Create(int Number)
 		DeleteGO(S_DragAndDraw.P_Stage);
 		DeleteGO(S_DragAndDraw.P_Box);
 		S_DragAndDraw.P_GameResult = NewGO<DragAndDraw_GameResult>(0, "dad_gameresult");
+		break;
+	}
+}
+
+void DragAndDraw::SetFlag(int Number)
+{
+	switch (Number)
+	{
+	case DAD_FLAG_Goal:
+		M_GoalFlag = true;
+		break;
+	case DAD_FLAG_Over:
+		M_OverFlag = true;
+		break;
+	}
+}
+bool DragAndDraw::GetFlag(int Number)
+{
+	switch (Number)
+	{
+	case DAD_FLAG_Goal:
+		return M_GoalFlag;
+		break;
+	case DAD_FLAG_Over:
+		return M_OverFlag;
 		break;
 	}
 }

@@ -2,10 +2,13 @@
 #include "DragAndDraw.h"
 #include "DragAndDraw_Stage.h"
 #include "DimensionCollision.h"
+DragAndDraw_Stage::DragAndDraw_Stage()
+{
+	M_BackGroundTexture.Init("Assets/Sprite/DragAndDraw/Sky.DDS", 1920.0f, 1080.0f, true);
+}
 bool DragAndDraw_Stage::Start()
 {
 	P_Collision = FindGO<DimensionCollision>("collision");
-	M_BackGroundTexture.Init("Assets/Sprite/DragAndDraw/Sky.DDS", 1920.0f, 1080.0f, true);
 	MapSet();
 	return true;
 }
@@ -17,21 +20,18 @@ void DragAndDraw_Stage::Render(RenderContext& rc)
 		for (int Y = 0; Y < 9; Y++)
 		{
 			if (M_StageTexture[X][Y].GetInitFlag())
-			{
-				M_StageTexture[X][Y].Draw(rc);
-			}
+			{M_StageTexture[X][Y].Draw(rc);}
 		}
 	}
 }
+
 bool DragAndDraw_Stage::MapSet()
 {
 	M_FilePath = "Assets/Sprite/DragAndDraw/StageTile.txt";
 	FILE* M_FilePointer = nullptr;
 	fopen_s(&M_FilePointer, M_FilePath, "r");
 	if (M_FilePointer == NULL)
-	{
-		return 0;
-	}
+	{return 0;}
 
 	while (fgets(M_Value, 3, M_FilePointer) != NULL)
 	{
@@ -89,7 +89,6 @@ bool DragAndDraw_Stage::MapSet()
 	fclose(M_FilePointer);
 	return true;
 }
-
 void DragAndDraw_Stage::Ground(int X, int Y)
 {
 	M_StageTexture[X][Y].Init("Assets/Sprite/DragAndDraw/Ground.DDS", 120.0f, 120.0f, true);

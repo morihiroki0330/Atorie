@@ -15,10 +15,12 @@ public:
 	void Over();
 private:
 	SpriteRender M_BoxTexture;
-	Vector3 M_BoxPosition ={-725.0f,0.0f,0.0f};
-	DimensionCollision* P_Collision;
-	DragAndDraw* P_DragAndDraw;
-	Mouse* P_Mouse;
+
+	Vector3 M_BoxPosition = { -725.0f,0.0f,0.0f };
+
+	DimensionCollision* P_Collision = nullptr;
+	DragAndDraw* P_DragAndDraw      = nullptr;
+	Mouse* P_Mouse                  = nullptr;
 	
 	bool M_FallFlag = false;
 };

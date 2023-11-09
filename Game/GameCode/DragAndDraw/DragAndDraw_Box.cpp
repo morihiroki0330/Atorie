@@ -60,7 +60,7 @@ void DragAndDraw_Box::Goal()
 {
 	if (P_Collision->DecisionAndDecisionCollision(DAD_COLLISION_BOX, DAD_COLLISION_GOAL))
 	{
-		P_DragAndDraw->Goal();
+		P_DragAndDraw->SetFlag(DAD_FLAG_Goal);
 		P_DragAndDraw->Create(SECOND);
 	}
 }
@@ -68,7 +68,7 @@ void DragAndDraw_Box::Over()
 {
 	if (P_Collision->DecisionAndDecisionsCollision(DAD_COLLISION_BOX, DAD_TAG_ERRORBOX))
 	{
-		P_DragAndDraw->Over();
+		P_DragAndDraw->SetFlag(DAD_FLAG_Over);
 		P_DragAndDraw->Create(SECOND);
 	}
 }
