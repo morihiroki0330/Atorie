@@ -1,8 +1,8 @@
 #pragma once
-class Action_Stage : public IGameObject
+class LivblockAdventure_Stage : public IGameObject
 {
 public:
-	Action_Stage();
+	LivblockAdventure_Stage();
 	bool Start();
 	void Render(RenderContext& rc);
 

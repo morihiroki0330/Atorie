@@ -1,19 +1,19 @@
 #include "stdafx.h"
-#include "Action.h"
-#include "Action_Stage.h"
+#include "LivblockAdventure.h"
+#include "LivblockAdventure_Stage.h"
 #include "DimensionCollision.h"
-Action_Stage::Action_Stage()
+LivblockAdventure_Stage::LivblockAdventure_Stage()
 {
-	M_BackGroundTexture.Init("Assets/Sprite/Action/Sky.DDS", 1000.0f, 1000.0f, true);
+	M_BackGroundTexture.Init("Assets/Sprite/LivblockAdventure/Sky.DDS", 1000.0f, 1000.0f, true);
 }
-bool Action_Stage::Start()	
+bool LivblockAdventure_Stage::Start()	
 {
 	P_Collision = FindGO<DimensionCollision>("collision");
 
 	MapSet();
 	return true;
 }
-void Action_Stage::Render(RenderContext& rc)
+void LivblockAdventure_Stage::Render(RenderContext& rc)
 {
 	M_BackGroundTexture.Draw(rc);
 	for (int X = 0; X < 10; X++)
@@ -26,9 +26,9 @@ void Action_Stage::Render(RenderContext& rc)
 	}
 }
 
-bool Action_Stage::MapSet()
+bool LivblockAdventure_Stage::MapSet()
 {
-	M_FilePath = "Assets/Sprite/Action/StageTile.txt";
+	M_FilePath = "Assets/Sprite/LivblockAdventure/StageTile.txt";
 	FILE* M_FilePointer = nullptr;
 	fopen_s(&M_FilePointer, M_FilePath, "r");
 	if (M_FilePointer == NULL)
@@ -66,13 +66,13 @@ bool Action_Stage::MapSet()
 							GroundType = Count;
 							switch (GroundType)
 							{
-							case ACTION_MAP_GROUND:
+							case LIVBLOCK_MAP_GROUND:
 								Ground(X, Y);
 								break;
-							case ACTION_MAP_WALL:
+							case LIVBLOCK_MAP_WALL:
 								Wall(X, Y);
 								break;
-							case ACTION_MAP_GOAL:
+							case LIVBLOCK_MAP_GOAL:
 								Goal(X, Y);
 								break;
 							default:
@@ -88,30 +88,30 @@ bool Action_Stage::MapSet()
 	return true;
 }
 
-void Action_Stage::Ground(int X, int Y)
+void LivblockAdventure_Stage::Ground(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/Action/Ground.DDS", 100.0f, 100.0f,true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/LivblockAdventure/Ground.DDS", 100.0f, 100.0f,true);
 	M_StagePosition.x = -450.0f + (X * 100.0f);
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_GROUND, ACTION_TAG_GROUND);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LIVBLOCK_COLLISION_GROUND, LIVBLOCK_TAG_GROUND);
 }
-void Action_Stage::Wall(int X, int Y)
+void LivblockAdventure_Stage::Wall(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/Action/Wall.DDS", 100.0f, 100.0f,true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/LivblockAdventure/Wall.DDS", 100.0f, 100.0f,true);
 	M_StagePosition.x = -450.0f + (X * 100.0f);
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_WALL, ACTION_TAG_WALL);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LIVBLOCK_COLLISION_WALL, LIVBLOCK_TAG_WALL);
 }
-void Action_Stage::Goal(int X, int Y)
+void LivblockAdventure_Stage::Goal(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/Action/Goal.DDS", 100.0f, 100.0f, true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/LivblockAdventure/Goal.DDS", 100.0f, 100.0f, true);
 	M_StagePosition.x = -450.0f + (X * 100.0f);
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, ACTION_COLLISION_GOAL, ACTION_TAG_GOAL);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LIVBLOCK_COLLISION_GOAL, LIVBLOCK_TAG_GOAL);
 }

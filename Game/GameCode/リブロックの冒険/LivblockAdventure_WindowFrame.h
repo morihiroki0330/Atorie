@@ -1,8 +1,8 @@
 #pragma once
-class Action_WindowFrame : public IGameObject
+class LivblockAdventure_WindowFrame : public IGameObject
 {
 public:
-	Action_WindowFrame();
+	LivblockAdventure_WindowFrame();
 	void Render(RenderContext& rc);
 private:
 	SpriteRender M_FrameTexture;

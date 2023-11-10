@@ -2,13 +2,13 @@
 class Mouse;
 class Controller;
 class Dungeon;
-class Action;
+class LivblockAdventure;
 class DragAndDraw;
 class TwoCamera;
 struct GameClass
 {
 	Dungeon* P_Dungeon         = nullptr;
-	Action* P_Action           = nullptr;
+	LivblockAdventure* P_Livblock = nullptr;
 	DragAndDraw* P_DragAndDraw = nullptr;
 	TwoCamera* P_TwoCamera     = nullptr;
 };
