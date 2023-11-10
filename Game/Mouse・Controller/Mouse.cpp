@@ -35,14 +35,19 @@ void Mouse::MouseMove()
 	M_Delta.x = M_Converted.x - M_PrevMouse.x;
 	M_Delta.y = M_Converted.y - M_PrevMouse.y;
 
-	M_PrevMouse.x = M_Converted.x;
-	M_PrevMouse.y = M_Converted.y;
+	M_DeltaTime = g_gameTime->GetFrameDeltaTime();
+
+	M_DeltaSpeed.x = M_Delta.x / M_DeltaTime;
+	M_DeltaSpeed.y = M_Delta.y / M_DeltaTime;
 
 	if (S_Flag.M_LeftButtonFlag)
 	{
 		M_MouseCousorMoveSpeed.x = M_Delta.x;
 		M_MouseCousorMoveSpeed.y = M_Delta.y * -1.0f;
 	}
+	
+	M_PrevMouse.x = M_Converted.x;
+	M_PrevMouse.y = M_Converted.y;
 }
 void Mouse::MouseSet()
 {
@@ -82,4 +87,9 @@ void Mouse::MouseButton()
 	{S_Flag.M_RightButtonFlag = true;}
 	else
 	{S_Flag.M_RightButtonFlag = false;}
+
+	if (abs(M_DeltaSpeed.x) > flickSpeedThreshold || abs(M_DeltaSpeed.y) > flickSpeedThreshold)
+	{S_Flag.M_FlickFlag = true;}
+	else 
+	{S_Flag.M_FlickFlag = false;}
 }

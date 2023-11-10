@@ -3,6 +3,7 @@ struct MouseFlag
 {
 	bool M_LeftButtonFlag = false;
 	bool M_RightButtonFlag = false;
+	bool M_FlickFlag = false;
 };
 class Mouse : public IGameObject
 {
@@ -27,11 +28,17 @@ public:
 	Vector3 GetMouseMoveSpeed()
 	{return M_MouseCousorMoveSpeed;}
 
+	Vector2 GetDelta()
+	{return M_Delta;}
+
 	bool GetLeftButton()
 	{return S_Flag.M_LeftButtonFlag;}
 
 	bool GetRightButton()
 	{return S_Flag.M_RightButtonFlag;}
+
+	bool GetFlick()
+	{return S_Flag.M_FlickFlag;}
 private:
 	SpriteRender M_MouseCursorTexture;
 	Vector3 M_MouseCousorPosition;
@@ -44,8 +51,12 @@ private:
 	Vector2 M_Window = { 1920.0f,1080.0f };//正規ウィンドウの縦横
 	Vector2 M_PrevMouse = { 0.0f,0.0f };
 	Vector2 M_Delta = { 0.0f,0.0f };//マウスの移動量
+	Vector2 M_DeltaSpeed = { 0.0f,0.0f };//
 	Vector2 M_Converted = { 0.0f,0.0f };
 
 	MouseFlag S_Flag;
+
+	float M_DeltaTime = 0.0f;
+	float flickSpeedThreshold = 6000.0f;
 };
 
