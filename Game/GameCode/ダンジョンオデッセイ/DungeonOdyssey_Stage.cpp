@@ -1,6 +1,7 @@
 #include "stdafx.h"
-#include "Dungeon_Stage.h"
-Dungeon_Stage::Dungeon_Stage()
+#include "DungeonOdyssey.h"
+#include "DungeonOdyssey_Stage.h"
+DungeonOdyssey_Stage::DungeonOdyssey_Stage()
 {
 	M_Square.x = 16;
 	M_Square.y = 9;
@@ -23,7 +24,7 @@ Dungeon_Stage::Dungeon_Stage()
 	M_Goal.x = M_Square.x - 2;
 	M_Goal.y = M_Square.y - 2;
 }
-bool Dungeon_Stage::Start()
+bool DungeonOdyssey_Stage::Start()
 {
 	for (int X = 0; X < M_Square.x; X++)
 	{
@@ -36,7 +37,7 @@ bool Dungeon_Stage::Start()
 	FirstMapDataSet();
 	return true;
 }
-void Dungeon_Stage::Update()
+void DungeonOdyssey_Stage::Update()
 {
 	for (int X = 0; X < M_Square.x; X++)
 	{
@@ -47,7 +48,7 @@ void Dungeon_Stage::Update()
 		}
 	}
 }
-void Dungeon_Stage::Render(RenderContext& rc)
+void DungeonOdyssey_Stage::Render(RenderContext& rc)
 {
 	for (int X = 0; X < M_Square.x; X++)
 	{
@@ -58,7 +59,7 @@ void Dungeon_Stage::Render(RenderContext& rc)
 	}
 }
 
-bool Dungeon_Stage::WallCheck(int X, int Y, int Direction)
+bool DungeonOdyssey_Stage::WallCheck(int X, int Y, int Direction)
 {
 	switch (Direction)
 	{
@@ -96,7 +97,7 @@ bool Dungeon_Stage::WallCheck(int X, int Y, int Direction)
 		break;
 	}
 }
-bool Dungeon_Stage::GroundCheck(int X, int Y, int Direction)
+bool DungeonOdyssey_Stage::GroundCheck(int X, int Y, int Direction)
 {
 	switch (Direction)
 	{
@@ -135,7 +136,7 @@ bool Dungeon_Stage::GroundCheck(int X, int Y, int Direction)
 	}
 }
 
-void Dungeon_Stage::FirstMapDataSet()
+void DungeonOdyssey_Stage::FirstMapDataSet()
 {
 	for (int X = 0; X < M_Square.x; X++)
 	{
@@ -157,7 +158,7 @@ void Dungeon_Stage::FirstMapDataSet()
 	M_MapData[M_Goal.x][M_Goal.y] = DUNGEON_GROUNDFORMAL;
 	SecondMapDataSet();
 }
-void Dungeon_Stage::SecondMapDataSet()
+void DungeonOdyssey_Stage::SecondMapDataSet()
 {
 	srand((unsigned int)time(NULL));
 
@@ -213,7 +214,7 @@ void Dungeon_Stage::SecondMapDataSet()
 
 	ThirdMapDataSet();
 }
-void Dungeon_Stage::ThirdMapDataSet()
+void DungeonOdyssey_Stage::ThirdMapDataSet()
 {
 	for (int X = 0; X < M_Square.x; X++)
 	{
@@ -221,15 +222,15 @@ void Dungeon_Stage::ThirdMapDataSet()
 		{
 			if (M_MapData[X][Y] == DUNGEON_WALLFIXED || M_MapData[X][Y] == DUNGEON_WALL || M_MapData[X][Y] == DUNGEON_WALLFORMAL)
 			{
-				M_MapTexture[X][Y].Init("Assets/Sprite/Dungeon/Wall.DDS", M_SquareWidth.x, M_SquareWidth.y);
+				M_MapTexture[X][Y].Init("Assets/Sprite/DungeonOdyssey/Wall.DDS", M_SquareWidth.x, M_SquareWidth.y);
 			}else {
 				if (M_MapData[X][Y] == DUNGEON_GROUND)
 				{
-					M_MapTexture[X][Y].Init("Assets/Sprite/Dungeon/Ground.DDS", M_SquareWidth.x, M_SquareWidth.y);
+					M_MapTexture[X][Y].Init("Assets/Sprite/DungeonOdyssey/Ground.DDS", M_SquareWidth.x, M_SquareWidth.y);
 				}else {
 					if (M_MapData[X][Y] == DUNGEON_GROUNDFORMAL)
 					{
-						M_MapTexture[X][Y].Init("Assets/Sprite/Dungeon/Goal.DDS", M_SquareWidth.x, M_SquareWidth.y);
+						M_MapTexture[X][Y].Init("Assets/Sprite/DungeonOdyssey/Goal.DDS", M_SquareWidth.x, M_SquareWidth.y);
 					}
 				}
 			}
@@ -237,7 +238,7 @@ void Dungeon_Stage::ThirdMapDataSet()
 	}
 	ForthMapDataSet();
 }
-void Dungeon_Stage::ForthMapDataSet()
+void DungeonOdyssey_Stage::ForthMapDataSet()
 {
 	for (int X = 0; X < M_Square.x; X++)
 	{
@@ -252,7 +253,7 @@ void Dungeon_Stage::ForthMapDataSet()
 	}
 }
 
-int Dungeon_Stage::GetNumber(int Number)
+int DungeonOdyssey_Stage::GetNumber(int Number)
 {
 	switch (Number)
 	{
@@ -288,7 +289,7 @@ int Dungeon_Stage::GetNumber(int Number)
 		break;
 	}
 }
-int Dungeon_Stage::GetMapData(int X, int Y, int Number)
+int DungeonOdyssey_Stage::GetMapData(int X, int Y, int Number)
 {
 	switch (Number)
 	{

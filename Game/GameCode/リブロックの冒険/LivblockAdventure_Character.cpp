@@ -11,8 +11,8 @@ LivblockAdventure_Character::LivblockAdventure_Character()
 }
 bool LivblockAdventure_Character::Start()
 {
-	P_Livblock = FindGO<LivblockAdventure>("livblock");
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Livblock   = FindGO<LivblockAdventure>("livblock");
+	P_Collision  = FindGO<DimensionCollision>("collision");
 	P_Controller = FindGO<Controller>("controller");
 	P_Collision->DecisionDataSet(90.0f, 90.0f, M_CharacterPosition.x, M_CharacterPosition.y, LIVBLOCK_COLLISION_CHARACTER, LIVBLOCK_TAG_NON);
 	return true;
@@ -20,7 +20,6 @@ bool LivblockAdventure_Character::Start()
 void LivblockAdventure_Character::Update()
 {
 	Move();
-
 	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, LIVBLOCK_COLLISION_CHARACTER);
 	M_CharacterTexture.SetPosition(M_CharacterPosition);
 	M_CharacterTexture.Update();
