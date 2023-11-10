@@ -63,32 +63,32 @@ bool DungeonOdyssey_Stage::WallCheck(int X, int Y, int Direction)
 {
 	switch (Direction)
 	{
-	case DUNGEON_DIRECTION_UP:
-		if (M_MapData[X][Y - 1] == DUNGEON_WALLFORMAL || M_MapData[X][Y - 1] == DUNGEON_WALLFIXED)
+	case DO_DIRECTION_UP:
+		if (M_MapData[X][Y - 1] == DO_WALLFORMAL || M_MapData[X][Y - 1] == DO_WALLFIXED)
 		{
 			return true;
 		}else {
 			return false;
 		}
 		break;
-	case DUNGEON_DIRECTION_RIGHT:
-		if (M_MapData[X + 1][Y] == DUNGEON_WALLFORMAL || M_MapData[X + 1][Y] == DUNGEON_WALLFIXED)
+	case DO_DIRECTION_RIGHT:
+		if (M_MapData[X + 1][Y] == DO_WALLFORMAL || M_MapData[X + 1][Y] == DO_WALLFIXED)
 		{
 			return true;
 		}else {
 			return false;
 		}
 		break;
-	case DUNGEON_DIRECTION_DOWN:
-		if (M_MapData[X][Y + 1] == DUNGEON_WALLFORMAL || M_MapData[X][Y + 1] == DUNGEON_WALLFIXED)
+	case DO_DIRECTION_DOWN:
+		if (M_MapData[X][Y + 1] == DO_WALLFORMAL || M_MapData[X][Y + 1] == DO_WALLFIXED)
 		{
 			return true;
 		}else {
 			return false;
 		}
 		break;
-	case DUNGEON_DIRECTION_LEFT:
-		if (M_MapData[X - 1][Y] == DUNGEON_WALLFORMAL || M_MapData[X - 1][Y] == DUNGEON_WALLFIXED)
+	case DO_DIRECTION_LEFT:
+		if (M_MapData[X - 1][Y] == DO_WALLFORMAL || M_MapData[X - 1][Y] == DO_WALLFIXED)
 		{
 			return true;
 		}else {
@@ -101,32 +101,32 @@ bool DungeonOdyssey_Stage::GroundCheck(int X, int Y, int Direction)
 {
 	switch (Direction)
 	{
-	case DUNGEON_DIRECTION_UP:
-		if (M_MapData[X][Y - 1] == DUNGEON_GROUNDFORMAL)
+	case DO_DIRECTION_UP:
+		if (M_MapData[X][Y - 1] == DO_GROUNDFORMAL)
 		{
 			return true;
 		}else {
 			return false;
 		}
 		break;
-	case DUNGEON_DIRECTION_RIGHT:
-		if (M_MapData[X + 1][Y] == DUNGEON_GROUNDFORMAL)
+	case DO_DIRECTION_RIGHT:
+		if (M_MapData[X + 1][Y] == DO_GROUNDFORMAL)
 		{
 			return true;
 		}else {
 			return false;
 		}
 		break;
-	case DUNGEON_DIRECTION_DOWN:
-		if (M_MapData[X][Y + 1] == DUNGEON_GROUNDFORMAL)
+	case DO_DIRECTION_DOWN:
+		if (M_MapData[X][Y + 1] == DO_GROUNDFORMAL)
 		{
 			return true;
 		}else {
 			return false;
 		}
 		break;
-	case DUNGEON_DIRECTION_LEFT:
-		if (M_MapData[X - 1][Y] == DUNGEON_GROUNDFORMAL)
+	case DO_DIRECTION_LEFT:
+		if (M_MapData[X - 1][Y] == DO_GROUNDFORMAL)
 		{
 			return true;
 		}else {
@@ -146,16 +146,16 @@ void DungeonOdyssey_Stage::FirstMapDataSet()
 			{
 				if (X % 2 == 0 && Y % 2 == 0)
 				{
-					M_MapData[X][Y] = DUNGEON_WALL;
+					M_MapData[X][Y] = DO_WALL;
 				}else {
-					M_MapData[X][Y] = DUNGEON_GROUND;
+					M_MapData[X][Y] = DO_GROUND;
 				}
 			}else {
-				M_MapData[X][Y] = DUNGEON_WALLFIXED;
+				M_MapData[X][Y] = DO_WALLFIXED;
 			}
 		}
 	}
-	M_MapData[M_Goal.x][M_Goal.y] = DUNGEON_GROUNDFORMAL;
+	M_MapData[M_Goal.x][M_Goal.y] = DO_GROUNDFORMAL;
 	SecondMapDataSet();
 }
 void DungeonOdyssey_Stage::SecondMapDataSet()
@@ -166,7 +166,7 @@ void DungeonOdyssey_Stage::SecondMapDataSet()
 	{
 		for (int Y = 1; Y < M_Square.y - 1; Y++)
 		{
-			if (M_MapData[X][Y] == DUNGEON_WALL)
+			if (M_MapData[X][Y] == DO_WALL)
 			{
 				M_RandCheck = false;
 				do
@@ -174,35 +174,35 @@ void DungeonOdyssey_Stage::SecondMapDataSet()
 					M_RandDirection = rand() % 4;
 					switch (M_RandDirection)
 					{
-					case DUNGEON_DIRECTION_UP:
+					case DO_DIRECTION_UP:
 						if (!WallCheck(X, Y, M_RandDirection))
 						{
 							if (!GroundCheck(X, Y, M_RandDirection))
-							{M_MapData[X][Y - 1] = DUNGEON_WALLFORMAL;}
+							{M_MapData[X][Y - 1] = DO_WALLFORMAL;}
 							M_RandCheck = true;
 						}
 						break;
-					case DUNGEON_DIRECTION_RIGHT:
+					case DO_DIRECTION_RIGHT:
 						if (!WallCheck(X, Y, M_RandDirection))
 						{
 							if (!GroundCheck(X, Y, M_RandDirection))
-							{M_MapData[X + 1][Y] = DUNGEON_WALLFORMAL;}
+							{M_MapData[X + 1][Y] = DO_WALLFORMAL;}
 							M_RandCheck = true;
 						}
 						break;
-					case DUNGEON_DIRECTION_DOWN:
+					case DO_DIRECTION_DOWN:
 						if (!WallCheck(X, Y, M_RandDirection))
 						{
 							if (!GroundCheck(X, Y, M_RandDirection))
-							{M_MapData[X][Y + 1] = DUNGEON_WALLFORMAL;}
+							{M_MapData[X][Y + 1] = DO_WALLFORMAL;}
 							M_RandCheck = true;
 						}
 						break;
-					case DUNGEON_DIRECTION_LEFT:
+					case DO_DIRECTION_LEFT:
 						if (!WallCheck(X, Y, M_RandDirection))
 						{
 							if (!GroundCheck(X, Y, M_RandDirection))
-							{M_MapData[X - 1][Y] = DUNGEON_WALLFORMAL;}
+							{M_MapData[X - 1][Y] = DO_WALLFORMAL;}
 							M_RandCheck = true;
 						}
 						break;
@@ -220,15 +220,15 @@ void DungeonOdyssey_Stage::ThirdMapDataSet()
 	{
 		for (int Y = 0; Y < M_Square.y; Y++)
 		{
-			if (M_MapData[X][Y] == DUNGEON_WALLFIXED || M_MapData[X][Y] == DUNGEON_WALL || M_MapData[X][Y] == DUNGEON_WALLFORMAL)
+			if (M_MapData[X][Y] == DO_WALLFIXED || M_MapData[X][Y] == DO_WALL || M_MapData[X][Y] == DO_WALLFORMAL)
 			{
 				M_MapTexture[X][Y].Init("Assets/Sprite/DungeonOdyssey/Wall.DDS", M_SquareWidth.x, M_SquareWidth.y);
 			}else {
-				if (M_MapData[X][Y] == DUNGEON_GROUND)
+				if (M_MapData[X][Y] == DO_GROUND)
 				{
 					M_MapTexture[X][Y].Init("Assets/Sprite/DungeonOdyssey/Ground.DDS", M_SquareWidth.x, M_SquareWidth.y);
 				}else {
-					if (M_MapData[X][Y] == DUNGEON_GROUNDFORMAL)
+					if (M_MapData[X][Y] == DO_GROUNDFORMAL)
 					{
 						M_MapTexture[X][Y].Init("Assets/Sprite/DungeonOdyssey/Goal.DDS", M_SquareWidth.x, M_SquareWidth.y);
 					}
@@ -244,11 +244,11 @@ void DungeonOdyssey_Stage::ForthMapDataSet()
 	{
 		for (int Y = 0; Y < M_Square.y; Y++)
 		{
-			if (M_MapData[X][Y] == DUNGEON_WALLFORMAL)
-			{M_MapData[X][Y] = DUNGEON_WALL;}
+			if (M_MapData[X][Y] == DO_WALLFORMAL)
+			{M_MapData[X][Y] = DO_WALL;}
 
-			if (M_MapData[X][Y] == DUNGEON_GROUNDFORMAL)
-			{M_MapData[X][Y] = DUNGEON_GROUND;}
+			if (M_MapData[X][Y] == DO_GROUNDFORMAL)
+			{M_MapData[X][Y] = DO_GROUND;}
 		}
 	}
 }
@@ -257,34 +257,34 @@ int DungeonOdyssey_Stage::GetNumber(int Number)
 {
 	switch (Number)
 	{
-	case DUNGEON_NUMBER_SquareX:
+	case DO_NUMBER_SquareX:
 		return M_Square.x;
 		break;
-	case DUNGEON_NUMBER_SquareY:
+	case DO_NUMBER_SquareY:
 		return M_Square.y;
 		break;
-	case DUNGEON_NUMBER_StageUpperLeftX:
+	case DO_NUMBER_StageUpperLeftX:
 		return M_StageUpperLeft.x;
 		break;
-	case DUNGEON_NUMBER_StageUpperLeftY:
+	case DO_NUMBER_StageUpperLeftY:
 		return M_StageUpperLeft.y;
 		break;
-	case DUNGEON_NUMBER_StageLowerRightX:
+	case DO_NUMBER_StageLowerRightX:
 		return M_StageLowerRight.x;
 		break;
-	case DUNGEON_NUMBER_StageLowerRightY:
+	case DO_NUMBER_StageLowerRightY:
 		return M_StageLowerRight.y;
 		break;
-	case DUNGEON_NUMBER_StartX:
+	case DO_NUMBER_StartX:
 		return M_Start.x;
 		break;
-	case DUNGEON_NUMBER_StartY:
+	case DO_NUMBER_StartY:
 		return M_Start.y;
 		break;
-	case DUNGEON_NUMBER_GoalX:
+	case DO_NUMBER_GoalX:
 		return M_Goal.x;
 		break;
-	case DUNGEON_NUMBER_GoalY:
+	case DO_NUMBER_GoalY:
 		return M_Goal.y;
 		break;
 	}
@@ -293,16 +293,16 @@ int DungeonOdyssey_Stage::GetMapData(int X, int Y, int Number)
 {
 	switch (Number)
 	{
-	case DUNGEON_NUMBER_MapDataUp:
+	case DO_NUMBER_MapDataUp:
 		return M_MapData[X][Y - 1];
 		break;
-	case DUNGEON_NUMBER_MapDataRight:
+	case DO_NUMBER_MapDataRight:
 		return M_MapData[X + 1][Y];
 		break;
-	case DUNGEON_NUMBER_MapDataDown:
+	case DO_NUMBER_MapDataDown:
 		return M_MapData[X][Y + 1];
 		break;
-	case DUNGEON_NUMBER_MapDataLeft:
+	case DO_NUMBER_MapDataLeft:
 		return M_MapData[X - 1][Y];
 		break;
 	}

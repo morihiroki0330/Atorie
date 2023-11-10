@@ -1,18 +1,18 @@
 #include "stdafx.h"
-#include "DragAndDraw.h"
-#include "DragAndDraw_Stage.h"
+#include "PuzzleBoxPath.h"
+#include "PuzzleBoxPath_Stage.h"
 #include "DimensionCollision.h"
-DragAndDraw_Stage::DragAndDraw_Stage()
+PuzzleBoxPath_Stage::PuzzleBoxPath_Stage()
 {
-	M_BackGroundTexture.Init("Assets/Sprite/DragAndDraw/Sky.DDS", 1920.0f, 1080.0f, true);
+	M_BackGroundTexture.Init("Assets/Sprite/PuzzleBoxPath/Sky.DDS", 1920.0f, 1080.0f, true);
 }
-bool DragAndDraw_Stage::Start()
+bool PuzzleBoxPath_Stage::Start()
 {
 	P_Collision = FindGO<DimensionCollision>("collision");
 	MapSet();
 	return true;
 }
-void DragAndDraw_Stage::Render(RenderContext& rc)
+void PuzzleBoxPath_Stage::Render(RenderContext& rc)
 {
 	M_BackGroundTexture.Draw(rc);
 	for (int X = 0; X < 16; X++)
@@ -25,9 +25,9 @@ void DragAndDraw_Stage::Render(RenderContext& rc)
 	}
 }
 
-bool DragAndDraw_Stage::MapSet()
+bool PuzzleBoxPath_Stage::MapSet()
 {
-	M_FilePath = "Assets/Sprite/DragAndDraw/StageTile.txt";
+	M_FilePath = "Assets/Sprite/PuzzleBoxPath/StageTile.txt";
 	FILE* M_FilePointer = nullptr;
 	fopen_s(&M_FilePointer, M_FilePath, "r");
 	if (M_FilePointer == NULL)
@@ -65,16 +65,16 @@ bool DragAndDraw_Stage::MapSet()
 							GroundType = Count;
 							switch (GroundType)
 							{
-							case DAD_MAP_GROUND:
+							case PBP_MAP_GROUND:
 								Ground(X, Y);
 								break;
-							case DAD_MAP_GOAL:
+							case PBP_MAP_GOAL:
 								Goal(X, Y);
 								break;
-							case DAD_MAP_ERRORBOX:
+							case PBP_MAP_ERRORBOX:
 								ErrorBox(X, Y);
 								break;
-							case DAD_MAP_DRAWERRORBOX:
+							case PBP_MAP_DRAWERRORBOX:
 								DrawErrorBox(X, Y);
 								break;
 							default:
@@ -89,39 +89,39 @@ bool DragAndDraw_Stage::MapSet()
 	fclose(M_FilePointer);
 	return true;
 }
-void DragAndDraw_Stage::Ground(int X, int Y)
+void PuzzleBoxPath_Stage::Ground(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/DragAndDraw/Ground.DDS", 120.0f, 120.0f, true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/PuzzleBoxPath/Ground.DDS", 120.0f, 120.0f, true);
 	M_StagePosition.x = -900.0f + (X * 120.0f);
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, DAD_COLLISION_GROUND, DAD_TAG_GROUND);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, PBP_COLLISION_GROUND, PBP_TAG_GROUND);
 }
-void DragAndDraw_Stage::Goal(int X, int Y)
+void PuzzleBoxPath_Stage::Goal(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/DragAndDraw/Goal.DDS", 120.0f, 120.0f, true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/PuzzleBoxPath/Goal.DDS", 120.0f, 120.0f, true);
 	M_StagePosition.x = -900.0f + (X * 120.0f);
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, DAD_COLLISION_GOAL, DAD_TAG_GOAL);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, PBP_COLLISION_GOAL, PBP_TAG_GOAL);
 }
-void DragAndDraw_Stage::ErrorBox(int X, int Y)
+void PuzzleBoxPath_Stage::ErrorBox(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/DragAndDraw/ErrorBox.DDS", 120.0f, 120.0f, true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/PuzzleBoxPath/ErrorBox.DDS", 120.0f, 120.0f, true);
 	M_StagePosition.x = -900.0f + (X * 120.0f);
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, DAD_COLLISION_ERRORBOX, DAD_TAG_ERRORBOX);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, PBP_COLLISION_ERRORBOX, PBP_TAG_ERRORBOX);
 }
-void DragAndDraw_Stage::DrawErrorBox(int X, int Y)
+void PuzzleBoxPath_Stage::DrawErrorBox(int X, int Y)
 {
-	M_StageTexture[X][Y].Init("Assets/Sprite/DragAndDraw/DrawErrorBox.DDS", 120.0f, 120.0f, true);
+	M_StageTexture[X][Y].Init("Assets/Sprite/PuzzleBoxPath/DrawErrorBox.DDS", 120.0f, 120.0f, true);
 	M_StagePosition.x = -900.0f + (X * 120.0f);
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, DAD_COLLISION_DRAWERRORBOX, DAD_TAG_DRAWERRORBOX);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, PBP_COLLISION_DRAWERRORBOX, PBP_TAG_DRAWERRORBOX);
 }

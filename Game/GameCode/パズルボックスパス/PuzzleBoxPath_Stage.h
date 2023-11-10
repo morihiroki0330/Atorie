@@ -1,9 +1,9 @@
 #pragma once
-class DragAndDraw;
-class DragAndDraw_Stage : public IGameObject
+class PuzzleBoxPath;
+class PuzzleBoxPath_Stage : public IGameObject
 {
 public:
-	DragAndDraw_Stage();
+	PuzzleBoxPath_Stage();
 	bool Start();
 	void Render(RenderContext& rc);
 

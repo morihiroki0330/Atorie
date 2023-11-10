@@ -1,10 +1,10 @@
 #pragma once
-class DragAndDraw;
+class PuzzleBoxPath;
 class Mouse;
-class DragAndDraw_GameTitle : public IGameObject
+class PuzzleBoxPath_GameTitle : public IGameObject
 {
 public:
-	DragAndDraw_GameTitle();
+	PuzzleBoxPath_GameTitle();
 	bool Start();
 	void Update();
 	void Render(RenderContext& rc);
@@ -15,7 +15,7 @@ private:
 	Vector3 M_GameTitleButtonPosition = { 0.0f,-150.0f,0.0f };
 
 	DimensionCollision* P_Collision = nullptr;
-	DragAndDraw* P_DragAndDraw      = nullptr;
+	PuzzleBoxPath* P_Puzzle      = nullptr;
 	Mouse* P_Mouse                  = nullptr;
 };
 

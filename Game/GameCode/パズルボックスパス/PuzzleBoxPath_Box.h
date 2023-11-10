@@ -1,7 +1,7 @@
 #pragma once
-class DragAndDraw;
+class PuzzleBoxPath;
 class Mouse;
-class DragAndDraw_Box : public IGameObject
+class PuzzleBoxPath_Box : public IGameObject
 {
 public:
 	bool Start();
@@ -19,7 +19,7 @@ private:
 	Vector3 M_BoxPosition = { -725.0f,0.0f,0.0f };
 
 	DimensionCollision* P_Collision = nullptr;
-	DragAndDraw* P_DragAndDraw      = nullptr;
+	PuzzleBoxPath* P_Puzzle      = nullptr;
 	Mouse* P_Mouse                  = nullptr;
 	
 	bool M_FallFlag = false;

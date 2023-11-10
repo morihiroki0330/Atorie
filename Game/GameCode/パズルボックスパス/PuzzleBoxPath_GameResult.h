@@ -1,7 +1,7 @@
 #pragma once
-class DragAndDraw;
+class PuzzleBoxPath;
 class Mouse;
-class DragAndDraw_GameResult : public IGameObject
+class PuzzleBoxPath_GameResult : public IGameObject
 {
 public:
 	bool Start();
@@ -11,6 +11,6 @@ private:
 	SpriteRender M_GameResultTexture;
 
 	DimensionCollision* P_Collision = nullptr;
-	DragAndDraw* P_DragAndDraw      = nullptr;
+	PuzzleBoxPath* P_Puzzle      = nullptr;
 };
 

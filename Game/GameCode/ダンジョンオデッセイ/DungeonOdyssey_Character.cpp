@@ -12,8 +12,8 @@ bool DungeonOdyssey_Character::Start()
 	P_Stage   = FindGO<DungeonOdyssey_Stage>("stage");
 	P_Dungeon = FindGO<DungeonOdyssey>("dungeon");
 
-	M_PositionX         = P_Stage->GetNumber(DUNGEON_NUMBER_StartX);
-	M_PositionY         = P_Stage->GetNumber(DUNGEON_NUMBER_StartY);
+	M_PositionX         = P_Stage->GetNumber(DO_NUMBER_StartX);
+	M_PositionY         = P_Stage->GetNumber(DO_NUMBER_StartY);
 	M_CharacterPosition = P_Stage->GetMapPosition(M_PositionX,M_PositionY);
 	return true;
 }
@@ -33,22 +33,22 @@ void DungeonOdyssey_Character::Move()
 {
 	if (g_pad[0]->IsTrigger(enButtonUp))
 	{
-		if (P_Stage->GetMapData(M_PositionX,M_PositionY,DUNGEON_NUMBER_MapDataUp) == DUNGEON_GROUND)
+		if (P_Stage->GetMapData(M_PositionX,M_PositionY,DO_NUMBER_MapDataUp) == DO_GROUND)
 		{M_PositionY--;}
 	}else {
 		if (g_pad[0]->IsTrigger(enButtonDown))
 		{
-			if (P_Stage->GetMapData(M_PositionX,M_PositionY,DUNGEON_NUMBER_MapDataDown) == DUNGEON_GROUND)
+			if (P_Stage->GetMapData(M_PositionX,M_PositionY,DO_NUMBER_MapDataDown) == DO_GROUND)
 			{M_PositionY++;}
 		}else {
 			if (g_pad[0]->IsTrigger(enButtonRight))
 			{
-				if (P_Stage->GetMapData(M_PositionX,M_PositionY,DUNGEON_NUMBER_MapDataRight) == DUNGEON_GROUND)
+				if (P_Stage->GetMapData(M_PositionX,M_PositionY,DO_NUMBER_MapDataRight) == DO_GROUND)
 				{M_PositionX++;}
 			}else {
 				if (g_pad[0]->IsTrigger(enButtonLeft))
 				{
-					if (P_Stage->GetMapData(M_PositionX, M_PositionY, DUNGEON_NUMBER_MapDataLeft) == DUNGEON_GROUND)
+					if (P_Stage->GetMapData(M_PositionX, M_PositionY, DO_NUMBER_MapDataLeft) == DO_GROUND)
 					{M_PositionX--;}
 				}
 			}
@@ -58,6 +58,6 @@ void DungeonOdyssey_Character::Move()
 }
 void DungeonOdyssey_Character::Goal()
 {
-	if (M_PositionX == P_Stage->GetNumber(DUNGEON_NUMBER_GoalX) && M_PositionY == P_Stage->GetNumber(DUNGEON_NUMBER_GoalY))
+	if (M_PositionX == P_Stage->GetNumber(DO_NUMBER_GoalX) && M_PositionY == P_Stage->GetNumber(DO_NUMBER_GoalY))
 	{P_Dungeon->Create(SECOND);}
 }

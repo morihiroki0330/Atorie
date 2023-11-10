@@ -3,13 +3,13 @@ class Mouse;
 class Controller;
 class DungeonOdyssey;
 class LivblockAdventure;
-class DragAndDraw;
+class PuzzleBoxPath;
 class TwoCamera;
 struct GameClass
 {
-	DungeonOdyssey* P_Dungeon         = nullptr;
-	LivblockAdventure* P_Livblock = nullptr;
-	DragAndDraw* P_DragAndDraw = nullptr;
+	DungeonOdyssey* P_DO        = nullptr;
+	LivblockAdventure* P_LA = nullptr;
+	PuzzleBoxPath* P_PBP = nullptr;
 	TwoCamera* P_TwoCamera     = nullptr;
 };
 struct Operation

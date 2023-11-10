@@ -66,13 +66,13 @@ bool LivblockAdventure_Stage::MapSet()
 							GroundType = Count;
 							switch (GroundType)
 							{
-							case LIVBLOCK_MAP_GROUND:
+							case LA_MAP_GROUND:
 								Ground(X, Y);
 								break;
-							case LIVBLOCK_MAP_WALL:
+							case LA_MAP_WALL:
 								Wall(X, Y);
 								break;
-							case LIVBLOCK_MAP_GOAL:
+							case LA_MAP_GOAL:
 								Goal(X, Y);
 								break;
 							default:
@@ -95,7 +95,7 @@ void LivblockAdventure_Stage::Ground(int X, int Y)
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LIVBLOCK_COLLISION_GROUND, LIVBLOCK_TAG_GROUND);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LA_COLLISION_GROUND, LA_TAG_GROUND);
 }
 void LivblockAdventure_Stage::Wall(int X, int Y)
 {
@@ -104,7 +104,7 @@ void LivblockAdventure_Stage::Wall(int X, int Y)
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LIVBLOCK_COLLISION_WALL, LIVBLOCK_TAG_WALL);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LA_COLLISION_WALL, LA_TAG_WALL);
 }
 void LivblockAdventure_Stage::Goal(int X, int Y)
 {
@@ -113,5 +113,5 @@ void LivblockAdventure_Stage::Goal(int X, int Y)
 	M_StagePosition.y = -450.0f + (Y * 100.0f);
 	M_StageTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LIVBLOCK_COLLISION_GOAL, LIVBLOCK_TAG_GOAL);
+	P_Collision->DecisionDataSet(100, 100, M_StagePosition.x, M_StagePosition.y, LA_COLLISION_GOAL, LA_TAG_GOAL);
 }
