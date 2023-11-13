@@ -1,7 +1,7 @@
 #pragma once
 class AnimeTraverse_Character;
 class AnimeTraverse_Stage;
-struct LivblockAdventureClass
+struct AnimeTraverseClass
 {
 	AnimeTraverse_Character* P_Character = nullptr;
 	AnimeTraverse_Stage* P_Stage = nullptr;
@@ -16,7 +16,7 @@ public:
 	float GetGravity()
 	{return M_Gravity;}
 private:
-	LivblockAdventureClass S_Livblock;
+	AnimeTraverseClass S_Livblock;
 
 	float M_Gravity = 10.0f;
 };

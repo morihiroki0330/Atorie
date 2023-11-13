@@ -12,9 +12,13 @@ namespace nsK2EngineLow
 	public:
 		void SetObjectData(Vector3 TagPos);
 		void CenterObjectMove(Vector3 CenterPos);
+		void CenterObjectMoveX(Vector3 CenterPos);
+		void CenterObjectMoveY(Vector3 CenterPos);
 		void CenterOffObjectMove(Vector3& CenterOffPos);
 	private:
 		ObjData S_ObjData;
+
+
 	};
 }
 

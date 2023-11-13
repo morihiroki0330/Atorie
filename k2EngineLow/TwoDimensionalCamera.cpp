@@ -17,10 +17,24 @@ namespace nsK2EngineLow
 		S_ObjData.M_TagPrevPos.x = S_ObjData.M_TagPos.x;
 		S_ObjData.M_TagPrevPos.y = S_ObjData.M_TagPos.y;
 	}
+	void TwoDimensionalCamera::CenterObjectMoveX(Vector3 CenterPos)
+	{
+		S_ObjData.M_TagPos = CenterPos;
+
+		S_ObjData.M_tagMoveSpeed.x = S_ObjData.M_TagPos.x - S_ObjData.M_TagPrevPos.x;
+		S_ObjData.M_TagPrevPos.x = S_ObjData.M_TagPos.x;
+	}
+	void TwoDimensionalCamera::CenterObjectMoveY(Vector3 CenterPos)
+	{
+		S_ObjData.M_TagPos = CenterPos;
+
+		S_ObjData.M_tagMoveSpeed.y = S_ObjData.M_TagPos.y - S_ObjData.M_TagPrevPos.y;
+		S_ObjData.M_TagPrevPos.y = S_ObjData.M_TagPos.y;
+	}
 
 	void TwoDimensionalCamera::CenterOffObjectMove(Vector3& CenterOffPos)
 	{
 		CenterOffPos.x -= S_ObjData.M_tagMoveSpeed.x;
-		//CenterOffPos.y += S_ObjData.M_tagMoveSpeed.y;
+		CenterOffPos.y += S_ObjData.M_tagMoveSpeed.y;
 	}
 }

@@ -22,16 +22,27 @@ bool GazeJourney_Character::Start()
 void GazeJourney_Character::Update()
 {
 	Move();
-	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, GJ_COLLISION_CHARACTER);
-	P_Camera->CenterObjectMove(M_CharacterPosition);
-	if (S_Flag.M_FallFlag)
-	{M_CharacterTexture.SetPosition(M_CharacterPosition);}
-	/*M_CharacterTexture.SetPosition(M_CharacterPosition);*/
+	P_Collision->DecisionSetPosition(0.0f, M_CharacterPosition.y, GJ_COLLISION_CHARACTER);
+	P_Camera->CenterObjectMoveX(M_CharacterPosition);
+	M_CharacterTexture.SetPositionY(M_CharacterPosition);
 	M_CharacterTexture.Update();
+
+	swprintf_s(M_X, 256, L"X:%f", M_CharacterPosition.x);
+	M_XFont.SetText(M_X);
+	M_XFont.SetPosition({300.0f,0.0f,0.0f});
+	M_XFont.SetScale(1.0f);
+
+	swprintf_s(M_Y, 256, L"Y:%f", M_CharacterPosition.y);
+	M_YFont.SetText(M_Y);
+	M_YFont.SetPosition({ 300.0f,-100.0f,0.0f });
+	M_YFont.SetScale(1.0f);
 }
 void GazeJourney_Character::Render(RenderContext& rc)
 {
 	M_CharacterTexture.Draw(rc);
+
+	M_XFont.Draw(rc);
+	M_YFont.Draw(rc);
 }
 
 void GazeJourney_Character::Move()

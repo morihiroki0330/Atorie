@@ -3,7 +3,7 @@ class GazeJourney_GameTitle;
 class GazeJourney_GameResult;
 class GazeJourney_Character;
 class GazeJourney_Stage;
-struct CameraClass
+struct GazeJourneyClass
 {
 	GazeJourney_GameTitle* P_GameTitle   = nullptr;
 	GazeJourney_GameResult* P_GameResult   = nullptr;
@@ -33,11 +33,15 @@ public:
 
 	float GetGravity()
 	{return M_Gravity;}
+	Vector3 GetCameraTarget()
+	{return M_CameraTarget;}
 private:
-	CameraClass S_Gaze;
+	GazeJourneyClass S_Gaze;
 
 	int M_Number = 0;
 
 	float M_Gravity = 10.0f;
+
+	Vector3 M_CameraTarget = { 0.0f,0.0f,0.0f };
 };
 

@@ -11,12 +11,13 @@ bool GazeJourney_Stage::Start()
 {
 	P_Camera = FindGO<TwoDimensionalCamera>("camera");
 	P_Collision = FindGO<DimensionCollision>("collision");
-	P_Collision->DecisionDataSet(1920.0f, 150.0f, 0.0f, -465.0f, GJ_COLLISION_GROUND, GJ_TAG_GROUND);
+	P_Collision->DecisionDataSet(1920.0f, 150.0f, 0.0f, -450.0f, GJ_COLLISION_GROUND, GJ_TAG_GROUND);
 	return true;
 }
 void GazeJourney_Stage::Update()
 {
 	P_Camera->CenterOffObjectMove(M_StagePosition);
+	P_Collision->DecisionSetPosition(M_StagePosition.x ,-450.0f,GJ_COLLISION_GROUND);
 	M_StageTexture.SetPosition(M_StagePosition);
 	M_StageTexture.Update();
 }
