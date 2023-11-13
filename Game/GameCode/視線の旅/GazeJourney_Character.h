@@ -20,7 +20,6 @@ public:
 	void Move();
 	void Walk();
 	void Fall();
-	void Goal();
 private:
 	SpriteRender M_CharacterTexture;
 
@@ -33,10 +32,5 @@ private:
 	TwoDimensionalCamera* P_Camera = nullptr;
 
 	GJ_MotionFlag S_Flag;
-
-	FontRender M_XFont;
-	wchar_t M_X[256];
-	FontRender M_YFont;
-	wchar_t M_Y[256];
 };
 

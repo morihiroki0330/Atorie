@@ -1,12 +1,8 @@
 #pragma once
-class GazeJourney_GameTitle;
-class GazeJourney_GameResult;
 class GazeJourney_Character;
 class GazeJourney_Stage;
 struct GazeJourneyClass
 {
-	GazeJourney_GameTitle* P_GameTitle   = nullptr;
-	GazeJourney_GameResult* P_GameResult   = nullptr;
 	GazeJourney_Character* P_Character = nullptr;
 	GazeJourney_Stage* P_Stage           = nullptr;
 	DimensionCollision* P_Collision    = nullptr;
@@ -29,7 +25,6 @@ class GazeJourney : public IGameObject
 public:
 	GazeJourney();
 	~GazeJourney();
-	void Create(int Number);
 
 	float GetGravity()
 	{return M_Gravity;}
@@ -37,11 +32,8 @@ public:
 	{return M_CameraTarget;}
 private:
 	GazeJourneyClass S_Gaze;
-
 	int M_Number = 0;
-
 	float M_Gravity = 10.0f;
-
 	Vector3 M_CameraTarget = { 0.0f,0.0f,0.0f };
 };
 

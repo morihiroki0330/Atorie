@@ -45,70 +45,54 @@ namespace nsK2EngineLow
 
 		//座標の設定
 		void SetPosition(const Vector3& pos)
-		{
-			m_position = pos;
-		}
+		{m_position = pos;}
+		void SetPositionX(const Vector3& pos)
+		{m_position.x = pos.x;}
+		void SetPositionY(const Vector3& pos)
+		{m_position.y = pos.y;}
+		void SetPositionZ(const Vector3& pos)
+		{m_position.z = pos.z;}
 
 		//座標の取得
 		const Vector3& GetPosition() const
-		{
-			return m_position;
-		}
+		{return m_position;}
 
 		//回転の設定
 		void SetRotation(const Quaternion& rot)
-		{
-			m_rotation = rot;
-		}
+		{m_rotation = rot;}
 
 		//回転の取得
 		const Quaternion& GetRotation() const
-		{
-			return m_rotation;
-		}
+		{return m_rotation;}
 
 		//拡大率の設定
 		void SetScale(const Vector3 scale)
-		{
-			m_scale = scale;
-		}
+		{m_scale = scale;}
 
 		//座標の取得
 		const Vector3& GetScale() const
-		{
-			return m_scale;
-		}
+		{return m_scale;}
 
 		//ピボットの設定
 		void SetPivot(const Vector2& pivot)
-		{
-			m_pivot = pivot;
-		}
+		{m_pivot = pivot;}
 
 		//ピボットの取得
 		const Vector2& GetPivot() const
-		{
-			return m_pivot;
-		}
+		{return m_pivot;}
 
 		//乗算カラーの設定
 		void SetMulColor(const Vector4& mulColor)
-		{
-			m_sprite.SetMulColor(mulColor);
-		}
+		{m_sprite.SetMulColor(mulColor);}
 
 		//乗算カラーの取得
 		const Vector4& GetMulColor() const
-		{
-			return m_sprite.GetMulColor();
-		}
+		{return m_sprite.GetMulColor();}
 
 		void OnRender2D(RenderContext& rc) override;
 
 		bool GetInitFlag()
-		{
-			return M_InitFlag;
-		}
+		{return M_InitFlag;}
 
 	private:
 		//スプライト
