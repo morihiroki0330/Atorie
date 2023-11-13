@@ -10,7 +10,8 @@ bool FlickBlade::Start()
 
 void FlickBlade::Update()
 {
-	
+	M_Texture.SetRotation(M_TextureRot);
+	M_Texture.Update();
 }
 
 void FlickBlade::Render(RenderContext& rc)

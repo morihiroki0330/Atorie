@@ -8,6 +8,7 @@ public:
 	void Render(RenderContext& rc);
 private:
 	SpriteRender M_Texture;
+	Quaternion M_TextureRot;
 	Mouse* P_Mouse;
 	bool M_Flick = false;
 };

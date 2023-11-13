@@ -2,12 +2,12 @@
 #include "TwoDimensionalCamera.h"
 namespace nsK2EngineLow 
 {
-	void TwoDimensionalCamera::SetObjectData(Vector2 TagPos)
+	void TwoDimensionalCamera::SetObjectData(Vector3 TagPos)
 	{
 		S_ObjData.M_TagPos = TagPos;
 	}
 
-	void TwoDimensionalCamera::CenterObjectMove(Vector2 CenterPos)
+	void TwoDimensionalCamera::CenterObjectMove(Vector3 CenterPos)
 	{
 		S_ObjData.M_TagPos = CenterPos;
 
@@ -18,9 +18,9 @@ namespace nsK2EngineLow
 		S_ObjData.M_TagPrevPos.y = S_ObjData.M_TagPos.y;
 	}
 
-	void TwoDimensionalCamera::CenterOffObjectMove(Vector2& CenterOffPos)
+	void TwoDimensionalCamera::CenterOffObjectMove(Vector3& CenterOffPos)
 	{
-		CenterOffPos.x += S_ObjData.M_tagMoveSpeed.x;
-		CenterOffPos.y += S_ObjData.M_tagMoveSpeed.y;
+		CenterOffPos.x -= S_ObjData.M_tagMoveSpeed.x;
+		//CenterOffPos.y += S_ObjData.M_tagMoveSpeed.y;
 	}
 }

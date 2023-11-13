@@ -5,14 +5,14 @@ class DungeonOdyssey;
 class LivblockAdventure;
 class PuzzleBoxPath;
 class FlickBlade;
-class TwoCamera;
+class GazeJourney;
 struct GameClass
 {
 	DungeonOdyssey* P_DO        = nullptr;
 	LivblockAdventure* P_LA = nullptr;
 	PuzzleBoxPath* P_PBP = nullptr;
 	FlickBlade* P_FB = nullptr;
-	TwoCamera* P_TwoCamera     = nullptr;
+	GazeJourney* P_GJ     = nullptr;
 };
 struct Operation
 {

@@ -1,7 +1,7 @@
 #pragma once
 class LivblockAdventure;
 class Controller;
-struct MotionFlag
+struct LA_MotionFlag
 {
 	bool M_WalkFlag         = false;
 	bool M_JumpFlag         = false;
@@ -28,14 +28,14 @@ public:
 private:
 	SpriteRender M_CharacterTexture;
 
-	Vector3 M_CharacterPosition = {0.0f,-150.0f,0.0f};
+	Vector3 M_CharacterPosition = { 0.0f,-150.0f,0.0f };
 	Vector3 M_CharacterSpeed    = { 0.0f,10.0f,0.0f };
 
 	LivblockAdventure* P_Livblock              = nullptr;
 	DimensionCollision* P_Collision = nullptr;
 	Controller* P_Controller        = nullptr;
 
-	MotionFlag S_Flag;
+	LA_MotionFlag S_Flag;
 
 	int M_JumpCoolTime = 0;
 };
