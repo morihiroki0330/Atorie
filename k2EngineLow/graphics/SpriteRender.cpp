@@ -3,22 +3,24 @@
 
 namespace nsK2EngineLow
 {
-
 	void SpriteRender::Init
 	(
 		const char* Sprite,
 		const float w,
 		const float h,
 		bool ColorOut,
+		bool ColorChange,
 		AlphaBlendMode alphaBlendMode
 	)
 	{
+		if (ColorChange)
+		{
+			InitData.m_fxFilePath = "Assets/shader/ColorChange.fx";
+		}else {
 		if (ColorOut)
 		{
 			InitData.m_fxFilePath = "Assets/shader/ColorOut.fx";
 		}else {
-		if (!ColorOut)
-		{
 			InitData.m_fxFilePath = "Assets/shader/sprite.fx";
 		}
 		}
@@ -33,6 +35,9 @@ namespace nsK2EngineLow
 		InitData.m_alphaBlendMode = alphaBlendMode;
 
 		M_InitFlag = true;
+
+		M_WideAndHeight.x = w;
+		M_WideAndHeight.y = h;
 
 		m_sprite.Init(InitData);
 	}

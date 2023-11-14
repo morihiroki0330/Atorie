@@ -37,7 +37,7 @@ enum
 enum
 {
 	CA_MAP_GROUND = 1,
-	CA_MAP_WALL = 2
+	CA_MAP_WALL = 2,
 };
 class ClairAction : public IGameObject
 {

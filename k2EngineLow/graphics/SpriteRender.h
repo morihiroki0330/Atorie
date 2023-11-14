@@ -15,6 +15,7 @@ namespace nsK2EngineLow
 			const float w,
 			const float h,
 			bool ColorOut = false,
+			bool ColorChange = false,
 			AlphaBlendMode alphaBlendMode = AlphaBlendMode_Trans
 		);
 
@@ -56,6 +57,9 @@ namespace nsK2EngineLow
 		//ç¿ïWÇÃéÊìæ
 		const Vector3& GetPosition() const
 		{return m_position;}
+
+		const Vector2& GetWideAndHeight() const
+		{return M_WideAndHeight;}
 
 		//âÒì]ÇÃê›íË
 		void SetRotation(const Quaternion& rot)
@@ -113,6 +117,8 @@ namespace nsK2EngineLow
 		Vector2 m_pivot = Sprite::DEFAULT_PIVOT;
 
 		bool M_InitFlag = false;
+
+		Vector2 M_WideAndHeight;
 	};
 }
 
