@@ -7,6 +7,7 @@ class PuzzleBoxPath;
 class FlickBlade;
 class GazeJourney;
 class AnimeTraverse;
+class ClairAction;
 struct GameClass
 {
 	DungeonOdyssey* P_DO        = nullptr;
@@ -15,6 +16,7 @@ struct GameClass
 	FlickBlade* P_FB = nullptr;
 	GazeJourney* P_GJ     = nullptr;
 	AnimeTraverse* P_AT = nullptr;
+	ClairAction* P_CA = nullptr;
 };
 struct Operation
 {
