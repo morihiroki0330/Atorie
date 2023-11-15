@@ -8,7 +8,7 @@ void Mouse::Update()
     MouseSet();
 	MouseMove();
     MouseCorsorTextureSetCheck();
-	MouseButton();
+	MouseFlagJudge();
     MouseCurSorSetPosition(M_MouseCousorPosition);
     M_MouseCursorTexture.SetPosition(M_MouseCousorPosition);
     M_MouseCursorTexture.Update();
@@ -76,7 +76,7 @@ void Mouse::MouseCorsorTextureSetCheck()
 	}
 }
 
-void Mouse::MouseButton()
+void Mouse::MouseFlagJudge()
 {
 	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
 	{S_Flag.M_LeftButtonFlag = true;}
@@ -88,8 +88,39 @@ void Mouse::MouseButton()
 	else
 	{S_Flag.M_RightButtonFlag = false;}
 
-	if (abs(M_DeltaSpeed.x) > flickSpeedThreshold || abs(M_DeltaSpeed.y) > flickSpeedThreshold)
+	if (abs(M_DeltaSpeed.x) > FlickSpeedThreshold || abs(M_DeltaSpeed.y) > FlickSpeedThreshold)
 	{S_Flag.M_FlickFlag = true;}
 	else 
 	{S_Flag.M_FlickFlag = false;}
+
+}
+void Mouse::SetMouseFlag(int Number,bool Flag)
+{
+	switch (Number)
+	{
+	case LEFTBUTTON:
+		S_Flag.M_LeftButtonFlag = Flag;
+		break;
+	case RIGHTBUTTON:
+		S_Flag.M_RightButtonFlag = Flag;
+		break;
+	case FLICK:
+		S_Flag.M_FlickFlag = Flag;
+		break;
+	}
+}
+bool Mouse::GetMouseFlag(int Number)
+{
+	switch (Number)
+	{
+	case LEFTBUTTON:
+		return S_Flag.M_LeftButtonFlag;
+		break;
+	case RIGHTBUTTON:
+		return S_Flag.M_RightButtonFlag;
+		break;
+	case FLICK:
+		return S_Flag.M_FlickFlag;
+		break;
+	}
 }

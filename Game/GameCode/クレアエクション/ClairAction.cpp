@@ -8,7 +8,7 @@
 #include "ステージ・ギミック/ClairAction_Gimmick.h"
 #include "DimensionCollision.h"
 #include "TwoDimensionalCamera.h"
-#include "Mouse・Controller/Mouse.h" 
+#include "Mouse・Controller/Mouse.h"
 ClairAction::ClairAction()
 {
 	S_Clair.P_Collision = NewGO<DimensionCollision>(0, "collision");
@@ -22,7 +22,7 @@ ClairAction::~ClairAction()
 bool ClairAction::Start()
 {
 	S_Clair.P_Mouse = FindGO<Mouse>("mouse");
-	S_Clair.P_Mouse->MouseCursorTextureSet("Assets/Sprite/ClairAction/MouseCursor.DDS", 90.0f, 90.0f, true);
+	S_Clair.P_Mouse->MouseCursorTextureSet("Assets/Sprite/ClairAction/MouseCursor.DDS", 90.0f, 90.0f, false);
 	S_Clair.P_Collision->DecisionDataSet(90.0f, 90.0f, S_Clair.P_Mouse->GetMousePosition().x, S_Clair.P_Mouse->GetMousePosition().y, CA_COLLISION_CURSOR, CA_TAG_CURSOR);
 	return true;
 }

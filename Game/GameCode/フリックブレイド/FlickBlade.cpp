@@ -16,8 +16,6 @@ void FlickBlade::Update()
 
 void FlickBlade::Render(RenderContext& rc)
 {
-	if (P_Mouse->GetFlick())
-	{
-		M_Texture.Draw(rc);
-	}
+	if (P_Mouse->GetMouseFlag(FLICK))
+	{M_Texture.Draw(rc);}
 }

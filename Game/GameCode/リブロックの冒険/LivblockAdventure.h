@@ -3,14 +3,12 @@ class LivblockAdventure_GameTitle;
 class LivblockAdventure_GameResult;
 class LivblockAdventure_Character;
 class LivblockAdventure_Stage;
-class LivblockAdventure_WindowFrame;
 struct LivblockAdventureClass
 {
 	LivblockAdventure_GameTitle* P_GameTitle     = nullptr;
 	LivblockAdventure_GameResult* P_GameResult   = nullptr;
 	LivblockAdventure_Character* P_Character     = nullptr;
 	LivblockAdventure_Stage* P_Stage             = nullptr;
-	LivblockAdventure_WindowFrame* P_WindowFrame = nullptr;
 	DimensionCollision* P_Collision              = nullptr;
 };
 enum 
@@ -39,17 +37,16 @@ class LivblockAdventure : public IGameObject
 public:
 	LivblockAdventure();
 	~LivblockAdventure();
+	void Render(RenderContext& rc);
 
 	void Create(int Number);
 
 	float GetGravity()
 	{return M_Gravity;}
 private:
+	SpriteRender M_FrameTexture;
 	LivblockAdventureClass S_Livblock;
-
 	int M_Number = 0;
-
 	float M_Gravity = 10.0f;
-
 };
 

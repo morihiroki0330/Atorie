@@ -24,15 +24,15 @@ bool ClairAction_GameTitle::Start()
 }
 void ClairAction_GameTitle::Update()
 {
-	if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_STARTBUTTON) && P_Mouse->GetLeftButton())
+	if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
 	{
 		P_Clair->Create(FIRST);
 	}else {
-		if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_OPTIONBUTTON) && P_Mouse->GetLeftButton())
+		if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
 		{
 
 		}else {
-			if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_EXITBUTTON) && P_Mouse->GetLeftButton())
+			if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
 			{
 				exit(EXIT_FAILURE);
 			}

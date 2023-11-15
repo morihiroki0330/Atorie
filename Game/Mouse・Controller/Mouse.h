@@ -4,6 +4,14 @@ struct MouseFlag
 	bool M_LeftButtonFlag = false;
 	bool M_RightButtonFlag = false;
 	bool M_FlickFlag = false;
+	//bool M_WheelFlag = false;
+};
+enum MouseFlagNumber
+{
+	LEFTBUTTON = 0,
+	RIGHTBUTTON = 1,
+	FLICK = 2,
+	WHEEL = 3
 };
 class Mouse : public IGameObject
 {
@@ -20,7 +28,9 @@ public:
 	void MouseCursorTextureSet(const char* Sprite, const float w, const float h, bool ColorOut = false);
 	void MouseCorsorTextureSetCheck();
 
-	void MouseButton();
+	void MouseFlagJudge();
+	bool GetMouseFlag(int Number);
+	void SetMouseFlag(int Number,bool Flag);
 	
 	Vector3 GetMousePosition()
 	{return M_MouseCousorPosition; }
@@ -30,15 +40,6 @@ public:
 
 	Vector2 GetDelta()
 	{return M_Delta;}
-
-	bool GetLeftButton()
-	{return S_Flag.M_LeftButtonFlag;}
-
-	bool GetRightButton()
-	{return S_Flag.M_RightButtonFlag;}
-
-	bool GetFlick()
-	{return S_Flag.M_FlickFlag;}
 private:
 	SpriteRender M_MouseCursorTexture;
 	Vector3 M_MouseCousorPosition;
@@ -57,6 +58,7 @@ private:
 	MouseFlag S_Flag;
 
 	float M_DeltaTime = 0.0f;
-	float flickSpeedThreshold = 6000.0f;
+	float FlickSpeedThreshold = 6000.0f;
+
 };
 

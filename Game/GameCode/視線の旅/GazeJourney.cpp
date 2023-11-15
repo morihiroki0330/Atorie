@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "GazeJourney.h"
-#include "GazeJourney_Character.h"
-#include "GazeJourney_Stage.h"
+#include "キャラクター/GazeJourney_Character.h"
+#include "ステージ/GazeJourney_Stage.h"
 #include "DimensionCollision.h"
 #include "TwoDimensionalCamera.h"
 GazeJourney::GazeJourney()
