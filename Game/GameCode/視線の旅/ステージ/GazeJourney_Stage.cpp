@@ -1,8 +1,11 @@
 #include "stdafx.h"
-#include "GameCode/‹ü‚Ì—·/GazeJourney.h"
 #include "GazeJourney_Stage.h"
-#include "DimensionCollision.h"
-#include "TwoDimensionalCamera.h"
+
+#include "GameCode/‹ü‚Ì—·/GazeJourney.h"
+
+#include "Tool/DimensionalCollision.h"
+#include "Tool/DimensionalCamera.h"
+
 GazeJourney_Stage::GazeJourney_Stage()
 {
 	M_StageTexture[0].Init("Assets/Sprite/GazeJourney/Stage.DDS", 1920.0f, 1080.0f, true);
@@ -10,8 +13,8 @@ GazeJourney_Stage::GazeJourney_Stage()
 }
 bool GazeJourney_Stage::Start()
 {
-	P_Camera = FindGO<TwoDimensionalCamera>("camera");
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Camera = FindGO<DimensionalCamera>("camera");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Collision->DecisionDataSet(1920.0f, 150.0f, 0.0f, -450.0f, GJ_COLLISION_GROUND, GJ_TAG_GROUND);
 	M_StagePosition[1].x = 1920.0f;
 	return true;

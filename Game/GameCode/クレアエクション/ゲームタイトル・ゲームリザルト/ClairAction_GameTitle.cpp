@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/クレアエクション/ClairAction.h"
 #include "ClairAction_GameTitle.h"
-#include "DimensionCollision.h"
+
+#include "GameCode/クレアエクション/ClairAction.h"
+
+#include "Tool/DimensionalCollision.h"
 #include "Mouse・Controller/Mouse.h"
+
 ClairAction_GameTitle::ClairAction_GameTitle()
 {
 	M_GameTitleTexture.Init("Assets/Sprite/ClairAction/GameTitle.DDS", 1920.0f, 1080.0f, true);
@@ -14,7 +17,7 @@ ClairAction_GameTitle::ClairAction_GameTitle()
 bool ClairAction_GameTitle::Start()
 {
 	P_Clair = FindGO<ClairAction>("clair");
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Mouse = FindGO<Mouse>("mouse");
 
 	P_Collision->DecisionDataSet(S_Button.M_StartButton.GetWideAndHeight().x, S_Button.M_StartButton.GetWideAndHeight().y, S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, CA_COLLISION_STARTBUTTON, CA_TAG_NON);

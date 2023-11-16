@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
 #include "DungeonOdyssey_GameResult.h"
+
+#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
+
 DungeonOdyssey_GameResult::DungeonOdyssey_GameResult()
 {
 	M_GameResultTexture.Init("Assets/Sprite/DungeonOdyssey/GameResult.DDS", 1920.0f, 1080.0f);

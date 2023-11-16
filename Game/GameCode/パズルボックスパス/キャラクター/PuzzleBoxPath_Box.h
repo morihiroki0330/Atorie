@@ -1,6 +1,9 @@
 #pragma once
 class PuzzleBoxPath;
+
+class DimensionalCollision;
 class Mouse;
+
 class PuzzleBoxPath_Box : public IGameObject
 {
 public:
@@ -18,7 +21,7 @@ private:
 
 	Vector3 M_BoxPosition = { -725.0f,0.0f,0.0f };
 
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 	PuzzleBoxPath* P_Puzzle      = nullptr;
 	Mouse* P_Mouse                  = nullptr;
 	

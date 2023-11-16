@@ -1,4 +1,6 @@
 #pragma once
+class DimensionalCollision;
+class DimensionalCamera;
 class GazeJourney_Stage : public IGameObject
 {
 public:
@@ -9,7 +11,7 @@ public:
 private:
 	SpriteRender M_StageTexture[2];
 	Vector3 M_StagePosition[2];
-	DimensionCollision* P_Collision = nullptr;
-	TwoDimensionalCamera* P_Camera = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
+	DimensionalCamera* P_Camera = nullptr;
 };
 

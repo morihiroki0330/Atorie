@@ -6,7 +6,10 @@ class ClairAction_Character;
 class ClairAction_Stage;
 class ClairAction_Gimmick;
 
+class DimensionalCollision;
+class DimensionalCamera;
 class Mouse;
+
 struct ClairActionClass
 {
 	ClairAction_GameTitle* P_GameTitle = nullptr;
@@ -15,9 +18,9 @@ struct ClairActionClass
 	ClairAction_Character* P_Character = nullptr;
 	ClairAction_Stage* P_Stage = nullptr;
 	ClairAction_Gimmick* P_Gimmic = nullptr;
-
-	DimensionCollision* P_Collision = nullptr;
-	TwoDimensionalCamera* P_Camera = nullptr;
+	
+	DimensionalCollision* P_Collision = nullptr;
+	DimensionalCamera* P_Camera = nullptr;
 	Mouse* P_Mouse = nullptr;
 };
 enum

@@ -1,5 +1,8 @@
 #pragma once
 class PuzzleBoxPath;
+
+class DimensionalCollision;
+
 class PuzzleBoxPath_Stage : public IGameObject
 {
 public:
@@ -18,7 +21,7 @@ private:
 
 	Vector3 M_StagePosition = { 0.0f,0.0f,0.0f };
 
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 
 	const char* M_FilePath = nullptr;
 

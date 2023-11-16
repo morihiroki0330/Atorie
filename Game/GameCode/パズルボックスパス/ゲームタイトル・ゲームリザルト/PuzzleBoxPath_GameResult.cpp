@@ -1,12 +1,16 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/パズルボックスパス/PuzzleBoxPath.h"
 #include "PuzzleBoxPath_GameResult.h"
+
+#include "GameCode/パズルボックスパス/PuzzleBoxPath.h"
+
+#include "Tool/DimensionalCollision.h"
 #include "Mouse・Controller/Mouse.h"
+
 bool PuzzleBoxPath_GameResult::Start()
 {
 	P_Puzzle = FindGO<PuzzleBoxPath>("puzzle");
-	P_Collision   = FindGO<DimensionCollision>("collision");
+	P_Collision   = FindGO<DimensionalCollision>("collision");
 
 	if (P_Puzzle->GetFlag(PBP_FLAG_Goal))
 	{

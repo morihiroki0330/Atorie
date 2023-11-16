@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
 #include "DungeonOdyssey_GameTitle.h"
+
+#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
+
 DungeonOdyssey_GameTitle::DungeonOdyssey_GameTitle()
 {
 	M_GameTitleTexture.Init("Assets/Sprite/DungeonOdyssey/GameTitle.DDS", 1920.0f, 1080.0f);

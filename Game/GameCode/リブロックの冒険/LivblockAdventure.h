@@ -3,13 +3,16 @@ class LivblockAdventure_GameTitle;
 class LivblockAdventure_GameResult;
 class LivblockAdventure_Character;
 class LivblockAdventure_Stage;
+
+class DimensionalCollision;
+
 struct LivblockAdventureClass
 {
 	LivblockAdventure_GameTitle* P_GameTitle     = nullptr;
 	LivblockAdventure_GameResult* P_GameResult   = nullptr;
 	LivblockAdventure_Character* P_Character     = nullptr;
 	LivblockAdventure_Stage* P_Stage             = nullptr;
-	DimensionCollision* P_Collision              = nullptr;
+	DimensionalCollision* P_Collision              = nullptr;
 };
 enum 
 {

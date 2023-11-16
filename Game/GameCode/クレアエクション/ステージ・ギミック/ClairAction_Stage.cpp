@@ -1,14 +1,17 @@
 #include "stdafx.h"
-#include "GameCode/クレアエクション/ClairAction.h"
 #include "ClairAction_Stage.h"
-#include "DimensionCollision.h"
+
+#include "GameCode/クレアエクション/ClairAction.h"
+
+#include "Tool/DimensionalCollision.h"
+
 ClairAction_Stage::ClairAction_Stage()
 {
 	M_BackGroundTexture.Init("Assets/Sprite/ClairAction/StageBackGround.DDS", 1920.0f, 1080.0f, true);
 }
 bool ClairAction_Stage::Start()
 {
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	//MapSet();
 	return true;
 }

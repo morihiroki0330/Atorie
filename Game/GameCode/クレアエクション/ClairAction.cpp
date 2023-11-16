@@ -1,18 +1,19 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "ClairAction.h"
+
 #include "ゲームタイトル・ゲームリザルト/ClairAction_GameTitle.h"
 #include "ゲームタイトル・ゲームリザルト/ClairAction_GameResult.h"
 #include "キャラクター/ClairAction_Character.h"
 #include "ステージ・ギミック/ClairAction_Stage.h"
 #include "ステージ・ギミック/ClairAction_Gimmick.h"
-#include "DimensionCollision.h"
-#include "TwoDimensionalCamera.h"
+
+#include "Tool/DimensionalCollision.h"
+#include "Tool/DimensionalCamera.h"
 #include "Mouse・Controller/Mouse.h"
+
 ClairAction::ClairAction()
 {
-	S_Clair.P_Collision = NewGO<DimensionCollision>(0, "collision");
-	S_Clair.P_Camera = NewGO<TwoDimensionalCamera>(0, "camera");
 	S_Clair.P_GameTitle = NewGO<ClairAction_GameTitle>(0, "gametitle");
 }
 ClairAction::~ClairAction()
@@ -21,6 +22,7 @@ ClairAction::~ClairAction()
 }
 bool ClairAction::Start()
 {
+	S_Clair.P_Collision = FindGO<DimensionalCollision>("collision");
 	S_Clair.P_Mouse = FindGO<Mouse>("mouse");
 	S_Clair.P_Mouse->MouseCursorTextureSet("Assets/Sprite/ClairAction/MouseCursor.DDS", 90.0f, 90.0f, false);
 	S_Clair.P_Collision->DecisionDataSet(90.0f, 90.0f, S_Clair.P_Mouse->GetMousePosition().x, S_Clair.P_Mouse->GetMousePosition().y, CA_COLLISION_CURSOR, CA_TAG_CURSOR);

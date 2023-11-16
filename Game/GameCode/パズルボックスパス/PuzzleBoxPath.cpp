@@ -1,25 +1,27 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "PuzzleBoxPath.h"
+
 #include "ゲームタイトル・ゲームリザルト/PuzzleBoxPath_GameTitle.h"
 #include "ゲームタイトル・ゲームリザルト/PuzzleBoxPath_GameResult.h"
 #include "キャラクター/PuzzleBoxPath_Box.h"
 #include "ステージ/PuzzleBoxPath_Stage.h"
-#include "DimensionCollision.h"
+
+#include "Tool/DimensionalCollision.h"
 #include "Mouse・Controller/Mouse.h"
+
 PuzzleBoxPath::PuzzleBoxPath()
 {
-	S_PuzzleBoxPath.P_Collision = NewGO<DimensionCollision>(0, "collision");
 	S_PuzzleBoxPath.P_GameTitle = NewGO<PuzzleBoxPath_GameTitle>(0, "dad_gametitle");
 }
 PuzzleBoxPath::~PuzzleBoxPath()
 {
 	DeleteGO(S_PuzzleBoxPath.P_GameTitle);
 	DeleteGO(S_PuzzleBoxPath.P_GameResult);
-	DeleteGO(S_PuzzleBoxPath.P_Collision);
 }
 bool PuzzleBoxPath::Start()
 {
+	S_PuzzleBoxPath.P_Collision = FindGO<DimensionalCollision>("collision");
 	S_PuzzleBoxPath.P_Mouse = FindGO<Mouse>("mouse");
 	S_PuzzleBoxPath.P_Mouse->MouseCursorTextureSet("Assets/Sprite/PuzzleBoxPath/MouseCursor.DDS", 90.0f, 90.0f, true);
 	S_PuzzleBoxPath.P_Collision->DecisionDataSet(100.0f, 100.0f, S_PuzzleBoxPath.P_Mouse->GetMousePosition().x, S_PuzzleBoxPath.P_Mouse->GetMousePosition().y, PBP_COLLISION_CURSOR, PBP_TAG_NON);

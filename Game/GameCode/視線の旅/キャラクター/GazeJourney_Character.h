@@ -1,6 +1,10 @@
 #pragma once
 class GazeJourney;
+
+class DimensionalCollision;
+class DimensionalCamera;
 class Controller;
+
 struct GJ_MotionFlag
 {
 	bool M_WalkFlag = false;
@@ -27,9 +31,9 @@ private:
 	Vector3 M_CharacterSpeed = { 0.0f,10.0f,0.0f };
 
 	GazeJourney* P_Gaze = nullptr;
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 	Controller* P_Controller = nullptr;
-	TwoDimensionalCamera* P_Camera = nullptr;
+	DimensionalCamera* P_Camera = nullptr;
 
 	GJ_MotionFlag S_Flag;
 };

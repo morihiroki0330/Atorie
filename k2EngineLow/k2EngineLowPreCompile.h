@@ -123,15 +123,6 @@ static const int MAX_BONE = 512;	// É{Å[ÉìÇÃç≈ëÂêîÅB
 //#include "AnimationRender.h"
 //#include "MapChipRender.h"
 //#include "LevelRender.h"
-#include "Level2DRender.h"
-#include "MapChip2DRender.h"
 
 #include "physics/PhysicsSphereObject.h"
 #include "physics/PhysicsStaticObjectPos.h"
-
-#include "DimensionCollision.h"
-#include "TwoDimensionalCamera.h"
-#include "MapCreate.h"
-#include "TwoAnimation.h"
-#include "Weather.h"
-

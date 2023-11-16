@@ -1,6 +1,5 @@
 #pragma once
-class Mouse;
-class Controller;
+
 class DungeonOdyssey;
 class LivblockAdventure;
 class PuzzleBoxPath;
@@ -8,6 +7,15 @@ class FlickBlade;
 class GazeJourney;
 class AnimeTraverse;
 class ClairAction;
+
+class Mouse;
+class Controller;
+
+class DimensionalCamera;
+class DimensionalCollision;
+class MapCreate;
+class Weather;
+
 struct GameClass
 {
 	DungeonOdyssey* P_DO        = nullptr;
@@ -23,6 +31,14 @@ struct Operation
 	Mouse* P_Mouse           = nullptr;
 	Controller* P_Controller = nullptr;
 };
+struct Tool
+{
+	DimensionalCamera* P_Camera =nullptr;
+	DimensionalCollision* P_Collision = nullptr;
+	MapCreate* P_MapCreate = nullptr;
+	Weather* P_Weather;
+};
+
 enum Class
 {
 	FIRST,
@@ -37,5 +53,6 @@ public:
 private:
 	GameClass S_GameClass;
 	Operation S_Operation;
+	Tool S_Tool;
 };
 

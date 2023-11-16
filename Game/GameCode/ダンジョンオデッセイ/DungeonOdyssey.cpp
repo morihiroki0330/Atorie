@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "DungeonOdyssey.h"
+
 #include "ゲームタイトル・ゲームリザルト/DungeonOdyssey_GameTitle.h"
 #include "ゲームタイトル・ゲームリザルト/DungeonOdyssey_GameResult.h"
 #include "キャラクター/DungeonOdyssey_Character.h"
 #include "ステージ/DungeonOdyssey_Stage.h"
+
 DungeonOdyssey::DungeonOdyssey()
 {
 	S_Dungeon.P_GameTitle = NewGO<DungeonOdyssey_GameTitle>(0, "gametitle");

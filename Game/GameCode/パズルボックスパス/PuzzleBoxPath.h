@@ -4,13 +4,16 @@ class PuzzleBoxPath_GameTitle;
 class PuzzleBoxPath_GameResult;
 class PuzzleBoxPath_Stage;
 class PuzzleBoxPath_Box;
+
+class DimensionalCollision;
+
 struct PuzzleBoxPathClass
 {
 	PuzzleBoxPath_GameTitle* P_GameTitle   = nullptr;
 	PuzzleBoxPath_GameResult* P_GameResult = nullptr;
 	PuzzleBoxPath_Stage* P_Stage           = nullptr;
 	PuzzleBoxPath_Box* P_Box               = nullptr;
-	DimensionCollision* P_Collision      = nullptr;
+	DimensionalCollision* P_Collision      = nullptr;
 	Mouse* P_Mouse                       = nullptr;
 };
 enum 

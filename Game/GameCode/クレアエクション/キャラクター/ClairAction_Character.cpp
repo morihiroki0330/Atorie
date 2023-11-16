@@ -1,10 +1,13 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "GameCode/クレアエクション/ClairAction.h"
+
 #include "ClairAction_Character.h"
-#include "DimensionCollision.h"
+
+#include "Tool/DimensionalCollision.h"
+#include "Tool/DimensionalCamera.h"
 #include "Mouse・Controller/Controller.h"
-#include "TwoDimensionalCamera.h"
+
 ClairAction_Character::ClairAction_Character()
 {
 	M_CharacterTexture.Init("Assets/Sprite/ClairAction/Character.DDS", 100.0f, 100.0f, true);
@@ -12,9 +15,9 @@ ClairAction_Character::ClairAction_Character()
 bool ClairAction_Character::Start()
 {
 	P_Clair = FindGO<ClairAction>("clair");
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Controller = FindGO<Controller>("controller");
-	P_Camera = FindGO<TwoDimensionalCamera>("camera");
+	P_Camera = FindGO<DimensionalCamera>("camera");
 	return true;
 }
 void ClairAction_Character::Update()

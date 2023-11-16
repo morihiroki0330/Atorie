@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/リブロックの冒険/LivblockAdventure.h"
 #include "LivblockAdventure_GameTitle.h"
+
+#include "GameCode/リブロックの冒険/LivblockAdventure.h"
+
 LivblockAdventure_GameTitle::LivblockAdventure_GameTitle()
 {
 	M_GameTitleTexture.Init("Assets/Sprite/LivblockAdventure/GameTitle.DDS", 1000.0f, 1000.0f);

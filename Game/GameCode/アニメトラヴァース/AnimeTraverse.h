@@ -1,11 +1,14 @@
 #pragma once
 class AnimeTraverse_Character;
 class AnimeTraverse_Stage;
+
+class DimensionalCollision;
+
 struct AnimeTraverseClass
 {
 	AnimeTraverse_Character* P_Character = nullptr;
 	AnimeTraverse_Stage* P_Stage = nullptr;
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 };
 class AnimeTraverse : public IGameObject
 {

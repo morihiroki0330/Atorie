@@ -1,14 +1,17 @@
 #include "stdafx.h"
-#include "GameCode/リブロックの冒険/LivblockAdventure.h"
 #include "LivblockAdventure_Stage.h"
-#include "DimensionCollision.h"
+
+#include "GameCode/リブロックの冒険/LivblockAdventure.h"
+
+#include "Tool/DimensionalCollision.h"
+
 LivblockAdventure_Stage::LivblockAdventure_Stage()
 {
 	M_BackGroundTexture.Init("Assets/Sprite/LivblockAdventure/Sky.DDS", 1000.0f, 1000.0f, true);
 }
 bool LivblockAdventure_Stage::Start()	
 {
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 
 	MapSet();
 	return true;

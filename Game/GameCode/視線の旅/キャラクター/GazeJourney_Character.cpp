@@ -1,10 +1,13 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/‹ü‚Ì—·/GazeJourney.h"
 #include "GazeJourney_Character.h"
-#include "DimensionCollision.h"
-#include "TwoDimensionalCamera.h"
+
+#include "GameCode/‹ü‚Ì—·/GazeJourney.h"
+
+#include "Tool/DimensionalCollision.h"
+#include "Tool/DimensionalCamera.h"
 #include "MouseEController/Controller.h"
+
 GazeJourney_Character::GazeJourney_Character()
 {
 	M_CharacterTexture.Init("Assets/Sprite/GazeJourney/Character.DDS", 150.0f, 150.0f, true);
@@ -12,9 +15,9 @@ GazeJourney_Character::GazeJourney_Character()
 bool GazeJourney_Character::Start()
 {
 	P_Gaze = FindGO<GazeJourney>("gaze");
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Controller = FindGO<Controller>("controller");
-	P_Camera = FindGO<TwoDimensionalCamera>("camera");
+	P_Camera = FindGO<DimensionalCamera>("camera");
 	P_Collision->DecisionDataSet(150.0f, 150.0f, M_CharacterPosition.x, M_CharacterPosition.y, GJ_COLLISION_CHARACTER, GJ_TAG_NON);
 	P_Camera->SetObjectData(M_CharacterPosition);
 	return true;

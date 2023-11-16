@@ -1,12 +1,16 @@
 #pragma once
 class GazeJourney_Character;
 class GazeJourney_Stage;
+
+class DimensionalCollision;
+class DimensionalCamera;
+
 struct GazeJourneyClass
 {
 	GazeJourney_Character* P_Character = nullptr;
 	GazeJourney_Stage* P_Stage           = nullptr;
-	DimensionCollision* P_Collision    = nullptr;
-	TwoDimensionalCamera* P_Camera     = nullptr;
+	DimensionalCollision* P_Collision    = nullptr;
+	DimensionalCamera* P_Camera     = nullptr;
 };
 enum
 {

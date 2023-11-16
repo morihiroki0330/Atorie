@@ -1,13 +1,16 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/パズルボックスパス/PuzzleBoxPath.h"
 #include "PuzzleBoxPath_Box.h"
-#include "DimensionCollision.h"
+
+#include "GameCode/パズルボックスパス/PuzzleBoxPath.h"
+
+#include "Tool/DimensionalCollision.h"
 #include "Mouse・Controller/Mouse.h"
+
 bool PuzzleBoxPath_Box::Start()
 {
 	M_BoxTexture.Init("Assets/Sprite/PuzzleBoxPath/Box.DDS", 90.0f, 90.0f, true);
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Puzzle = FindGO<PuzzleBoxPath>("puzzle");
 	P_Mouse = FindGO<Mouse>("mouse");
 	P_Collision->DecisionDataSet(90, 90, M_BoxPosition.x, M_BoxPosition.y, PBP_COLLISION_BOX, PBP_TAG_BOX);

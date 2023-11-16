@@ -1,6 +1,9 @@
 #pragma once
 class LivblockAdventure;
+
+class DimensionalCollision;
 class Controller;
+
 struct LA_MotionFlag
 {
 	bool M_WalkFlag         = false;
@@ -32,7 +35,7 @@ private:
 	Vector3 M_CharacterSpeed    = { 0.0f,10.0f,0.0f };
 
 	LivblockAdventure* P_Livblock              = nullptr;
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 	Controller* P_Controller        = nullptr;
 
 	LA_MotionFlag S_Flag;

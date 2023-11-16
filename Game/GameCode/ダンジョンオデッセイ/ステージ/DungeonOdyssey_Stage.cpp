@@ -1,6 +1,8 @@
 #include "stdafx.h"
-#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
 #include "DungeonOdyssey_Stage.h"
+
+#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
+
 DungeonOdyssey_Stage::DungeonOdyssey_Stage()
 {
 	M_Square.x = 16;

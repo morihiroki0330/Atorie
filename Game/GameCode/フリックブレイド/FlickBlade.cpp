@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "FlickBlade.h"
+
 #include "MouseÅEController/Mouse.h"
+
 bool FlickBlade::Start()
 {
 	P_Mouse = FindGO<Mouse>("mouse");

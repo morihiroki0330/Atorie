@@ -1,14 +1,17 @@
 #include "stdafx.h"
-#include "GameCode/パズルボックスパス/PuzzleBoxPath.h"
 #include "PuzzleBoxPath_Stage.h"
-#include "DimensionCollision.h"
+
+#include "GameCode/パズルボックスパス/PuzzleBoxPath.h"
+
+#include "Tool/DimensionalCollision.h"
+
 PuzzleBoxPath_Stage::PuzzleBoxPath_Stage()
 {
 	M_BackGroundTexture.Init("Assets/Sprite/PuzzleBoxPath/Sky.DDS", 1920.0f, 1080.0f, true);
 }
 bool PuzzleBoxPath_Stage::Start()
 {
-	P_Collision = FindGO<DimensionCollision>("collision");
+	P_Collision = FindGO<DimensionalCollision>("collision");
 	MapSet();
 	return true;
 }

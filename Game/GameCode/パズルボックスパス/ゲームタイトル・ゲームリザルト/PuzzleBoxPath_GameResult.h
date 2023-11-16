@@ -1,6 +1,9 @@
 #pragma once
 class PuzzleBoxPath;
+
+class DimensionalCollision;
 class Mouse;
+
 class PuzzleBoxPath_GameResult : public IGameObject
 {
 public:
@@ -10,7 +13,7 @@ public:
 private:
 	SpriteRender M_GameResultTexture;
 
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 	PuzzleBoxPath* P_Puzzle      = nullptr;
 };
 

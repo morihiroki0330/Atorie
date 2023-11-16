@@ -1,6 +1,9 @@
 #pragma once
 class ClairAction;
+
+class DimensionalCollision;
 class Mouse;
+
 struct ClairActionButton
 {
 	SpriteRender M_StartButton;
@@ -23,7 +26,7 @@ private:
 	ClairActionButton S_Button;
 
 	ClairAction* P_Clair = nullptr;
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
 	Mouse* P_Mouse = nullptr;
 };
 

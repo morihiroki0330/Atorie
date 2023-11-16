@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/リブロックの冒険/LivblockAdventure.h"
 #include "LivblockAdventure_Character.h"
-#include "DimensionCollision.h"
+
+#include "GameCode/リブロックの冒険/LivblockAdventure.h"
+
+#include "Tool/DimensionalCollision.h"
 #include "Mouse・Controller/Controller.h"
+
 LivblockAdventure_Character::LivblockAdventure_Character()
 {
 	M_CharacterTexture.Init("Assets/Sprite/LivblockAdventure/Riblock.DDS", 90.0f, 90.0f, true);
@@ -12,7 +15,7 @@ LivblockAdventure_Character::LivblockAdventure_Character()
 bool LivblockAdventure_Character::Start()
 {
 	P_Livblock   = FindGO<LivblockAdventure>("livblock");
-	P_Collision  = FindGO<DimensionCollision>("collision");
+	P_Collision  = FindGO<DimensionalCollision>("collision");
 	P_Controller = FindGO<Controller>("controller");
 	P_Collision->DecisionDataSet(90.0f, 90.0f, M_CharacterPosition.x, M_CharacterPosition.y, LA_COLLISION_CHARACTER, LA_TAG_NON);
 	return true;

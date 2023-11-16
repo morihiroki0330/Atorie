@@ -1,6 +1,10 @@
 #pragma once
 class ClairAction;
+
+class DimensionalCollision;
+class DimensionalCamera;
 class Controller;
+
 struct ClairActionMotionFlag
 {
 	bool M_WalkFlag = false;
@@ -29,9 +33,9 @@ private:
 	Vector3 M_CharacterSpeed = { 0.0f,10.0f,0.0f };
 
 	ClairAction* P_Clair = nullptr;
-	DimensionCollision* P_Collision = nullptr;
+	DimensionalCollision* P_Collision = nullptr;
+	DimensionalCamera* P_Camera = nullptr;
 	Controller* P_Controller = nullptr;
-	TwoDimensionalCamera* P_Camera = nullptr;
 
 	ClairActionMotionFlag S_Flag;
 };

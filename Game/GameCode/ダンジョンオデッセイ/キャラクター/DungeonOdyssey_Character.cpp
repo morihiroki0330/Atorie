@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "Game.h"
-#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
 #include "DungeonOdyssey_Character.h"
+
+#include "GameCode/ダンジョンオデッセイ/DungeonOdyssey.h"
 #include "GameCode/ダンジョンオデッセイ/ステージ/DungeonOdyssey_Stage.h"
+
 DungeonOdyssey_Character::DungeonOdyssey_Character()
 {
 	M_CharacterTexture.Init("Assets/Sprite/DungeonOdyssey/AnyModel.DDS", 120.0f, 120.0f, true);
