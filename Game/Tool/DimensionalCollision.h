@@ -28,7 +28,7 @@ public:
 
 	//当たり判定の生成
 	void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag);
-
+	void DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag, int& Number);
 
 	//コピー
 	bool CopyDecisionData(ObjectData& Decision, int ObjectName);//【本体】のコピー
@@ -38,6 +38,7 @@ public:
 
 	//座標更新
 	void DecisionSetPosition(float PositionX, float PositionY, int ObjectName);
+	void DecisionSetPosition(float PositionX, float PositionY, int ObjectName,int Number);
 
 	//衝突判定
 	bool EmptyAndEmptyCollision(int ObjectName1, int Direction1, int ObjectName2, int Direction2);//【空同士】の衝突
@@ -50,6 +51,9 @@ public:
 
 	bool EmptyAndEmptysCollision(int ObjectName1, int Direction1, int Tag2, int Direction2);//【空】と【タグが付いた複数の空】の衝突
 	bool DecisionAndEmptysCollision(int ObjectName1, int Tag2, int Direction2);//【本体】と【タグが付いた複数の空】の衝突
+
+	bool DecisionAndDecisionsCollision(int ObjectName1, int Tag2,int Number);//【本体】と【指定タグが付いた複数の本体】の衝突
+	bool EmptysAndEmptysCollision(int Tag1, int Direction1, int Number1, int Tag2, int Direction2);//【指定タグが付いた複数の空】と【タグが付いた複数の空】の衝突
 
 
 	int OddConversion(int Number)
@@ -85,7 +89,7 @@ private:
 	void DecisionLeftSetPosition(int Count);
 private:
 	ObjectData DecisionData[256][5];
-	float EmptyWidth = 5.0f;
+	float EmptyWidth = 15.0f;
 	float InitValue = 50000.0f;
 	Vector4 CollisionWidth;//X:上の状突Y:右の衝突Z:下の衝突W:左の衝突
 };

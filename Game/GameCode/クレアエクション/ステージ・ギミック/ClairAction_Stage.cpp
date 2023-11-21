@@ -2,6 +2,7 @@
 #include "ClairAction_Stage.h"
 
 #include "GameCode/クレアエクション/ClairAction.h"
+#include "ClairAction_Gimmick.h"
 
 #include "Tool/DimensionalCollision.h"
 
@@ -12,7 +13,8 @@ ClairAction_Stage::ClairAction_Stage()
 bool ClairAction_Stage::Start()
 {
 	P_Collision = FindGO<DimensionalCollision>("collision");
-	//MapSet();
+	P_Gimmick = FindGO<ClairAction_Gimmick>("gimmick");
+	MapSet();
 	return true;
 }
 void ClairAction_Stage::Render(RenderContext& rc)
@@ -32,7 +34,7 @@ void ClairAction_Stage::Render(RenderContext& rc)
 
 bool ClairAction_Stage::MapSet()
 {
-	M_FilePath = "Assets/Sprite/PuzzleBoxPath/StageTile.txt";
+	M_FilePath = "Assets/Sprite/ClairAction/StageTile.txt";
 	FILE* M_FilePointer = nullptr;
 	fopen_s(&M_FilePointer, M_FilePath, "r");
 	if (M_FilePointer == NULL)
@@ -47,8 +49,7 @@ bool ClairAction_Stage::MapSet()
 			X = 99;
 			Y = 99;
 			MapType = 99;
-		}
-		else {
+		}else {
 			if (X == 99)
 			{
 				if (M_Value[0] != '\n')
@@ -56,8 +57,7 @@ bool ClairAction_Stage::MapSet()
 					int Count = atoi(M_Value);
 					X = Count;
 				}
-			}
-			else {
+			}else {
 				if (Y == 99)
 				{
 					if (M_Value[0] != '\n')
@@ -65,8 +65,7 @@ bool ClairAction_Stage::MapSet()
 						int Count = atoi(M_Value);
 						Y = Count;
 					}
-				}
-				else {
+				}else {
 					if (MapType == 99)
 					{
 						if (M_Value[0] != '\n')
@@ -76,10 +75,13 @@ bool ClairAction_Stage::MapSet()
 							switch (MapType)
 							{
 							case CA_MAP_GROUND:
-								//Ground(X, Y);
+								Ground(X, Y);
 								break;
 							case CA_MAP_WALL:
-								//Goal(X, Y);
+								Wall(X, Y);
+								break;
+							case CA_GIMMICK_BOX:
+								Box(X, Y);
 								break;
 							default:
 								break;
@@ -92,4 +94,39 @@ bool ClairAction_Stage::MapSet()
 	}
 	fclose(M_FilePointer);
 	return true;
+}
+
+void ClairAction_Stage::Ground(int X, int Y)
+{
+	M_StageTileTexture[X][Y].Init("Assets/Sprite/ClairAction/Ground.DDS", 120.0f, 120.0f, true);
+	M_StagePosition.x = -900.0f + (X * 120.0f);
+	M_StagePosition.y = -480.0f + (Y * 120.0f);
+	M_StageTileTexture[X][Y].SetPosition(M_StagePosition);
+	M_StageTileTexture[X][Y].Update();
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, CA_COLLISION_GROUND, CA_TAG_GROUND);
+}
+void ClairAction_Stage::Wall(int X, int Y)
+{
+	M_StageTileTexture[X][Y].Init("Assets/Sprite/ClairAction/Ground.DDS", 120.0f, 120.0f, true);
+	M_StagePosition.x = -900.0f + (X * 120.0f);
+	M_StagePosition.y = -480.0f + (Y * 120.0f);
+	M_StageTileTexture[X][Y].SetPosition(M_StagePosition);
+	M_StageTileTexture[X][Y].Update();
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, CA_COLLISION_WALL, CA_TAG_WALL);
+}
+void ClairAction_Stage::Goal(int X, int Y)
+{
+	M_StageTileTexture[X][Y].Init("Assets/Sprite/ClairAction/Ground.DDS", 120.0f, 120.0f, true);
+	M_StagePosition.x = -900.0f + (X * 120.0f);
+	M_StagePosition.y = -480.0f + (Y * 120.0f);
+	M_StageTileTexture[X][Y].SetPosition(M_StagePosition);
+	M_StageTileTexture[X][Y].Update();
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, CA_COLLISION_GOAL, CA_TAG_NON);
+}
+
+void ClairAction_Stage::Box(int X, int Y)
+{
+	M_StagePosition.x = -900.0f + (X * 120.0f);
+	M_StagePosition.y = -480.0f + (Y * 120.0f);
+	P_Gimmick->Create(CA_GIMMICK_BOX, X, Y, M_StagePosition);
 }

@@ -33,5 +33,5 @@ PSInput VSMain(VSInput In)
 float4 PSMain( PSInput In ) : SV_Target0
 {
 	float4 TexColor = colorTexture.Sample(Sampler,In.uv);
-	return TexColor;
+	return TexColor * mulColor;
 }

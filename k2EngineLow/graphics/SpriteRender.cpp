@@ -65,6 +65,12 @@ namespace nsK2EngineLow
 		m_sprite.Init(InitData);
 	}
 
+	void SpriteRender::TextureSet(const char* Sprite)
+	{
+		InitData.m_ddsFilePath[0] = Sprite;
+		m_sprite.Init(InitData);
+	}
+
 	void SpriteRender::Draw(RenderContext& rc)
 	{
 		g_renderingEngine->InRenderObject(this);

@@ -98,6 +98,10 @@ namespace nsK2EngineLow
 		bool GetInitFlag()
 		{return M_InitFlag;}
 
+	//画像変換
+
+		void TextureSet(const char* Sprite);
+
 	private:
 		//スプライト
 		Texture M_Texture;

@@ -55,23 +55,36 @@ void DimensionalCollision::DecisionDataSet(float  Wide, float Height, float Posi
 
 			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = (PositionY - (Height / 2));
 
-			/*DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX = int((PositionX - (Wide / 2)));
-			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX = EvenConversion(DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX);
+			DecisionData[Count][DIRECTION_NON].Wide = (Wide);
+			DecisionData[Count][DIRECTION_NON].Height = (Height);
 
-			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY = int((PositionY + (Height / 2)));
-			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY = EvenConversion(DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY);
+			DecisionInSideDataSet(Count);
+			return;
+		}
+	}
+}
+void DimensionalCollision::DecisionDataSet(float  Wide, float Height, float PositionX, float PositionY, int ObjectName, int Tag, int& Number)
+{
+	for (int Count = 0; Count < 256; Count++)
+	{
+		if (DecisionData[Count][DIRECTION_NON].ObjectName == (int)(InitValue))
+		{
+			DecisionData[Count][DIRECTION_NON].ObjectName = ObjectName;
 
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX = int((PositionX + (Wide / 2)));
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX = EvenConversion(DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX);
+			DecisionData[Count][DIRECTION_NON].Tag = Tag;
 
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = int((PositionY - (Height / 2)));
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = EvenConversion(DecisionData[Count][0].LowerRightVertexPositionY);*/
+			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX = (PositionX - (Wide / 2));
+
+			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY = (PositionY + (Height / 2));
+
+			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX = (PositionX + (Wide / 2));
+
+			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = (PositionY - (Height / 2));
 
 			DecisionData[Count][DIRECTION_NON].Wide = (Wide);
 			DecisionData[Count][DIRECTION_NON].Height = (Height);
 
-			/*DecisionData[Count][DIRECTION_NON].Wide = (int)(Wide);
-			DecisionData[Count][DIRECTION_NON].Height = (int)(Height);*/
+			Number = Count;
 
 			DecisionInSideDataSet(Count);
 			return;
@@ -193,24 +206,30 @@ void DimensionalCollision::DecisionSetPosition(float PositionX, float PositionY,
 
 			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = (PositionY - (DecisionData[Count][DIRECTION_NON].Height / 2));
 
-			/*DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX = int((PositionX - (DecisionData[Count][DIRECTION_NON].Wide / 2)));
-			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX = EvenConversion(DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX);
-
-			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY = int((PositionY + (DecisionData[Count][DIRECTION_NON].Height / 2)));
-			DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY = EvenConversion(DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY);
-
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX = int((PositionX + (DecisionData[Count][DIRECTION_NON].Wide / 2)));
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX = EvenConversion(DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX);
-
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = int((PositionY - (DecisionData[Count][DIRECTION_NON].Height / 2)));
-			DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY = EvenConversion(DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY);*/
-
 			DecisionUpSetPosition(Count);
 			DecisionRightSetPosition(Count);
 			DecisionLeftSetPosition(Count);
 			DecisionDownSetPosition(Count);
 			return;
 		}
+	}
+}
+void DimensionalCollision::DecisionSetPosition(float PositionX, float PositionY, int ObjectName,int Number)
+{
+	if (DecisionData[Number][DIRECTION_NON].ObjectName == ObjectName)
+	{
+		DecisionData[Number][DIRECTION_NON].UpperLeftVertexPositionX = (PositionX - (DecisionData[Number][DIRECTION_NON].Wide / 2));
+		DecisionData[Number][DIRECTION_NON].UpperLeftVertexPositionY = (PositionY + (DecisionData[Number][DIRECTION_NON].Height / 2));
+
+		DecisionData[Number][DIRECTION_NON].LowerRightVertexPositionX = (PositionX + (DecisionData[Number][DIRECTION_NON].Wide / 2));
+
+		DecisionData[Number][DIRECTION_NON].LowerRightVertexPositionY = (PositionY - (DecisionData[Number][DIRECTION_NON].Height / 2));
+
+		DecisionUpSetPosition(Number);
+		DecisionRightSetPosition(Number);
+		DecisionLeftSetPosition(Number);
+		DecisionDownSetPosition(Number);
+		return;
 	}
 }
 void DimensionalCollision::DecisionUpSetPosition(int Count)
@@ -390,6 +409,53 @@ bool DimensionalCollision::DecisionAndEmptysCollision(int ObjectName1, int Tag2,
 	for (int Count = 0; Count < 256; Count++)
 	{
 		if (CopyDecisionData(Decision1, ObjectName1) && CopyEmptysData(Decision2, Tag2, Direction2, Count))
+		{
+			for (int X = Decision1.UpperLeftVertexPositionX; X <= Decision1.LowerRightVertexPositionX; X++)
+			{
+				for (int Y = Decision1.LowerRightVertexPositionY; Y <= Decision1.UpperLeftVertexPositionY; Y++)
+				{
+					if ((X >= Decision2.UpperLeftVertexPositionX && X <= Decision2.LowerRightVertexPositionX) && (Y <= Decision2.UpperLeftVertexPositionY && Y >= Decision2.LowerRightVertexPositionY))
+					{
+						CollisionWidth.x = Decision2.UpperLeftVertexPositionY;
+						return true;
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
+
+
+bool DimensionalCollision::DecisionAndDecisionsCollision(int ObjectName1, int Tag2,int Number)
+{
+	ObjectData Decision1;
+	ObjectData Decision2;
+	
+	if (CopyDecisionData(Decision1, ObjectName1) && CopyDecisionsData(Decision2, Tag2, Number))
+	{
+		for (int X = Decision1.UpperLeftVertexPositionX; X <= Decision1.LowerRightVertexPositionX; X++)
+		{
+			for (int Y = Decision1.LowerRightVertexPositionY; Y <= Decision1.UpperLeftVertexPositionY; Y++)
+			{
+				if ((X >= Decision2.UpperLeftVertexPositionX && X <= Decision2.LowerRightVertexPositionX) && (Y <= Decision2.UpperLeftVertexPositionY && Y >= Decision2.LowerRightVertexPositionY))
+				{
+					CollisionWidth.x = Decision2.UpperLeftVertexPositionY;
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+bool DimensionalCollision::EmptysAndEmptysCollision(int Tag1, int Direction1, int Number1, int Tag2, int Direction2)
+{
+	ObjectData Decision1;
+	CopyEmptysData(Decision1, Tag1, Direction1, Number1);
+	ObjectData Decision2;
+	for (int Count = 0; Count < 256; Count++)
+	{
+		if (CopyEmptysData(Decision2, Tag2, Direction2, Count))
 		{
 			for (int X = Decision1.UpperLeftVertexPositionX; X <= Decision1.LowerRightVertexPositionX; X++)
 			{

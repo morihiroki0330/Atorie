@@ -7,11 +7,12 @@ class Controller;
 
 struct ClairActionMotionFlag
 {
-	bool M_WalkFlag = false;
+	bool M_WalkFlag = true;
 	bool M_JumpFlag = false;
 	bool M_GoalFlag = false;
-	bool M_PositionJustFlag = false;
 	bool M_FallFlag = false;
+	bool M_RightFlag = false;
+	bool M_LeftFlag = false;
 };
 class ClairAction_Character : public IGameObject
 {
@@ -23,9 +24,12 @@ public:
 
 	void Move();
 	void Walk();
+	void Rotation();
 	void Jump();
 	void Fall();
 	void Goal();
+
+	void TextureSet();
 private:
 	SpriteRender M_CharacterTexture;
 
@@ -38,5 +42,16 @@ private:
 	Controller* P_Controller = nullptr;
 
 	ClairActionMotionFlag S_Flag;
+
+	int M_JumpCoolTime = 0;
+
+	FontRender FR;
+	wchar_t R[256];
+
+	FontRender FL;
+	wchar_t L[256];
+
+	FontRender FX;
+	wchar_t X[256];
 };
 

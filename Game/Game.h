@@ -15,6 +15,7 @@ class DimensionalCamera;
 class DimensionalCollision;
 class MapCreate;
 class Weather;
+class Fade;
 
 struct GameClass
 {
@@ -37,6 +38,7 @@ struct Tool
 	DimensionalCollision* P_Collision = nullptr;
 	MapCreate* P_MapCreate = nullptr;
 	Weather* P_Weather;
+	Fade* P_Fade;
 };
 
 enum Class

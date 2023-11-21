@@ -8,7 +8,8 @@ cbuffer cb : register(b0)
 	float4 mulColor;
 };
 
-struct VSInput{
+struct VSInput
+{
 	float4 pos : POSITION;
 	float2 uv  : TEXCOORD0;
 };
@@ -38,6 +39,6 @@ float4 PSMain( PSInput In ) : SV_Target0
 		TexColor.g = 0.5f;
 		TexColor.b = 0.5f;
 	}
-	//TexColor.rgb = pow(TexColor.rgb, 1.0 / 2.2);
-	return TexColor;
+	TexColor.rgb = pow(TexColor.rgb, 1.0 / 2.2);
+	return TexColor * mulColor;
 }

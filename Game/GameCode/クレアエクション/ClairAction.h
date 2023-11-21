@@ -8,6 +8,7 @@ class ClairAction_Gimmick;
 
 class DimensionalCollision;
 class DimensionalCamera;
+class Fade;
 class Mouse;
 
 struct ClairActionClass
@@ -17,30 +18,50 @@ struct ClairActionClass
 
 	ClairAction_Character* P_Character = nullptr;
 	ClairAction_Stage* P_Stage = nullptr;
-	ClairAction_Gimmick* P_Gimmic = nullptr;
+	ClairAction_Gimmick* P_Gimmick = nullptr;
 	
 	DimensionalCollision* P_Collision = nullptr;
 	DimensionalCamera* P_Camera = nullptr;
+	Fade* P_Fade = nullptr;
 	Mouse* P_Mouse = nullptr;
 };
 enum
 {
-	CA_COLLISION_CURSOR = 1,
+	CA_COLLISION_CURSOR,
 
-	CA_COLLISION_STARTBUTTON = 2,
-	CA_COLLISION_OPTIONBUTTON = 3,
-	CA_COLLISION_EXITBUTTON = 4,
+	CA_COLLISION_STARTBUTTON,
+	CA_COLLISION_OPTIONBUTTON,
+	CA_COLLISION_EXITBUTTON,
+
+	CA_COLLISION_CHARACTER,
+
+	CA_COLLISION_GROUND,
+	CA_COLLISION_WALL,
+	CA_COLLISION_GOAL,
+
+	CA_COLLISION_BOX,
+
+	CA_COLLISION_NON
 };
 enum
 {
-	CA_TAG_CURSOR = 1,
+	CA_TAG_CURSOR,
 
-	CA_TAG_NON = 2
+	CA_TAG_GROUND,
+	CA_TAG_WALL,
+
+	CA_TAG_BOX,
+
+	CA_TAG_NON
 };
 enum
 {
 	CA_MAP_GROUND = 1,
 	CA_MAP_WALL = 2,
+
+	CA_GIMMICK_BOX,
+
+	CA_MAP_NON
 };
 class ClairAction : public IGameObject
 {

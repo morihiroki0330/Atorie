@@ -15,6 +15,7 @@
 #include "Tool/DimensionalCollision.h"
 #include "Tool/MapCreate.h"
 #include "Tool/Weather.h"
+#include "Tool/Fade.h"
 Game::Game()
 {
 	//S_GameClass.P_DO = NewGO<DungeonOdyssey>(0, "dungeon");
@@ -28,15 +29,16 @@ Game::Game()
 	S_Operation.P_Mouse = NewGO<Mouse>(1, "mouse");
 	S_Operation.P_Controller = NewGO<Controller>(1, "controller");
 
-	S_Tool.P_Camera = NewGO<DimensionalCamera>(0, "camera");
-	S_Tool.P_Collision = NewGO<DimensionalCollision>(0, "collision");
-	S_Tool.P_MapCreate = NewGO<MapCreate>(0, "create");
-	S_Tool.P_Weather = NewGO<Weather>(0, "weather");
+	S_Tool.P_Camera = NewGO<DimensionalCamera>(1, "camera");
+	S_Tool.P_Collision = NewGO<DimensionalCollision>(1, "collision");
+	S_Tool.P_MapCreate = NewGO<MapCreate>(1, "create");
+	S_Tool.P_Weather = NewGO<Weather>(1, "weather");
+	S_Tool.P_Fade = NewGO<Fade>(1, "fade");
 }
 Game::~Game()
 {
 	//DeleteGO(S_GameClass.P_DO);
-	//DeleteGO(S_GameClass.P_Livblock);
+	//DeleteGO(S_GameClass.P_LA);
 	//DeleteGO(S_GameClass.P_PBP);
 	//DeleteGO(S_GameClass.P_FB);
 	//DeleteGO(S_GameClass.P_GJ);
@@ -50,4 +52,5 @@ Game::~Game()
 	DeleteGO(S_Tool.P_Collision);
 	DeleteGO(S_Tool.P_MapCreate);
 	DeleteGO(S_Tool.P_Weather);
+	DeleteGO(S_Tool.P_Fade);
 }
