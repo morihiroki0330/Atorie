@@ -19,6 +19,7 @@ void ClairAction_GimmickBox::Update()
 {
 	Move();
 	Fall();
+	Reset();
 	P_Collision->DecisionSetPosition(M_BoxPosition.x, M_BoxPosition.y, CA_COLLISION_BOX, M_CollisionNumner);
 	M_BoxTexture.SetPosition(M_BoxPosition);
 	M_BoxTexture.Update();
@@ -67,5 +68,14 @@ void ClairAction_GimmickBox::Move()
 			M_OnGround = false;
 			M_OnBox = false;
 		}
+	}
+}
+
+void ClairAction_GimmickBox::Reset()
+{
+	if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP))
+	{
+		M_OnGround = true;
+		M_OnBox = false;
 	}
 }

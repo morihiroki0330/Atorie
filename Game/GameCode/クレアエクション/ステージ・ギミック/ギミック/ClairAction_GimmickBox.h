@@ -14,6 +14,8 @@ public:
 	void Fall();
 	void Move();
 
+	void Reset();
+
 	void SetPosition(Vector3 Position)
 	{M_BoxPosition = Position;}
 private:
