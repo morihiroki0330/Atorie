@@ -4,12 +4,15 @@
 
 #include "ClairAction_Character.h"
 
+#include "Tool/DimensionalAnimation.h"
 #include "Tool/DimensionalCollision.h"
 #include "Tool/DimensionalCamera.h"
 #include "MouseÅEController/Controller.h"
 
 ClairAction_Character::ClairAction_Character()
 {
+	//P_Animation = NewGO<DimensionalAnimation>(0, "Animation");
+
 	M_CharacterTexture.Init("Assets/Sprite/ClairAction/Character1.DDS", 256.0f, 256.0f, true);
 }
 bool ClairAction_Character::Start()
@@ -118,27 +121,8 @@ void ClairAction_Character::Walk()
 	M_CharacterSpeed.x = P_Controller->GetLStick().x;
 	Rotation();
 
-	if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_LEFT, CA_TAG_BOX, DIRECTION_RIGHT))
-	{
-		if (M_CharacterSpeed.x < 0.0f)
-		{
-			S_Flag.M_WalkFlag = false;
-		}else {
-			S_Flag.M_WalkFlag = true;
-		}
-	}else {
-	if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_RIGHT, CA_TAG_BOX, DIRECTION_LEFT))
-	{
-		if (M_CharacterSpeed.x > 0.0f)
-		{
-			S_Flag.M_WalkFlag = false;
-		}else {
-			S_Flag.M_WalkFlag = true;
-		}
-	}else {
-		S_Flag.M_WalkFlag = true;
-	}
-	}
+	BoxCollision();
+	
 
 	if (S_Flag.M_WalkFlag)
 	{
@@ -170,6 +154,31 @@ void ClairAction_Character::Rotation()
 void ClairAction_Character::Goal()
 {
 	
+}
+
+void ClairAction_Character::BoxCollision()
+{
+	if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_LEFT, CA_TAG_BOX, DIRECTION_RIGHT))
+	{
+		if (M_CharacterSpeed.x < 0.0f)
+		{
+			S_Flag.M_WalkFlag = false;
+		}else {
+			S_Flag.M_WalkFlag = true;
+		}
+	}else {
+		if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_RIGHT, CA_TAG_BOX, DIRECTION_LEFT))
+		{
+			if (M_CharacterSpeed.x > 0.0f)
+			{
+				S_Flag.M_WalkFlag = false;
+			}else {
+				S_Flag.M_WalkFlag = true;
+			}
+		}else {
+			S_Flag.M_WalkFlag = true;
+		}
+	}
 }
 
 void ClairAction_Character::TextureSet()

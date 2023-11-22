@@ -21,7 +21,6 @@ struct ClairActionClass
 	ClairAction_Gimmick* P_Gimmick = nullptr;
 	
 	DimensionalCollision* P_Collision = nullptr;
-	DimensionalCamera* P_Camera = nullptr;
 	Fade* P_Fade = nullptr;
 	Mouse* P_Mouse = nullptr;
 };

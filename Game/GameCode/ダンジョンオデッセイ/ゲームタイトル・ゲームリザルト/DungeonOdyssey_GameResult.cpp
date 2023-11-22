@@ -6,7 +6,7 @@
 
 DungeonOdyssey_GameResult::DungeonOdyssey_GameResult()
 {
-	M_GameResultTexture.Init("Assets/Sprite/DungeonOdyssey/GameResult.DDS", 1920.0f, 1080.0f);
+	M_GameResultTexture.Init("Assets/Sprite/DungeonOdyssey/GameResult.DDS", 1920.0f, 1080.0f,true);
 }
 bool DungeonOdyssey_GameResult::Start()
 {

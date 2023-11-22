@@ -6,7 +6,7 @@
 
 DungeonOdyssey_GameTitle::DungeonOdyssey_GameTitle()
 {
-	M_GameTitleTexture.Init("Assets/Sprite/DungeonOdyssey/GameTitle.DDS", 1920.0f, 1080.0f);
+	M_GameTitleTexture.Init("Assets/Sprite/DungeonOdyssey/GameTitle.DDS", 1920.0f, 1080.0f,true);
 }
 bool DungeonOdyssey_GameTitle::Start()
 {
