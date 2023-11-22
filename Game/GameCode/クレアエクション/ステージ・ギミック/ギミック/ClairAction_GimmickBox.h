@@ -13,6 +13,7 @@ public:
 
 	void Fall();
 	void Move();
+	void Collision();
 
 	void Reset();
 
@@ -28,9 +29,12 @@ private:
 	Mouse* P_Mouse = nullptr;
 
 	bool M_FallFlag = false;
+	bool M_MoveFlag = false;
+
 	bool M_OnGround = false;
 	bool M_OnBox = false;
 
 	int M_CollisionNumner = 0;
+
 };
 

@@ -17,6 +17,7 @@ bool ClairAction_GimmickBox::Start()
 }
 void ClairAction_GimmickBox::Update()
 {
+	Collision();
 	Move();
 	Fall();
 	Reset();
@@ -31,25 +32,22 @@ void ClairAction_GimmickBox::Render(RenderContext& rc)
 
 void ClairAction_GimmickBox::Fall()
 {
-	if (!P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP) && !P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP) && !P_Mouse->GetMouseFlag(LEFTBUTTON))
+	if (!M_OnBox && !M_OnGround)
 	{
-		M_FallFlag = true;
-	}else {
-		if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP) || P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+		if (!M_MoveFlag)
 		{
-			if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP))
-			{
-				M_OnGround = true;
-				M_OnBox = false;
-			}else {
-			if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
-			{
-				M_OnGround = false;
-				M_OnBox = true;
-			}
-			}
+			M_FallFlag = true;
+		}else {
+		if (M_MoveFlag)
+		{
 			M_FallFlag = false;
 		}
+		}
+	}else {
+	if (M_OnBox || M_OnGround)
+	{
+		M_FallFlag = false;
+	}
 	}
 
 	if (M_FallFlag)
@@ -57,25 +55,74 @@ void ClairAction_GimmickBox::Fall()
 }
 void ClairAction_GimmickBox::Move()
 {
-	if (P_Collision->DecisionAndDecisionsCollision(CA_COLLISION_CURSOR, CA_TAG_BOX, M_CollisionNumner) || M_OnBox)
+	if (!M_MoveFlag)
 	{
-		M_BoxPosition += P_Mouse->GetMouseMoveSpeed();
-		M_FallFlag = false;
-	}else {
-		if (!P_Collision->DecisionAndDecisionsCollision(CA_COLLISION_CURSOR, CA_TAG_BOX, M_CollisionNumner))
+		if (M_OnBox)
 		{
-			M_FallFlag = true;
-			M_OnGround = false;
-			M_OnBox = false;
+			M_BoxPosition += P_Mouse->GetMouseMoveSpeed();
+		}
+	}
+
+	if (M_MoveFlag)
+	{M_BoxPosition += P_Mouse->GetMouseMoveSpeed();}
+}
+void ClairAction_GimmickBox::Collision()
+{
+	if (!P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP) && !P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+	{
+		//両方衝突していない
+		M_OnBox = false;
+		M_OnGround = false;
+	}else {
+		if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP) && P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+		{
+			//両方衝突している
+			M_OnBox = true;
+			M_OnGround = true;
+		}
+		else {
+			if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP))
+			{
+				//地面と衝突している
+				M_OnBox = false;
+				M_OnGround = true;
+			}
+			else {
+				if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+				{
+					//箱と衝突している
+					M_OnBox = true;
+					M_OnGround = false;
+				}
+			}
+		}
+	}
+
+	if (!P_Collision->DecisionAndDecisionsCollision(CA_COLLISION_CURSOR, CA_TAG_BOX, M_CollisionNumner))
+	{
+		//カーソルと衝突していない
+		M_MoveFlag = false;
+	}else {
+		if (P_Collision->DecisionAndDecisionsCollision(CA_COLLISION_CURSOR, CA_TAG_BOX, M_CollisionNumner))
+		{
+			//カーソルと衝突している
+			if (!P_Mouse->GetMouseFlag(LEFTBUTTON))
+			{
+				//左クリックを押していない
+				M_MoveFlag = false;
+			}else {
+			if (P_Mouse->GetMouseFlag(LEFTBUTTON))
+			{
+				//左クリックを押している
+				M_MoveFlag = true;
+			}
+			}
 		}
 	}
 }
 
 void ClairAction_GimmickBox::Reset()
 {
-	if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP))
-	{
-		M_OnGround = true;
-		M_OnBox = false;
-	}
+	if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_DOWN))
+	{M_BoxPosition.y = 0.0f;}
 }
