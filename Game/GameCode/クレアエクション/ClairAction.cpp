@@ -39,6 +39,7 @@ void ClairAction::Create(int Number)
 	switch(Number) {
 	case FIRST:
 		DeleteGO(S_Clair.P_GameTitle);
+		S_Clair.P_Fade->StartFadeIn();
 		S_Clair.P_Stage = NewGO<ClairAction_Stage>(0, "stage");
 		S_Clair.P_Gimmick = NewGO<ClairAction_Gimmick>(0, "gimmick");
 		S_Clair.P_Character = NewGO<ClairAction_Character>(0, "character");

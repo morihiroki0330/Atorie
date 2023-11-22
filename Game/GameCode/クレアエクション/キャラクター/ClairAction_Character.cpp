@@ -31,44 +31,10 @@ void ClairAction_Character::Update()
 	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, CA_COLLISION_CHARACTER);
 	M_CharacterTexture.SetPosition(M_CharacterPosition);
 	M_CharacterTexture.Update();
-
-	if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_RIGHT, CA_TAG_BOX, DIRECTION_LEFT))
-	{
-		swprintf_s(R, 256, L"右衝突：している");
-	}else {
-		if (!P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_RIGHT, CA_TAG_BOX, DIRECTION_LEFT))
-		{
-			swprintf_s(R, 256, L"右衝突：していない");
-		}
-	}
-	FR.SetText(R);
-	FR.SetPosition({300.0f,0.0f,0.0f});
-	FR.SetScale(1.0f);
-
-	if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_LEFT, CA_TAG_BOX, DIRECTION_RIGHT))
-	{
-		swprintf_s(L, 256, L"左衝突：している");
-	}else {
-		if (!P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_LEFT, CA_TAG_BOX, DIRECTION_RIGHT))
-		{
-			swprintf_s(L, 256, L"左衝突：していない");
-		}
-	}
-	FL.SetText(L);
-	FL.SetPosition({ 300.0f,100.0f,0.0f });
-	FL.SetScale(1.0f);
-
-	swprintf_s(X, 256, L"Speed：%f", M_CharacterSpeed.x);
-	FX.SetText(X);
-	FX.SetPosition({ 300.0f,200.0f,0.0f });
-	FX.SetScale(1.0f);
 }
 void ClairAction_Character::Render(RenderContext& rc)
 {
 	M_CharacterTexture.Draw(rc);
-	FR.Draw(rc);
-	FL.Draw(rc);
-	FX.Draw(rc);
 }
 
 void ClairAction_Character::Move()
@@ -112,9 +78,7 @@ void ClairAction_Character::Jump()
 	}
 
 	if (S_Flag.M_JumpFlag)
-	{
-		M_CharacterPosition.y += M_CharacterSpeed.y;
-	}
+	{M_CharacterPosition.y += M_CharacterSpeed.y;}
 }
 void ClairAction_Character::Walk()
 {

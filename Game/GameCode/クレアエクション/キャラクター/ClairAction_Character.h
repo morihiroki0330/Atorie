@@ -48,14 +48,5 @@ private:
 	ClairActionMotionFlag S_Flag;
 
 	int M_JumpCoolTime = 0;
-
-	FontRender FR;
-	wchar_t R[256];
-
-	FontRender FL;
-	wchar_t L[256];
-
-	FontRender FX;
-	wchar_t X[256];
 };
 

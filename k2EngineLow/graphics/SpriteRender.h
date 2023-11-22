@@ -2,7 +2,6 @@
 namespace nsK2EngineLow
 {
 	class RenderingEngine;
-	class DimensionCollision;
 
 	class SpriteRender : public IRender
 	{
@@ -100,7 +99,7 @@ namespace nsK2EngineLow
 
 	//画像変換
 
-		void TextureSet(const char* Sprite);
+		void TextureSet(const wchar_t* Sprite);
 
 	private:
 		//スプライト

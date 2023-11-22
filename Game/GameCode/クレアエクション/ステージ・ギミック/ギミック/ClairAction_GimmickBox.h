@@ -1,4 +1,5 @@
 #pragma once
+//áŠQ•¨‚â‘ä‚Æ‚µ‚Äg—p
 class ClairAction;
 
 class DimensionalCollision;

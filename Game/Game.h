@@ -3,9 +3,6 @@
 class DungeonOdyssey;
 class LivblockAdventure;
 class PuzzleBoxPath;
-class FlickBlade;
-class GazeJourney;
-class AnimeTraverse;
 class ClairAction;
 
 class Mouse;
@@ -22,9 +19,6 @@ struct GameClass
 	DungeonOdyssey* P_DO        = nullptr;
 	LivblockAdventure* P_LA = nullptr;
 	PuzzleBoxPath* P_PBP = nullptr;
-	FlickBlade* P_FB = nullptr;
-	GazeJourney* P_GJ     = nullptr;
-	AnimeTraverse* P_AT = nullptr;
 	ClairAction* P_CA = nullptr;
 };
 struct Operation

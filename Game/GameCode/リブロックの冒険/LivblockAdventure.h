@@ -40,6 +40,7 @@ class LivblockAdventure : public IGameObject
 public:
 	LivblockAdventure();
 	~LivblockAdventure();
+	bool Start();
 	void Render(RenderContext& rc);
 
 	void Create(int Number);

@@ -21,6 +21,11 @@ LivblockAdventure::~LivblockAdventure()
 	DeleteGO(S_Livblock.P_Stage);
 	DeleteGO(S_Livblock.P_Character);
 }
+bool LivblockAdventure::Start()
+{
+	S_Livblock.P_Collision = FindGO<DimensionalCollision>("collision");
+	return true;
+}
 void LivblockAdventure::Render(RenderContext& rc)
 {
 	M_FrameTexture.Draw(rc);

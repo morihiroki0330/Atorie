@@ -5,6 +5,7 @@
 #include "GameCode/クレアエクション/ClairAction.h"
 
 #include "Tool/DimensionalCollision.h"
+#include "Tool/Fade.h"
 #include "Mouse・Controller/Mouse.h"
 
 ClairAction_GameTitle::ClairAction_GameTitle()
@@ -18,6 +19,7 @@ bool ClairAction_GameTitle::Start()
 {
 	P_Clair = FindGO<ClairAction>("clair");
 	P_Collision = FindGO<DimensionalCollision>("collision");
+	P_Fade = FindGO<Fade>("fade");
 	P_Mouse = FindGO<Mouse>("mouse");
 
 	P_Collision->DecisionDataSet(S_Button.M_StartButton.GetWideAndHeight().x, S_Button.M_StartButton.GetWideAndHeight().y, S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, CA_COLLISION_STARTBUTTON, CA_TAG_NON);
@@ -27,20 +29,8 @@ bool ClairAction_GameTitle::Start()
 }
 void ClairAction_GameTitle::Update()
 {
-	if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
-	{
-		P_Clair->Create(FIRST);
-	}else {
-		if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
-		{
-
-		}else {
-			if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
-			{
-				exit(EXIT_FAILURE);
-			}
-		}
-	}
+	Button();
+	ButtonAfter();
 
 	P_Collision->DecisionSetPosition(S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, CA_COLLISION_STARTBUTTON);
 	P_Collision->DecisionSetPosition(S_Button.M_OptionButtonPosition.x, S_Button.M_OptionButtonPosition.y, CA_COLLISION_OPTIONBUTTON);
@@ -61,4 +51,53 @@ void ClairAction_GameTitle::Render(RenderContext& rc)
 	S_Button.M_StartButton.Draw(rc);
 	S_Button.M_OptionButton.Draw(rc);
 	S_Button.M_ExitButton.Draw(rc);
+}
+
+void ClairAction_GameTitle::Button()
+{
+	if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+	{
+		if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
+		{
+			P_Fade->StartFadeOut();
+			M_StartFlag = true;
+		}
+	}else {
+		if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+		{
+			if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
+			{
+				M_OptionFlag = true;
+			}
+		}else {
+			if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+			{
+				if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
+				{
+					P_Fade->StartFadeOut();
+					M_ExitFlag = true;
+				}
+			}
+		}
+	}
+}
+void ClairAction_GameTitle::ButtonAfter()
+{
+	if (!P_Fade->IsFade())
+	{
+		if (M_StartFlag)
+		{
+			P_Clair->Create(FIRST);
+		}else {
+			if (M_OptionFlag)
+			{
+
+			}else {
+				if (M_ExitFlag)
+				{
+					exit(EXIT_FAILURE);
+				}
+			}
+		}
+	}
 }

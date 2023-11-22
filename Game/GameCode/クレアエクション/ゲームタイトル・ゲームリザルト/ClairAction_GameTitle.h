@@ -2,6 +2,7 @@
 class ClairAction;
 
 class DimensionalCollision;
+class Fade;
 class Mouse;
 
 struct ClairActionButton
@@ -21,12 +22,20 @@ public:
 	bool Start();
 	void Update();
 	void Render(RenderContext& rc);
+
+	void Button();
+	void ButtonAfter();
 private:
 	SpriteRender M_GameTitleTexture;
 	ClairActionButton S_Button;
 
 	ClairAction* P_Clair = nullptr;
 	DimensionalCollision* P_Collision = nullptr;
+	Fade* P_Fade = nullptr;
 	Mouse* P_Mouse = nullptr;
+
+	bool M_StartFlag = false;
+	bool M_OptionFlag = false;
+	bool M_ExitFlag = false;
 };
 
