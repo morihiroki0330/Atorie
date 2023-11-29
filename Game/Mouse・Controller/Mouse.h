@@ -61,4 +61,3 @@ private:
 	float FlickSpeedThreshold = 6000.0f;
 
 };
-

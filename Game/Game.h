@@ -19,7 +19,7 @@ struct GameClass
 	DungeonOdyssey* P_DO        = nullptr;
 	LivblockAdventure* P_LA = nullptr;
 	PuzzleBoxPath* P_PBP = nullptr;
-	ClairAction* P_CA = nullptr;
+	ClairAction* P_Clair = nullptr;
 };
 struct Operation
 {

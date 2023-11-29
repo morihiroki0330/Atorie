@@ -4,8 +4,8 @@
 
 #include "GameCode/クレアエクション/ClairAction.h"
 
-#include "Tool/DimensionalCollision.h"
-#include "Tool/Fade.h"
+#include "DimensionalElement/DimensionalCollision.h"
+#include "DimensionalEffect/Fade.h"
 #include "Mouse・Controller/Mouse.h"
 
 ClairAction_GameTitle::ClairAction_GameTitle()

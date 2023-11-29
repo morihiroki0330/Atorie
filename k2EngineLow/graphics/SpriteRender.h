@@ -99,7 +99,7 @@ namespace nsK2EngineLow
 
 	//画像変換
 
-		void TextureSet(const wchar_t* Sprite);
+		void TextureSet(const char* Sprite);
 
 	private:
 		//スプライト

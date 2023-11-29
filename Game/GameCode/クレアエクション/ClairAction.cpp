@@ -5,12 +5,12 @@
 #include "ゲームタイトル・ゲームリザルト/ClairAction_GameTitle.h"
 #include "ゲームタイトル・ゲームリザルト/ClairAction_GameResult.h"
 #include "キャラクター/ClairAction_Character.h"
-#include "ステージ・ギミック/ClairAction_Stage.h"
-#include "ステージ・ギミック/ClairAction_Gimmick.h"
+#include "ステージ/ClairAction_Stage.h"
+#include "ギミック/ClairAction_Gimmick.h"
 
-#include "Tool/DimensionalCollision.h"
-#include "Tool/DimensionalCamera.h"
-#include "Tool/Fade.h"
+#include "DimensionalElement/DimensionalCollision.h"
+#include "DimensionalElement/DimensionalCamera.h"
+#include "DimensionalEffect/Fade.h"
 #include "Mouse・Controller/Mouse.h"
 
 ClairAction::ClairAction()

@@ -4,9 +4,9 @@
 
 #include "ClairAction_Character.h"
 
-#include "Tool/DimensionalAnimation.h"
-#include "Tool/DimensionalCollision.h"
-#include "Tool/DimensionalCamera.h"
+#include "DimensionalElement/DimensionalAnimation.h"
+#include "DimensionalElement/DimensionalCollision.h"
+#include "DimensionalElement/DimensionalCamera.h"
 #include "MouseÅEController/Controller.h"
 
 ClairAction_Character::ClairAction_Character()

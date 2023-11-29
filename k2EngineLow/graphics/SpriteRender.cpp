@@ -65,7 +65,7 @@ namespace nsK2EngineLow
 		m_sprite.Init(InitData);
 	}
 
-	void SpriteRender::TextureSet(const wchar_t* Sprite)
+	void SpriteRender::TextureSet(const char* Sprite)
 	{
 		InitData.m_ddsFilePath[0] = Sprite;
 		m_sprite.Init(InitData);
