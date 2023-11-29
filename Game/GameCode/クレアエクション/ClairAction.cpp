@@ -10,7 +10,11 @@
 
 #include "DimensionalElement/DimensionalCollision.h"
 #include "DimensionalElement/DimensionalCamera.h"
+
 #include "DimensionalEffect/Fade.h"
+
+#include "DimensionalStorage/NumberStorage.h"
+
 #include "MouseÅEController/Mouse.h"
 
 ClairAction::ClairAction()
@@ -27,12 +31,12 @@ bool ClairAction::Start()
 	S_Clair.P_Fade = FindGO<Fade>("fade");
 	S_Clair.P_Mouse = FindGO<Mouse>("mouse");
 	S_Clair.P_Mouse->MouseCursorTextureSet("Assets/Sprite/ClairAction/MouseCursor.DDS", 90.0f, 90.0f, false);
-	S_Clair.P_Collision->DecisionDataSet(35.0f, 35.0f, S_Clair.P_Mouse->GetMousePosition().x, S_Clair.P_Mouse->GetMousePosition().y, CA_COLLISION_CURSOR, CA_TAG_CURSOR);
+	S_Clair.P_Collision->DecisionDataSet(35.0f, 35.0f, S_Clair.P_Mouse->GetMousePosition().x, S_Clair.P_Mouse->GetMousePosition().y, COLLISION_CURSOR, TAG_CURSOR);
 	return true;
 }
 void ClairAction::Update()
 {
-	S_Clair.P_Collision->DecisionSetPosition(S_Clair.P_Mouse->GetMousePosition().x-27.0f, S_Clair.P_Mouse->GetMousePosition().y+27.0f, CA_COLLISION_CURSOR);
+	S_Clair.P_Collision->DecisionSetPosition(S_Clair.P_Mouse->GetMousePosition().x-27.0f, S_Clair.P_Mouse->GetMousePosition().y+27.0f, COLLISION_CURSOR);
 }
 void ClairAction::Create(int Number)
 {

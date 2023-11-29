@@ -5,7 +5,11 @@
 #include "GameCode/クレアエクション/ClairAction.h"
 
 #include "DimensionalElement/DimensionalCollision.h"
+
 #include "DimensionalEffect/Fade.h"
+
+#include "DimensionalStorage/NumberStorage.h"
+
 #include "Mouse・Controller/Mouse.h"
 
 ClairAction_GameTitle::ClairAction_GameTitle()
@@ -22,9 +26,9 @@ bool ClairAction_GameTitle::Start()
 	P_Fade = FindGO<Fade>("fade");
 	P_Mouse = FindGO<Mouse>("mouse");
 
-	P_Collision->DecisionDataSet(S_Button.M_StartButton.GetWideAndHeight().x, S_Button.M_StartButton.GetWideAndHeight().y, S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, CA_COLLISION_STARTBUTTON, CA_TAG_NON);
-	P_Collision->DecisionDataSet(S_Button.M_OptionButton.GetWideAndHeight().x, S_Button.M_OptionButton.GetWideAndHeight().y, S_Button.M_OptionButtonPosition.x, S_Button.M_OptionButtonPosition.y, CA_COLLISION_OPTIONBUTTON, CA_TAG_NON);
-	P_Collision->DecisionDataSet(S_Button.M_ExitButton.GetWideAndHeight().x, S_Button.M_ExitButton.GetWideAndHeight().y, S_Button.M_ExitButtonPosition.x, S_Button.M_ExitButtonPosition.y, CA_COLLISION_EXITBUTTON, CA_TAG_NON);
+	P_Collision->DecisionDataSet(S_Button.M_StartButton.GetWideAndHeight().x, S_Button.M_StartButton.GetWideAndHeight().y, S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, COLLISION_STARTBUTTON, TAG_NON);
+	P_Collision->DecisionDataSet(S_Button.M_OptionButton.GetWideAndHeight().x, S_Button.M_OptionButton.GetWideAndHeight().y, S_Button.M_OptionButtonPosition.x, S_Button.M_OptionButtonPosition.y, COLLISION_OPTIONBUTTON, TAG_NON);
+	P_Collision->DecisionDataSet(S_Button.M_ExitButton.GetWideAndHeight().x, S_Button.M_ExitButton.GetWideAndHeight().y, S_Button.M_ExitButtonPosition.x, S_Button.M_ExitButtonPosition.y, COLLISION_EXITBUTTON, TAG_NON);
 	return true;
 }
 void ClairAction_GameTitle::Update()
@@ -32,9 +36,9 @@ void ClairAction_GameTitle::Update()
 	Button();
 	ButtonAfter();
 
-	P_Collision->DecisionSetPosition(S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, CA_COLLISION_STARTBUTTON);
-	P_Collision->DecisionSetPosition(S_Button.M_OptionButtonPosition.x, S_Button.M_OptionButtonPosition.y, CA_COLLISION_OPTIONBUTTON);
-	P_Collision->DecisionSetPosition(S_Button.M_ExitButtonPosition.x, S_Button.M_ExitButtonPosition.y, CA_COLLISION_EXITBUTTON);
+	P_Collision->DecisionSetPosition(S_Button.M_StartButtonPosition.x, S_Button.M_StartButtonPosition.y, COLLISION_STARTBUTTON);
+	P_Collision->DecisionSetPosition(S_Button.M_OptionButtonPosition.x, S_Button.M_OptionButtonPosition.y, COLLISION_OPTIONBUTTON);
+	P_Collision->DecisionSetPosition(S_Button.M_ExitButtonPosition.x, S_Button.M_ExitButtonPosition.y, COLLISION_EXITBUTTON);
 
 	S_Button.M_StartButton.SetPosition(S_Button.M_StartButtonPosition);
 	S_Button.M_OptionButton.SetPosition(S_Button.M_OptionButtonPosition);
@@ -55,7 +59,7 @@ void ClairAction_GameTitle::Render(RenderContext& rc)
 
 void ClairAction_GameTitle::Button()
 {
-	if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+	if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
 	{
 		if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
 		{
@@ -63,14 +67,14 @@ void ClairAction_GameTitle::Button()
 			M_StartFlag = true;
 		}
 	}else {
-		if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+		if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
 		{
 			if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
 			{
 				M_OptionFlag = true;
 			}
 		}else {
-			if (P_Collision->DecisionAndDecisionCollision(CA_COLLISION_CURSOR, CA_COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+			if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
 			{
 				if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
 				{

@@ -7,6 +7,7 @@
 #include "DimensionalElement/DimensionalAnimation.h"
 #include "DimensionalElement/DimensionalCollision.h"
 #include "DimensionalElement/DimensionalCamera.h"
+#include "DimensionalStorage/NumberStorage.h"
 #include "MouseÅEController/Controller.h"
 
 ClairAction_Character::ClairAction_Character()
@@ -21,14 +22,14 @@ bool ClairAction_Character::Start()
 	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Controller = FindGO<Controller>("controller");
 	P_Camera = FindGO<DimensionalCamera>("camera");
-	P_Collision->DecisionDataSet(256.0f, 256.0f, M_CharacterPosition.x, M_CharacterPosition.y, CA_COLLISION_CHARACTER, CA_TAG_NON);
+	P_Collision->DecisionDataSet(256.0f, 256.0f, M_CharacterPosition.x, M_CharacterPosition.y, COLLISION_CHARACTER, TAG_NON);
 	return true;
 }
 void ClairAction_Character::Update()
 {
 	Move();
 	TextureSet();
-	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, CA_COLLISION_CHARACTER);
+	P_Collision->DecisionSetPosition(M_CharacterPosition.x, M_CharacterPosition.y, COLLISION_CHARACTER);
 	M_CharacterTexture.SetPosition(M_CharacterPosition);
 	M_CharacterTexture.Update();
 }
@@ -46,11 +47,11 @@ void ClairAction_Character::Move()
 }
 void ClairAction_Character::Fall()
 {
-	if (!P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_DOWN, CA_TAG_GROUND, DIRECTION_UP) && !P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_DOWN, CA_TAG_BOX, DIRECTION_UP) && !S_Flag.M_JumpFlag)
+	if (!P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_GROUND, DIRECTION_UP) && !P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_BOX, DIRECTION_UP) && !S_Flag.M_JumpFlag)
 	{
 		S_Flag.M_FallFlag = true;
 	}else {
-		if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_DOWN, CA_TAG_GROUND, DIRECTION_UP)|| P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_DOWN, CA_TAG_BOX, DIRECTION_UP))
+		if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_GROUND, DIRECTION_UP)|| P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_DOWN, TAG_BOX, DIRECTION_UP))
 		{
 			S_Flag.M_FallFlag = false;
 			S_Flag.M_JumpFlag = false;
@@ -122,7 +123,7 @@ void ClairAction_Character::Goal()
 
 void ClairAction_Character::BoxCollision()
 {
-	if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_LEFT, CA_TAG_BOX, DIRECTION_RIGHT))
+	if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_LEFT, TAG_BOX, DIRECTION_RIGHT))
 	{
 		if (M_CharacterSpeed.x < 0.0f)
 		{
@@ -131,7 +132,7 @@ void ClairAction_Character::BoxCollision()
 			S_Flag.M_WalkFlag = true;
 		}
 	}else {
-		if (P_Collision->EmptyAndEmptysCollision(CA_COLLISION_CHARACTER, DIRECTION_RIGHT, CA_TAG_BOX, DIRECTION_LEFT))
+		if (P_Collision->EmptyAndEmptysCollision(COLLISION_CHARACTER, DIRECTION_RIGHT, TAG_BOX, DIRECTION_LEFT))
 		{
 			if (M_CharacterSpeed.x > 0.0f)
 			{

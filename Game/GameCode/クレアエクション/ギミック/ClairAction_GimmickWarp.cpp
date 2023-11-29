@@ -11,8 +11,8 @@ bool ClairAction_GimmickWarp::Start()
 {
 	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Clair = FindGO<ClairAction>("clair");
-	P_Collision->DecisionDataSet(M_WarpTexture[BLACKHOLE].GetWideAndHeight().x, M_WarpTexture[BLACKHOLE].GetWideAndHeight().y, M_WarpPosition[BLACKHOLE].x, M_WarpPosition[BLACKHOLE].y, CA_COLLISION_BOX, CA_TAG_NON, M_CollisionNumner[BLACKHOLE]);
-	P_Collision->DecisionDataSet(M_WarpTexture[BLACKHOLE].GetWideAndHeight().x, M_WarpTexture[BLACKHOLE].GetWideAndHeight().y, M_WarpPosition[BLACKHOLE].x, M_WarpPosition[BLACKHOLE].y, CA_COLLISION_BOX, CA_TAG_NON, M_CollisionNumner[BLACKHOLE]);
+	P_Collision->DecisionDataSet(M_WarpTexture[BLACKHOLE].GetWideAndHeight().x, M_WarpTexture[BLACKHOLE].GetWideAndHeight().y, M_WarpPosition[BLACKHOLE].x, M_WarpPosition[BLACKHOLE].y, COLLISION_BOX, TAG_NON, M_CollisionNumner[BLACKHOLE]);
+	P_Collision->DecisionDataSet(M_WarpTexture[BLACKHOLE].GetWideAndHeight().x, M_WarpTexture[BLACKHOLE].GetWideAndHeight().y, M_WarpPosition[BLACKHOLE].x, M_WarpPosition[BLACKHOLE].y, COLLISION_BOX, TAG_NON, M_CollisionNumner[BLACKHOLE]);
 }
 void ClairAction_GimmickWarp::Update()
 {

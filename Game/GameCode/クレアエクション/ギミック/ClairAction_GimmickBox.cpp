@@ -4,6 +4,7 @@
 #include "GameCode/クレアエクション/ClairAction.h"
 
 #include "DimensionalElement/DimensionalCollision.h"
+#include "DimensionalStorage/NumberStorage.h"
 #include "Mouse・Controller/Mouse.h"
 
 bool ClairAction_GimmickBox::Start()
@@ -12,7 +13,7 @@ bool ClairAction_GimmickBox::Start()
 	P_Collision = FindGO<DimensionalCollision>("collision");
 	P_Clair = FindGO<ClairAction>("clair");
 	P_Mouse = FindGO<Mouse>("mouse");
-	P_Collision->DecisionDataSet(120, 120, M_BoxPosition.x, M_BoxPosition.y, CA_COLLISION_BOX, CA_TAG_BOX, M_CollisionNumner);
+	P_Collision->DecisionDataSet(120, 120, M_BoxPosition.x, M_BoxPosition.y, COLLISION_BOX, TAG_BOX, M_CollisionNumner);
 	return true;
 }
 void ClairAction_GimmickBox::Update()
@@ -21,7 +22,7 @@ void ClairAction_GimmickBox::Update()
 	Move();
 	Fall();
 	Reset();
-	P_Collision->DecisionSetPosition(M_BoxPosition.x, M_BoxPosition.y, CA_COLLISION_BOX, M_CollisionNumner);
+	P_Collision->DecisionSetPosition(M_BoxPosition.x, M_BoxPosition.y, COLLISION_BOX, M_CollisionNumner);
 	M_BoxTexture.SetPosition(M_BoxPosition);
 	M_BoxTexture.Update();
 }
@@ -68,27 +69,27 @@ void ClairAction_GimmickBox::Move()
 }
 void ClairAction_GimmickBox::Collision()
 {
-	if (!P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP) && !P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+	if (!P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_GROUND, DIRECTION_UP) && !P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_BOX, DIRECTION_UP))
 	{
 		//両方衝突していない
 		M_OnBox = false;
 		M_OnGround = false;
 	}else {
-		if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP) && P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+		if (P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_GROUND, DIRECTION_UP) && P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_BOX, DIRECTION_UP))
 		{
 			//両方衝突している
 			M_OnBox = true;
 			M_OnGround = true;
 		}
 		else {
-			if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_UP))
+			if (P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_GROUND, DIRECTION_UP))
 			{
 				//地面と衝突している
 				M_OnBox = false;
 				M_OnGround = true;
 			}
 			else {
-				if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_BOX, DIRECTION_UP))
+				if (P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_BOX, DIRECTION_UP))
 				{
 					//箱と衝突している
 					M_OnBox = true;
@@ -98,12 +99,12 @@ void ClairAction_GimmickBox::Collision()
 		}
 	}
 
-	if (!P_Collision->DecisionAndDecisionsCollision(CA_COLLISION_CURSOR, CA_TAG_BOX, M_CollisionNumner))
+	if (!P_Collision->DecisionAndDecisionsCollision(COLLISION_CURSOR, TAG_BOX, M_CollisionNumner))
 	{
 		//カーソルと衝突していない
 		M_MoveFlag = false;
 	}else {
-		if (P_Collision->DecisionAndDecisionsCollision(CA_COLLISION_CURSOR, CA_TAG_BOX, M_CollisionNumner))
+		if (P_Collision->DecisionAndDecisionsCollision(COLLISION_CURSOR, TAG_BOX, M_CollisionNumner))
 		{
 			//カーソルと衝突している
 			if (!P_Mouse->GetMouseFlag(LEFTBUTTON))
@@ -123,6 +124,6 @@ void ClairAction_GimmickBox::Collision()
 
 void ClairAction_GimmickBox::Reset()
 {
-	if (P_Collision->EmptysAndEmptysCollision(CA_TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, CA_TAG_GROUND, DIRECTION_DOWN))
+	if (P_Collision->EmptysAndEmptysCollision(TAG_BOX, DIRECTION_DOWN, M_CollisionNumner, TAG_GROUND, DIRECTION_DOWN))
 	{M_BoxPosition.y = 0.0f;}
 }

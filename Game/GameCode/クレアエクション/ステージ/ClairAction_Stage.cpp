@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "ClairAction_Stage.h"
 
-#include "GameCode/クレアエクション/ClairAction.h"
 #include "GameCode/クレアエクション/ギミック/ClairAction_Gimmick.h"
 
 #include "DimensionalElement/DimensionalCollision.h"
+
+#include "DimensionalStorage/NumberStorage.h"
 
 ClairAction_Stage::ClairAction_Stage()
 {
@@ -74,13 +75,13 @@ bool ClairAction_Stage::MapSet()
 							MapType = Count;
 							switch (MapType)
 							{
-							case CA_MAP_GROUND:
+							case MAP_GROUND:
 								Ground(X, Y);
 								break;
-							case CA_MAP_WALL:
+							case MAP_WALL:
 								Wall(X, Y);
 								break;
-							case CA_GIMMICK_BOX:
+							case GIMMICK_BOX:
 								Box(X, Y);
 								break;
 							default:
@@ -103,7 +104,7 @@ void ClairAction_Stage::Ground(int X, int Y)
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTileTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTileTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, CA_COLLISION_GROUND, CA_TAG_GROUND);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, COLLISION_GROUND, TAG_GROUND);
 }
 void ClairAction_Stage::Wall(int X, int Y)
 {
@@ -112,7 +113,7 @@ void ClairAction_Stage::Wall(int X, int Y)
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTileTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTileTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, CA_COLLISION_WALL, CA_TAG_WALL);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, COLLISION_WALL, TAG_WALL);
 }
 void ClairAction_Stage::Goal(int X, int Y)
 {
@@ -121,12 +122,12 @@ void ClairAction_Stage::Goal(int X, int Y)
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
 	M_StageTileTexture[X][Y].SetPosition(M_StagePosition);
 	M_StageTileTexture[X][Y].Update();
-	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, CA_COLLISION_GOAL, CA_TAG_NON);
+	P_Collision->DecisionDataSet(120, 120, M_StagePosition.x, M_StagePosition.y, COLLISION_GOAL, TAG_NON);
 }
 
 void ClairAction_Stage::Box(int X, int Y)
 {
 	M_StagePosition.x = -900.0f + (X * 120.0f);
 	M_StagePosition.y = -480.0f + (Y * 120.0f);
-	P_Gimmick->Create(CA_GIMMICK_BOX, X, Y, M_StagePosition);
+	P_Gimmick->Create(GIMMICK_BOX, X, Y, M_StagePosition);
 }
