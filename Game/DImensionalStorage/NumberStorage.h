@@ -1,5 +1,5 @@
 #pragma once
-enum
+enum CollisionStorage
 {
 	COLLISION_CURSOR,
 
@@ -20,7 +20,7 @@ enum
 
 	COLLISION_NON
 };
-enum
+enum TagStorage
 {
 	TAG_CURSOR,
 
@@ -31,7 +31,7 @@ enum
 
 	TAG_NON
 };
-enum
+enum MapStorage
 {
 	MAP_GROUND = 1,
 	MAP_WALL = 2,
@@ -39,4 +39,10 @@ enum
 	GIMMICK_BOX,
 
 	MAP_NON
+};
+enum Class
+{
+	FIRST,
+	SECOND,
+	THIRD,
 };

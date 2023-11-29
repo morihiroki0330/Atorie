@@ -2,6 +2,7 @@
 #include "ClairAction_GimmickWarp.h"
 #include "GameCode/クレアエクション/ClairAction.h"
 #include "DimensionalElement/DimensionalCollision.h"
+#include "DimensionalStorage/NumberStorage.h"
 ClairAction_GimmickWarp::ClairAction_GimmickWarp()
 {
 	M_WarpTexture[BLACKHOLE].Init("Assets/Sprite/ClairAction/GimmickBox.DDS", 120.0f, 120.0f, true);
