@@ -47,9 +47,9 @@ public:
 	bool EmptyAndDecisionCollision(int ObjectName1, int Direction1, int ObjectName2);//y‹óz‚Æy–{‘Ìz‚ÌÕ“Ë
 
 	bool EmptyAndDecisionsCollision(int ObjectName1, int Direction1, int Tag2);//y‹óz‚Æyƒ^ƒO‚ª•t‚¢‚½•¡”‚Ì–{‘Ìz‚ÌÕ“Ë
-	bool DecisionAndDecisionsCollision(int ObjectName1, int Tag2);//y–{‘Ìz‚Æyƒ^ƒO‚ª•t‚¢‚½•¡”‚Ì–{‘Ìz‚ÌÕ“Ë
-
 	bool EmptyAndEmptysCollision(int ObjectName1, int Direction1, int Tag2, int Direction2);//y‹óz‚Æyƒ^ƒO‚ª•t‚¢‚½•¡”‚Ì‹óz‚ÌÕ“Ë
+
+	bool DecisionAndDecisionsCollision(int ObjectName1, int Tag2);//y–{‘Ìz‚Æyƒ^ƒO‚ª•t‚¢‚½•¡”‚Ì–{‘Ìz‚ÌÕ“Ë
 	bool DecisionAndEmptysCollision(int ObjectName1, int Tag2, int Direction2);//y–{‘Ìz‚Æyƒ^ƒO‚ª•t‚¢‚½•¡”‚Ì‹óz‚ÌÕ“Ë
 
 	bool DecisionAndDecisionsCollision(int ObjectName1, int Tag2,int Number);//y–{‘Ìz‚Æyw’èƒ^ƒO‚ª•t‚¢‚½•¡”‚Ì–{‘Ìz‚ÌÕ“Ë

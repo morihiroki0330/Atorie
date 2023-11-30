@@ -100,33 +100,24 @@ void DimensionalCollision::DecisionInSideDataSet(int Count)
 	}
 
 	DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX + (EmptyWidth);
-	//DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX;
 	DecisionData[Count][DIRECTION_UP].UpperLeftVertexPositionY = (DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY);
 	DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX + (-EmptyWidth);
-	//DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX;
 	DecisionData[Count][DIRECTION_UP].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY + (-EmptyWidth);
 
 	DecisionData[Count][DIRECTION_RIGHT].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX + (-EmptyWidth);
 	DecisionData[Count][DIRECTION_RIGHT].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY + (-EmptyWidth);
-	//DecisionData[Count][DIRECTION_RIGHT].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY;
 	DecisionData[Count][DIRECTION_RIGHT].LowerRightVertexPositionX = (DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX);
 	DecisionData[Count][DIRECTION_RIGHT].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY + (EmptyWidth);
-	//DecisionData[Count][DIRECTION_RIGHT].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY;
 
 	DecisionData[Count][DIRECTION_DOWN].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX + (EmptyWidth);
-	//DecisionData[Count][DIRECTION_DOWN].UpperLeftVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX;
 	DecisionData[Count][DIRECTION_DOWN].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY + (EmptyWidth);
 	DecisionData[Count][DIRECTION_DOWN].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX + (-EmptyWidth);
-	//DecisionData[Count][DIRECTION_DOWN].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionX;
 	DecisionData[Count][DIRECTION_DOWN].LowerRightVertexPositionY = (DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY);
 
 	DecisionData[Count][DIRECTION_LEFT].UpperLeftVertexPositionX = (DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX);
 	DecisionData[Count][DIRECTION_LEFT].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY + (-EmptyWidth);
-	//DecisionData[Count][DIRECTION_LEFT].UpperLeftVertexPositionY = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionY;
 	DecisionData[Count][DIRECTION_LEFT].LowerRightVertexPositionX = DecisionData[Count][DIRECTION_NON].UpperLeftVertexPositionX + (EmptyWidth);
 	DecisionData[Count][DIRECTION_LEFT].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY + (EmptyWidth);
-	//DecisionData[Count][DIRECTION_LEFT].LowerRightVertexPositionY = DecisionData[Count][DIRECTION_NON].LowerRightVertexPositionY;
-
 }
 
 //ÉRÉsÅ[

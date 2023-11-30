@@ -8,6 +8,7 @@
 #include "DimensionalEffect/DimensionalEffect.h"
 #include "DimensionalElement/DimensionalElement.h"
 #include "DimensionalStorage/NumberStorage.h"
+
 ClairAction_GameTitle::ClairAction_GameTitle()
 {
 	M_GameTitleTexture.Init("Assets/Sprite/ClairAction/GameTitle.DDS", 1920.0f, 1080.0f, true);
@@ -55,7 +56,7 @@ void ClairAction_GameTitle::Render(RenderContext& rc)
 
 void ClairAction_GameTitle::Button()
 {
-	if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+	if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_STARTBUTTON) && P_Mouse->GetMouseFlag(MOUSE_LEFTBUTTON))
 	{
 		if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
 		{
@@ -63,14 +64,14 @@ void ClairAction_GameTitle::Button()
 			M_StartFlag = true;
 		}
 	}else {
-		if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+		if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_OPTIONBUTTON) && P_Mouse->GetMouseFlag(MOUSE_LEFTBUTTON))
 		{
 			if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
 			{
 				M_OptionFlag = true;
 			}
 		}else {
-			if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(LEFTBUTTON))
+			if (P_Collision->DecisionAndDecisionCollision(COLLISION_CURSOR, COLLISION_EXITBUTTON) && P_Mouse->GetMouseFlag(MOUSE_LEFTBUTTON))
 			{
 				if (!M_StartFlag && !M_OptionFlag && !M_ExitFlag)
 				{

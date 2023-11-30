@@ -40,3 +40,10 @@ enum MapStorage
 
 	MAP_NON
 };
+enum MouseFlagStorage
+{
+	MOUSE_LEFTBUTTON = 0,
+	MOUSE_RIGHTBUTTON = 1,
+	MOUSE_FLICK = 2,
+	MOUSE_WHEEL = 3
+};

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Mouse.h"
+#include "DimensionalStorage/NumberStorage.h"
 void Mouse::Update()
 {
 	M_HWnd = GetConsoleWindow();
@@ -96,13 +97,13 @@ void Mouse::SetMouseFlag(int Number,bool Flag)
 {
 	switch (Number)
 	{
-	case LEFTBUTTON:
+	case MOUSE_LEFTBUTTON:
 		S_Flag.M_LeftButtonFlag = Flag;
 		break;
-	case RIGHTBUTTON:
+	case MOUSE_RIGHTBUTTON:
 		S_Flag.M_RightButtonFlag = Flag;
 		break;
-	case FLICK:
+	case MOUSE_FLICK:
 		S_Flag.M_FlickFlag = Flag;
 		break;
 	}
@@ -111,13 +112,13 @@ bool Mouse::GetMouseFlag(int Number)
 {
 	switch (Number)
 	{
-	case LEFTBUTTON:
+	case MOUSE_LEFTBUTTON:
 		return S_Flag.M_LeftButtonFlag;
 		break;
-	case RIGHTBUTTON:
+	case MOUSE_RIGHTBUTTON:
 		return S_Flag.M_RightButtonFlag;
 		break;
-	case FLICK:
+	case MOUSE_FLICK:
 		return S_Flag.M_FlickFlag;
 		break;
 	}

@@ -108,12 +108,12 @@ void ClairAction_GimmickBox::Collision()
 		if (P_Collision->DecisionAndDecisionsCollision(COLLISION_CURSOR, TAG_BOX, M_CollisionNumner))
 		{
 			//カーソルと衝突している
-			if (!P_Mouse->GetMouseFlag(LEFTBUTTON))
+			if (!P_Mouse->GetMouseFlag(MOUSE_LEFTBUTTON))
 			{
 				//左クリックを押していない
 				M_MoveFlag = false;
 			}else {
-			if (P_Mouse->GetMouseFlag(LEFTBUTTON))
+			if (P_Mouse->GetMouseFlag(MOUSE_LEFTBUTTON))
 			{
 				//左クリックを押している
 				M_MoveFlag = true;
