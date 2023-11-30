@@ -8,14 +8,10 @@
 #include "ステージ/ClairAction_Stage.h"
 #include "ギミック/ClairAction_Gimmick.h"
 
-#include "DimensionalElement/DimensionalCollision.h"
-#include "DimensionalElement/DimensionalCamera.h"
-
-#include "DimensionalEffect/Fade.h"
-
+#include "Operation/Operation.h"
+#include "DimensionalEffect/DimensionalEffect.h"
+#include "DimensionalElement/DimensionalElement.h"
 #include "DimensionalStorage/NumberStorage.h"
-
-#include "Mouse・Controller/Mouse.h"
 
 ClairAction::ClairAction()
 {
@@ -41,19 +37,19 @@ void ClairAction::Update()
 void ClairAction::Create(int Number)
 {
 	switch(Number) {
-	case FIRST:
+	case 0:
 		DeleteGO(S_Clair.P_GameTitle);
 		S_Clair.P_Fade->StartFadeIn();
 		S_Clair.P_Stage = NewGO<ClairAction_Stage>(0, "stage");
 		S_Clair.P_Gimmick = NewGO<ClairAction_Gimmick>(0, "gimmick");
 		S_Clair.P_Character = NewGO<ClairAction_Character>(0, "character");
 		break;
-	case SECOND:
+	case 1:
 		DeleteGO(S_Clair.P_Stage);
 		DeleteGO(S_Clair.P_Character);
 		S_Clair.P_GameResult = NewGO<ClairAction_GameResult>(0, "gameresult");
 		break;
-	case THIRD:
+	case 2:
 		DeleteGO(S_Clair.P_GameResult);
 		S_Clair.P_GameTitle = NewGO<ClairAction_GameTitle>(0, "gametitle");
 		break;

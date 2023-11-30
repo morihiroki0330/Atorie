@@ -40,9 +40,3 @@ enum MapStorage
 
 	MAP_NON
 };
-enum Class
-{
-	FIRST,
-	SECOND,
-	THIRD,
-};

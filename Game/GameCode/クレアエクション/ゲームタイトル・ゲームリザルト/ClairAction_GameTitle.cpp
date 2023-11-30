@@ -4,14 +4,10 @@
 
 #include "GameCode/クレアエクション/ClairAction.h"
 
-#include "DimensionalElement/DimensionalCollision.h"
-
-#include "DimensionalEffect/Fade.h"
-
+#include "Operation/Operation.h"
+#include "DimensionalEffect/DimensionalEffect.h"
+#include "DimensionalElement/DimensionalElement.h"
 #include "DimensionalStorage/NumberStorage.h"
-
-#include "Mouse・Controller/Mouse.h"
-
 ClairAction_GameTitle::ClairAction_GameTitle()
 {
 	M_GameTitleTexture.Init("Assets/Sprite/ClairAction/GameTitle.DDS", 1920.0f, 1080.0f, true);
@@ -91,7 +87,7 @@ void ClairAction_GameTitle::ButtonAfter()
 	{
 		if (M_StartFlag)
 		{
-			P_Clair->Create(FIRST);
+			P_Clair->Create(0);
 		}else {
 			if (M_OptionFlag)
 			{

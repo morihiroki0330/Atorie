@@ -4,11 +4,10 @@
 
 #include "ClairAction_Character.h"
 
-#include "DimensionalElement/DimensionalAnimation.h"
-#include "DimensionalElement/DimensionalCollision.h"
-#include "DimensionalElement/DimensionalCamera.h"
+#include "Operation/Operation.h"
+#include "DimensionalEffect/DimensionalEffect.h"
+#include "DimensionalElement/DimensionalElement.h"
 #include "DimensionalStorage/NumberStorage.h"
-#include "MouseÅEController/Controller.h"
 
 ClairAction_Character::ClairAction_Character()
 {

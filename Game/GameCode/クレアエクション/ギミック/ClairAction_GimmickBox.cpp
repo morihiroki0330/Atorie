@@ -3,9 +3,10 @@
 
 #include "GameCode/クレアエクション/ClairAction.h"
 
-#include "DimensionalElement/DimensionalCollision.h"
+#include "Operation/Operation.h"
+#include "DimensionalEffect/DimensionalEffect.h"
+#include "DimensionalElement/DimensionalElement.h"
 #include "DimensionalStorage/NumberStorage.h"
-#include "Mouse・Controller/Mouse.h"
 
 bool ClairAction_GimmickBox::Start()
 {

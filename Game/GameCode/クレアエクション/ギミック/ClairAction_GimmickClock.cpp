@@ -1,8 +1,10 @@
 #include "stdafx.h"
 #include "ClairAction_GimmickClock.h"
 
-#include "DimensionalElement/DimensionalCollision.h"
-#include "MouseÅEController/Mouse.h"
+#include "Operation/Operation.h"
+#include "DimensionalEffect/DimensionalEffect.h"
+#include "DimensionalElement/DimensionalElement.h"
+#include "DimensionalStorage/NumberStorage.h"
 
 ClairAction_GimmickClock::ClairAction_GimmickClock()
 {
